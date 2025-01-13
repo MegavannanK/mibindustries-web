@@ -35,8 +35,25 @@ jobs:
         name: terraform
         path: |
           terraform/*.tf
+    
+    - name: Setup terrafrom
+      uses: hashicorp/setup-terraform@v1
+      with:
+        terraform_version: 1.4.0
+    
+    - name: Download artifact
+      uses: actions/download-artifact@v3
+      with:
+        name: terraform
+        path: terraform
+    
+    - name: Terraform init
+      env:
+        AZ_CLIENT_ID: ${{ secrets.AZ_CLIENT_ID }}
+        AZ_CLIENT_SECRET: ${{ secrets.AZ_CLIENT_SECRET }}
+        AZ_SUBSCRIPTION_ID: ${{ secrets.AZ_SUBSCRIPTION_ID }}
+        AZ_TENANT_ID: ${{ secrets.AZ_TENANT_ID }}
+      run: terraform init
 
-    - name: Check the path for artifact
-      run: |
-        ls -la terraform
-        ls -la
+    - name: Terraform plan
+      run: terraform plan

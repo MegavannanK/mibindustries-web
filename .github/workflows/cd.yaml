@@ -17,30 +17,26 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v2
 
-    - name: Setup terrafrom
-      uses: hashicorp/setup-terraform@v1
-      with:
-        terraform_version: 1.4.0
     
-    - name: Getting the artifact path
-      run: ls -la terraform
+    # - name: Getting the artifact path
+    #   run: ls -la terraform
 
-    - name: Download artifact
-      uses: actions/download-artifact@v3
-      with:
-        name: terraform
-        path: terraform
+    # - name: Download artifact
+    #   uses: actions/download-artifact@v3
+    #   with:
+    #     name: terraform
+    #     path: terraform
     
-    - name: Terraform init
-      env:
-        AZ_CLIENT_ID: ${{ secrets.AZ_CLIENT_ID }}
-        AZ_CLIENT_SECRET: ${{ secrets.AZ_CLIENT_SECRET }}
-        AZ_SUBSCRIPTION_ID: ${{ secrets.AZ_SUBSCRIPTION_ID }}
-        AZ_TENANT_ID: ${{ secrets.AZ_TENANT_ID }}
-      run: terraform init
+    # - name: Terraform init
+    #   env:
+    #     AZ_CLIENT_ID: ${{ secrets.AZ_CLIENT_ID }}
+    #     AZ_CLIENT_SECRET: ${{ secrets.AZ_CLIENT_SECRET }}
+    #     AZ_SUBSCRIPTION_ID: ${{ secrets.AZ_SUBSCRIPTION_ID }}
+    #     AZ_TENANT_ID: ${{ secrets.AZ_TENANT_ID }}
+    #   run: terraform init
 
-    - name: terraform Validate
-      run: terraform validate
+    # - name: terraform Validate
+    #   run: terraform validate
 
-    - name: Terraform plan
-      run: terraform plan
+    # - name: Terraform plan
+    #   run: terraform plan
