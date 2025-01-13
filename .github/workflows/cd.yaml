@@ -23,7 +23,7 @@ jobs:
         terraform_version: 1.4.0
     
     - name: Getting the artifact path
-      run: ls -la
+      run: ls -la terraform
 
     - name: Download artifact
       uses: actions/download-artifact@v3

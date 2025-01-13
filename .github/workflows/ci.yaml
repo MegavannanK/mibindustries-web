@@ -35,3 +35,8 @@ jobs:
         name: terraform
         path: |
           terraform/*.tf
+
+    - name: Check the path for artifact
+      run: |
+        ls -la terraform
+        ls -la
