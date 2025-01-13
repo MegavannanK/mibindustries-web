@@ -48,6 +48,7 @@ jobs:
         path: terraform
     
     - name: Terraform init
+      working-directory: terraform
       env:
         AZ_CLIENT_ID: ${{ secrets.AZ_CLIENT_ID }}
         AZ_CLIENT_SECRET: ${{ secrets.AZ_CLIENT_SECRET }}
@@ -56,4 +57,5 @@ jobs:
       run: terraform init
 
     - name: Terraform plan
+      working-directory: terraform
       run: terraform plan
