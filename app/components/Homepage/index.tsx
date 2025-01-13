@@ -1,4 +1,5 @@
 import { AboutUs } from "./AboutUs";
+import { Products } from "./Products";
 import { PartnersMarquee } from "./ClientMarquee";
 import { Experience } from "./Experience";
 import { Header } from "./Header";
@@ -10,6 +11,7 @@ export const Homepage = () => {
     <div>
       <Header />
       <AboutUs />
+      <Products />
       <PartnersMarquee />
       <Experience />
       <OurWork />
