@@ -30,7 +30,7 @@ jobs:
       run: docker push ${{secrets.DOCKERHUB_USERNAME}}/mib-frontend:${{github.ref_name}}-${{github.sha}}
 
     - name: Publish terrafrom as artifact
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       with:
         name: terraform
         path: |
