@@ -19,6 +19,11 @@ jobs:
       uses: hashicorp/setup-terraform@v1
       with:
         terraform_version: 1.4.0
+
+    - name: Download artifacr
+      uses: actions/download-artifact@v2
+      with:
+        name: terraform
     
     - name: Terraform init
       env:
@@ -27,6 +32,9 @@ jobs:
         AZ_SUBSCRIPTION_ID: ${{ secrets.AZ_SUBSCRIPTION_ID }}
         AZ_TENANT_ID: ${{ secrets.AZ_TENANT_ID }}
       run: terraform init
+
+    - name: terraform Validate
+      run: terraform validate
 
     - name: Terraform plan
       run: terraform plan
