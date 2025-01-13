@@ -31,11 +31,11 @@ export const Navbar = () => {
             : "absolute top-4 left-1/2 -translate-x-1/2 w-11/12"
         }`}
       >
-        <div className="grid grid-cols-4 justify-between items-center h-full px-10">
+        <div className="grid grid-cols-4 text-blue-900 justify-between items-center h-full px-10">
           <p className="cursor-pointer text-title-4 font-bold col-span-2">
             Logo
           </p>
-          <div className="flex gap-4 items-center justify-between col-span-2">
+          <div className="cursor-pointer flex gap-4 items-center justify-between col-span-2">
             {navItems.map((item, index) => (
               <p
                 className="cursor-pointer text-title-7 font-semibold"

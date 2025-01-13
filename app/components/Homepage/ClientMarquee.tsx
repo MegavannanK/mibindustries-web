@@ -9,8 +9,8 @@ const clients = [client1, client2, client3, client4, client5];
 
 export const PartnersMarquee = () => {
   return (
-    <div className="bg-white py-4 px-2">
-      <h2 className="pb-4 text-title-4 text-primary-700 text-center font-bold">
+    <div className="bg-white">
+      <h2 className="pb-4 text-title-7 md:text-title-4 text-primary-700 text-center font-bold">
         Our Partners
       </h2>
       <Marquee>
