@@ -21,6 +21,9 @@ jobs:
       uses: hashicorp/setup-terraform@v1
       with:
         terraform_version: 1.4.0
+    
+    - name: Getting the artifact path
+      run: ls -la
 
     - name: Download artifact
       uses: actions/download-artifact@v3
