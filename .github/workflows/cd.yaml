@@ -6,7 +6,7 @@ on:
     types:
       - completed
   workflow_dispatch:
-    
+   
 
 jobs:
   deploy:
@@ -17,19 +17,36 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v2
 
+    - name: Publish terrafrom as artifact
+      uses: actions/upload-artifact@v3
+      with:
+        name: terraform
+        path: |
+            terraform/*.tf
+        
     - name: Setup terrafrom
       uses: hashicorp/setup-terraform@v1
       with:
         terraform_version: 1.4.0
-    
-    - name: Terraform apply
+        
+    - name: Download artifact
+      uses: actions/download-artifact@v3
+      with:
+        name: terraform
+        path: terraform
+        
+    - name: Terraform init & Plan & Apply
+      working-directory: terraform
       env:
         ARM_CLIENT_ID: ${{ secrets.AZ_CLIENT_ID }}
         ARM_CLIENT_SECRET: ${{ secrets.AZ_CLIENT_SECRET }}
         ARM_SUBSCRIPTION_ID: ${{ secrets.AZ_SUBSCRIPTION_ID }}
-        ARM _TENANT_ID: ${{ secrets.AZ_TENANT_ID }}
-      run: terraform apply -auto-approve
-
+        ARM_TENANT_ID: ${{ secrets.AZ_TENANT_ID }}
+      run: |
+        terraform init
+        terraform plan
+        terraform apply -auto-approve
+    
     - name: DockerHub login
       uses: docker/login-action@v2
       with:
