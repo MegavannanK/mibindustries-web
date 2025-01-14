@@ -56,6 +56,11 @@ jobs:
     - name: Docker Pull Image
       run: docker pull ${{secrets.DOCKERHUB_USERNAME}}/mib-frontend:${{github.ref_name}}-${{github.sha}}
 
+    - name: Azure Login
+      uses: azure/login@v1
+      with:
+        creds: ${{ secrets.AZURE_CREDENTIALS }}
+
     - name: Config Webapp for Container
       run: |
         az webapp config container set \
