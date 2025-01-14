@@ -57,4 +57,4 @@
           run: |
             terraform init
             terraform plan
-            run: terraform apply -auto-approve
+            terraform apply -auto-approve
