@@ -65,7 +65,7 @@ jobs:
       run: |
         az webapp config container set \
         --name mib-industries \
-        --resource-group mib-rg \
+        --resource-group mat-rg \
         --docker-custom-image-name ${{secrets.DOCKERHUB_USERNAME}}/mib-frontend:${{github.ref_name}}-${{github.sha}} \
         --docker-registry-server-url https://index.docker.io/v1/ \
         --docker-registry-server-user ${{secrets.DOCKERHUB_USERNAME}} \
