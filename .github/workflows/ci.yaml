@@ -47,7 +47,7 @@
             name: terraform
             path: terraform
         
-        - name: Terraform init & Plan
+        - name: Terraform init & Plan & Apply
           working-directory: terraform
           env:
             ARM_CLIENT_ID: ${{ secrets.AZ_CLIENT_ID }}
@@ -57,3 +57,4 @@
           run: |
             terraform init
             terraform plan
+            run: terraform apply -auto-approve
