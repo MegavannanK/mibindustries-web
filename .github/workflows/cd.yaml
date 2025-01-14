@@ -28,7 +28,8 @@ jobs:
         ARM_CLIENT_SECRET: ${{ secrets.AZ_CLIENT_SECRET }}
         ARM_SUBSCRIPTION_ID: ${{ secrets.AZ_SUBSCRIPTION_ID }}
         ARM _TENANT_ID: ${{ secrets.AZ_TENANT_ID }}
-      run: terraform apply -var "rg_name=myResourceGroup" -var "location=East US" -var "appservice_plan_name=mib-industries" -auto-approve
+      run: terraform apply -auto-approve
+      # -var "rg_name=myResourceGroup" -var "location=East US" -var "appservice_plan_name=mib-industries"
 
 
     - name: DockerHub login
