@@ -1,5 +1,4 @@
 import aboutUsImage from "../../assets/images/about-us.svg";
-import Container from "../ui/Container";
 
 export const AboutUs = () => {
   return (
