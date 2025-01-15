@@ -13,13 +13,10 @@
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-fast-marquee": "^1.6.5",
-    "tailwind-scrollbar-hide": "^2.0.0",
     "tailwind-scrollbar-hide": "^2.0.0"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
-    "@types/node": "20.17.12",
-    "@types/react": "19.0.4",
     "@types/node": "20.17.12",
     "@types/react": "19.0.4",
     "@types/react-dom": "^19",
