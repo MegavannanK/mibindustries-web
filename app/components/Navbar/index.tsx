@@ -1,4 +1,7 @@
+"use client";
+
 import { useState, useEffect } from "react";
+import { usePathname } from "next/navigation";
 
 const navItems = [
   { label: "Home", target: "/" },
@@ -9,33 +12,43 @@ const navItems = [
 
 export const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
+  const pathname = usePathname(); // Get the current route
 
   const handleScroll = () => {
-    setIsScrolled(window.scrollY > 50);
+    if (pathname === "/") {
+      setIsScrolled(window.scrollY > 50);
+    }
   };
 
   useEffect(() => {
-    window.addEventListener("scroll", handleScroll);
+    if (pathname === "/") {
+      window.addEventListener("scroll", handleScroll);
+    }
+
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
-  }, []);
+  }, [pathname]);
+
+  const isHomePage = pathname === "/";
 
   return (
     <>
       {/* Navbar */}
       <div
-        className={` h-20 bg-primary-400 rounded-md transition-all duration-300 z-50 ${
-          isScrolled
-            ? "fixed top-0 left-0 right-0 shadow-md w-full"
-            : "absolute top-4 left-1/2 -translate-x-1/2 w-11/12"
+        className={`h-20  rounded-md transition-all duration-300 z-50 ${
+          isHomePage
+            ? isScrolled
+              ? "fixed top-0 left-0 right-0 shadow-md w-full bg-primary-400"
+              : "absolute top-4 left-1/2 -translate-x-1/2 w-11/12 bg-primary-400"
+            : "fixed top-0 left-0 right-0 shadow-md w-full bg-white"
         }`}
       >
-        <div className="grid grid-cols-4 justify-between items-center h-full px-10">
+        <div className="grid grid-cols-4 text-blue-900 justify-between items-center h-full px-10">
           <p className="cursor-pointer text-title-4 font-bold col-span-2">
             Logo
           </p>
-          <div className="flex gap-4 items-center justify-between col-span-2">
+          <div className="cursor-pointer flex gap-4 items-center justify-between col-span-2">
             {navItems.map((item, index) => (
               <p
                 className="cursor-pointer text-title-7 font-semibold"
@@ -48,12 +61,14 @@ export const Navbar = () => {
         </div>
       </div>
 
-      {/* Spacer */}
-      {/* <div
-        className={`transition-all duration-300 ${
-          isScrolled ? "h-16" : "h-20"
-        }`}
-      /> */}
+      {/* Spacer to prevent content shift on scroll */}
+      {isHomePage && (
+        <div
+          className={`transition-all duration-300 ${
+            isScrolled ? "h-16" : "h-20"
+          }`}
+        />
+      )}
     </>
   );
 };
