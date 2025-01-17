@@ -1,9 +1,7 @@
 import headerImage from "../../assets/images/export.png";
-import Container from "../ui/Container";
 export const Header = () => {
   return (
     <div className="bg-primary-200 h-auto md:h-screen pt-20 overflow-hidden">
-      {/* <Container> */}
       <div className="px-10 flex flex-col md:flex-row gap-5 h-[50vh] md:h-screen items-center relative">
         <div>
           <h1 className="text-primary-800 text-title-5 md:text-title-1 font-bold">
@@ -24,7 +22,6 @@ export const Header = () => {
           />
         </div>
       </div>
-      {/* </Container> */}
     </div>
   );
 };
