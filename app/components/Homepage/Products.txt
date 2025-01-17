@@ -6,38 +6,38 @@ import ProductCard from "./ProductCard";
 const products = [
   {
     id: 1,
-    title: "Steel",
-    description: "High-quality steel products.",
+    title: "Rice",
+    description: "High-quality Rice.",
     image: "/export.png", // Replace with your image path
   },
   {
     id: 2,
-    title: "Plastic",
-    description: "Durable plastic products.",
+    title: "Red Chillies",
+    description: "High-quality Chillies.",
     image: "/export.png", // Replace with your image path
   },
   {
     id: 3,
-    title: "Cement",
-    description: "Premium cement products.",
+    title: "Urid Dhall / Dhalls",
+    description: "Premium Dhall.",
     image: "/export.png", // Replace with your image path
   },
   {
     id: 4,
-    title: "Timber",
-    description: "Sustainable timber solutions.",
+    title: "Spices",
+    description: "Varieties of spices.",
     image: "/export.png", // Replace with your image path
   },
   {
     id: 5,
-    title: "Glass",
-    description: "Premium glass materials.",
+    title: "Pooja Items",
+    description: "Premium pooja items.",
     image: "/export.png", // Replace with your image path
   },
   {
     id: 6,
-    title: "Iron",
-    description: "Reliable iron products.",
+    title: "Oil",
+    description: "Oil products.",
     image: "/export.png", // Replace with your image path
   },
 ];
@@ -46,6 +46,7 @@ export const Products = () => {
   const [visibleProducts, setVisibleProducts] = useState(products.slice(0, 3)); // Initial set of 3 products
 
   const handleScrollRight = () => {
+    // Shift the products to the right
     const nextProducts = [...visibleProducts];
     const firstIndex = products.findIndex(
       (p) => p.id === visibleProducts[2].id
@@ -58,6 +59,7 @@ export const Products = () => {
   };
 
   const handleScrollLeft = () => {
+    // Shift the products to the left
     const nextProducts = [...visibleProducts];
     const firstIndex = products.findIndex(
       (p) => p.id === visibleProducts[0].id
@@ -70,26 +72,11 @@ export const Products = () => {
   };
 
   return (
-    <div className="bg-blue-900 py-8">
+    <div className="relative bg-blue-900 py-8">
       <h2 className="text-center text-2xl font-bold text-white mb-6">
         Services
       </h2>
-
-      {/* Mobile View */}
-      <div className="flex flex-col items-center space-y-4 md:hidden px-4">
-        {products.slice(0, 3).map((product) => (
-          <div className="w-full max-w-sm" key={product.id}>
-            <ProductCard
-              title={product.title}
-              description={product.description}
-              image={product.image}
-            />
-          </div>
-        ))}
-      </div>
-
-      {/* Desktop View */}
-      <div className="hidden md:flex relative items-center">
+      <div className="relative flex items-center">
         {/* Left Arrow */}
         <button
           onClick={handleScrollLeft}
