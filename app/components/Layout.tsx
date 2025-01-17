@@ -1,5 +1,6 @@
 "use client";
 import { Navbar } from "./Navbar";
+import { Footer } from "./Footer/Footer";
 
 export default function Layout({ children }: { children: React.ReactNode }) {
   return (
@@ -9,7 +10,9 @@ export default function Layout({ children }: { children: React.ReactNode }) {
       </div>
       <main>{children}</main>
       {/* Mega footer comes here */}
-      <div>Footer</div>
+      <div>
+        <Footer />
+      </div>
     </>
   );
 }
