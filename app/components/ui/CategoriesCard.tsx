@@ -18,8 +18,10 @@ export const CategoriesCard = ({
 
       {/* Content */}
       <div className="rounded-b-md bg-primary-800 text-center py-4 px-4 text-primary-100 text-left flex flex-col gap-2">
-        <h3 className="font-bold text-title-7">{name}</h3>
-        <h2 className="text-title-8">
+        <h3 className="font-bold text-body-2 sm:text-body-1 lg:text-title-8 xl:text-title-7">
+          {name}
+        </h3>
+        <h2 className="text-body-4 sm:text-body-3 lg:text-body-2 xl:text-title-8">
           Packs:{" "}
           {packs.length > 0
             ? packs.map((pack) => `${pack}kgs`).join(", ")
