@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 
 const navItems = [
   { label: "Home", target: "/" },
@@ -31,12 +31,13 @@ export const Navbar = () => {
   }, [pathname]);
 
   const isHomePage = pathname === "/";
+  const router = useRouter();
 
   return (
     <>
       {/* Navbar */}
       <div
-        className={`h-20  rounded-md transition-all duration-300 z-50 ${
+        className={`h-20 rounded-md transition-all duration-300 z-50 ${
           isHomePage
             ? isScrolled
               ? "fixed top-0 left-0 right-0 shadow-md w-full bg-primary-400"
@@ -53,6 +54,9 @@ export const Navbar = () => {
               <p
                 className="cursor-pointer text-title-7 font-semibold"
                 key={index}
+                onClick={() => {
+                  router.push(item.target);
+                }}
               >
                 {item.label}
               </p>
@@ -62,13 +66,13 @@ export const Navbar = () => {
       </div>
 
       {/* Spacer to prevent content shift on scroll */}
-      {isHomePage && (
+      {/* {isHomePage && (
         <div
           className={`transition-all duration-300 ${
             isScrolled ? "h-16" : "h-20"
           }`}
         />
-      )}
+      )} */}
     </>
   );
 };
