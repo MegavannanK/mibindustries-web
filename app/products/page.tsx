@@ -1,27 +1,19 @@
 "use client";
-
-import { Category } from "@/app/components/Catgeories";
-import Layout from "@/app/components/Layout";
 import { ArrowLeftIcon } from "@heroicons/react/20/solid";
-import { useParams } from "next/navigation";
+import { ProductPage } from "../components/Products";
+import Layout from "../components/Layout";
 import pebbleImage from "@/app/assets/images/pebble.png";
-import { ModifiedBreadCrumb } from "@/app/components/ui/ModifiedBreadCrumb";
-import { products } from "@/app/masters/products";
+import { ModifiedBreadCrumb } from "../components/ui/ModifiedBreadCrumb";
 
-const ProductDetails = () => {
-  const params = useParams();
-  const slug = params.slug;
-  const selectedProduct = products.find((p) => p.slug === slug);
-
+const ProductsView = () => {
   return (
     <Layout>
       <div className="p-6 w-11/12 mx-auto mt-[5rem] relative">
         {/* Back button */}
+        <ModifiedBreadCrumb text="Products" />
 
-        <ModifiedBreadCrumb text={selectedProduct?.name} />
-
-        {/* Category Component */}
-        <Category />
+        {/* Product Component */}
+        <ProductPage />
 
         {/* Background Images */}
         <div className="absolute inset-0 -z-50 -left-[18rem] -top-[35rem]">
@@ -43,4 +35,4 @@ const ProductDetails = () => {
   );
 };
 
-export default ProductDetails;
+export default ProductsView;

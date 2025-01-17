@@ -1,37 +1,18 @@
-import { CategoriesCard } from "./ui/CategoriesCard";
+import { useParams } from "next/navigation";
+import { products } from "../masters/products";
+import { ProductCategoryCard } from "./ui/CategoriesCard";
 
 export const Category = () => {
-  const categoryData = [
-    {
-      name: "Rice",
-      packs: [1, 2, 3],
-    },
-    {
-      name: "Red Chilli",
-      packs: [4, 5, 6],
-    },
-    {
-      name: "Green Chilli",
-      packs: [7, 8, 9],
-    },
-    {
-      name: "Salt",
-      packs: [10, 11, 12],
-    },
-    {
-      name: "Sugar",
-      packs: [13, 14, 15],
-    },
-    {
-      name: "Wheat",
-      packs: [16, 17, 18],
-    },
-  ];
+  const params = useParams();
+  const slug = params.slug;
+  const categoryData = products.find(
+    (product) => product.slug === slug
+  )?.variants;
 
   return (
     <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5">
-      {categoryData.map((category, index) => (
-        <CategoriesCard
+      {categoryData?.map((category, index) => (
+        <ProductCategoryCard
           key={index}
           name={category.name}
           packs={category.packs}
