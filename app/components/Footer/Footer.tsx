@@ -1,6 +1,6 @@
 import { PhoneIcon } from "./PhoneIcon";
 import { EmailIcon } from "./EmailIcon";
-
+import Logo from "@/app/assets/images/logo.png";
 export const Footer = () => {
   return (
     <footer className="bg-sky-100 text-gray-800 py-6">
@@ -9,7 +9,7 @@ export const Footer = () => {
         <div className="flex justify-center items-center">
           <div className="flex flex-col items-center">
             <img
-              src="/logo.svg" // Replace with your logo's path
+              src={Logo.src} // Replace with your logo's path
               alt="Logo"
               className="h-12 w-12 object-contain"
             />

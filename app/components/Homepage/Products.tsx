@@ -1,46 +1,8 @@
 "use client";
 
 import React, { useState } from "react";
-import ProductCard from "./ProductCard";
-
-const products = [
-  {
-    id: 1,
-    title: "Steel",
-    description: "High-quality steel products.",
-    image: "/export.png", // Replace with your image path
-  },
-  {
-    id: 2,
-    title: "Plastic",
-    description: "Durable plastic products.",
-    image: "/export.png", // Replace with your image path
-  },
-  {
-    id: 3,
-    title: "Cement",
-    description: "Premium cement products.",
-    image: "/export.png", // Replace with your image path
-  },
-  {
-    id: 4,
-    title: "Timber",
-    description: "Sustainable timber solutions.",
-    image: "/export.png", // Replace with your image path
-  },
-  {
-    id: 5,
-    title: "Glass",
-    description: "Premium glass materials.",
-    image: "/export.png", // Replace with your image path
-  },
-  {
-    id: 6,
-    title: "Iron",
-    description: "Reliable iron products.",
-    image: "/export.png", // Replace with your image path
-  },
-];
+import { products } from "@/app/masters/products";
+import ProductCard from "../ui/ProductCard";
 
 export const Products = () => {
   const [visibleProducts, setVisibleProducts] = useState(products.slice(0, 3)); // Initial set of 3 products
@@ -70,21 +32,19 @@ export const Products = () => {
   };
 
   return (
-    <div className="bg-blue-900 py-8">
+    <div className="bg-blue-900 py-8 w-full mx-auto">
       <h2 className="text-center text-2xl font-bold text-white mb-6">
         Services
       </h2>
 
       {/* Mobile View */}
-      <div className="flex flex-col items-center space-y-4 md:hidden px-4">
-        {products.slice(0, 3).map((product) => (
-          <div className="w-full max-w-sm" key={product.id}>
-            <ProductCard
-              title={product.title}
-              description={product.description}
-              image={product.image}
-            />
-          </div>
+      <div className="flex flex-col items-center gap-4 md:hidden px-4 mx-auto">
+        {products.slice(0, 3).map((product, index) => (
+          <ProductCard
+            key={index}
+            title={product.name}
+            description={product.description}
+          />
         ))}
       </div>
 
@@ -93,7 +53,8 @@ export const Products = () => {
         {/* Left Arrow */}
         <button
           onClick={handleScrollLeft}
-          className="absolute left-2 z-10 bg-gray-300 text-gray-700 p-3 rounded-full shadow-md hover:bg-gray-400"
+          aria-label="Scroll left"
+          className="absolute left-4 z-10 bg-white text-blue-900 p-3 rounded-full shadow-md hover:bg-blue-700 hover:text-white transition-all duration-200 focus:ring-2 focus:ring-blue-500"
         >
           &lt;
         </button>
@@ -103,7 +64,7 @@ export const Products = () => {
           {visibleProducts.map((product) => (
             <ProductCard
               key={product.id}
-              title={product.title}
+              title={product.name}
               description={product.description}
               image={product.image}
             />
@@ -113,7 +74,8 @@ export const Products = () => {
         {/* Right Arrow */}
         <button
           onClick={handleScrollRight}
-          className="absolute right-2 z-10 bg-gray-300 text-gray-700 p-3 rounded-full shadow-md hover:bg-gray-400"
+          aria-label="Scroll right"
+          className="absolute right-4 z-10 bg-white text-blue-900 p-3 rounded-full shadow-md hover:bg-blue-700 hover:text-white transition-all duration-200 focus:ring-2 focus:ring-blue-500"
         >
           &gt;
         </button>

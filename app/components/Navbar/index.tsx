@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { usePathname, useRouter } from "next/navigation";
-
+import logo from "@/app/assets/images/logo.png";
 const navItems = [
   { label: "Home", target: "/" },
   { label: "Products", target: "/products" },
@@ -46,9 +46,15 @@ export const Navbar = () => {
         }`}
       >
         <div className="grid grid-cols-4 text-blue-900 justify-between items-center h-full px-10">
-          <p className="cursor-pointer text-title-4 font-bold col-span-2">
-            Logo
-          </p>
+          <div className="col-span-2">
+            <img
+              onClick={() => router.push("/")}
+              src={logo.src}
+              alt="Logo"
+              className="h-14 cursor-pointer col"
+            />
+          </div>
+
           <div className="cursor-pointer flex gap-4 items-center justify-between col-span-2">
             {navItems.map((item, index) => (
               <p

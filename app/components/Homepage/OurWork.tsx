@@ -3,7 +3,7 @@ import Container from "../ui/Container";
 export const OurWork = () => {
   return (
     <div className="bg-white">
-      <Container className="grid grid-cols-2 gap-5 w-11/12 mx-auto items-center">
+      <Container className="grid grid-cols-1 md:grid-cols-2 gap-5 w-11/12 mx-auto items-center">
         <div className="flex flex-col gap-4">
           <h2 className="text-title-8 md:text-title-5 text-primary-700 font-bold">
             Introducing Our Work

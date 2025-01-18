@@ -10,6 +10,7 @@ export default {
     extend: {
       dropShadow: {
         primary: "0px 4px 10px rgba(3, 4, 94, 1)",
+        secondary: "0px 4px 10px rgb(72, 202, 228)",
       },
       colors: {
         background: "var(--background)",
