@@ -1,4 +1,4 @@
-import { ArrowLeftIcon } from "@heroicons/react/20/solid";
+import { ArrowLeftIcon } from "@heroicons/react/solid";
 import { useRouter } from "next/navigation";
 
 export const ModifiedBreadCrumb = ({ text }: { text: string | undefined }) => {
