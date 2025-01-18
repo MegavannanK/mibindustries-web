@@ -1,5 +1,4 @@
 "use client";
-import { ArrowLeftIcon } from "@heroicons/react/20/solid";
 import { ProductPage } from "../components/Products";
 import Layout from "../components/Layout";
 import pebbleImage from "@/app/assets/images/pebble.png";
