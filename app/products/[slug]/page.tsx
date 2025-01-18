@@ -2,7 +2,6 @@
 
 import { Category } from "@/app/components/Catgeories";
 import Layout from "@/app/components/Layout";
-import { ArrowLeftIcon } from "@heroicons/react/20/solid";
 import { useParams } from "next/navigation";
 import pebbleImage from "@/app/assets/images/pebble.png";
 import { ModifiedBreadCrumb } from "@/app/components/ui/ModifiedBreadCrumb";
