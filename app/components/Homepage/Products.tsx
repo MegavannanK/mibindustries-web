@@ -66,7 +66,6 @@ export const Products = () => {
               key={product.id}
               title={product.name}
               description={product.description}
-              image={product.image}
             />
           ))}
         </div>
