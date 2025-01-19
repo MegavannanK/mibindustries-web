@@ -4,6 +4,7 @@ import client2 from "../../assets/images/clients/Pinterest.png";
 import client3 from "../../assets/images/clients/Spotify.png";
 import client4 from "../../assets/images/clients/Stripe.png";
 import client5 from "../../assets/images/clients/Reddit.png";
+import Image from "next/image";
 
 const clients = [client1, client2, client3, client4, client5];
 
@@ -16,7 +17,7 @@ export const PartnersMarquee = () => {
       <Marquee>
         <div className="flex gap-10 justify-between">
           {clients.map((client, index) => (
-            <img
+            <Image
               key={index}
               src={client.src}
               alt="Client"
