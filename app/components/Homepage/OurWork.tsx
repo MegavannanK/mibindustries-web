@@ -1,3 +1,4 @@
+import Image from "next/image";
 import ourWorkImage from "../../assets/images/ourWork.png";
 import Container from "../ui/Container";
 export const OurWork = () => {
@@ -24,7 +25,7 @@ export const OurWork = () => {
             </p>
           </div>
         </div>
-        <img src={ourWorkImage.src} alt="Our Work" />
+        <Image src={ourWorkImage.src} alt="Our Work" />
       </Container>
     </div>
   );

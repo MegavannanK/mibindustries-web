@@ -1,8 +1,9 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 import { usePathname, useRouter } from "next/navigation";
 import logo from "@/app/assets/images/logo.png";
+import Image from "next/image";
 const navItems = [
   { label: "Home", target: "/" },
   { label: "Products", target: "/products" },
@@ -14,21 +15,20 @@ export const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const pathname = usePathname(); // Get the current route
 
-  const handleScroll = () => {
-    if (pathname === "/") {
-      setIsScrolled(window.scrollY > 50);
+  const handleScroll = useCallback(() => {
+    if (window.scrollY > 50) {
+      setIsScrolled(true);
+    } else {
+      setIsScrolled(false);
     }
-  };
+  }, []);
 
   useEffect(() => {
-    if (pathname === "/") {
-      window.addEventListener("scroll", handleScroll);
-    }
-
+    window.addEventListener("scroll", handleScroll);
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
-  }, [pathname]);
+  }, [handleScroll]);
 
   const isHomePage = pathname === "/";
   const router = useRouter();
@@ -47,7 +47,7 @@ export const Navbar = () => {
       >
         <div className="grid grid-cols-4 text-blue-900 justify-between items-center h-full px-10">
           <div className="col-span-2">
-            <img
+            <Image
               onClick={() => router.push("/")}
               src={logo.src}
               alt="Logo"

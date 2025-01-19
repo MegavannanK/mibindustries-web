@@ -6,6 +6,7 @@ import { useParams } from "next/navigation";
 import pebbleImage from "@/app/assets/images/pebble.png";
 import { ModifiedBreadCrumb } from "@/app/components/ui/ModifiedBreadCrumb";
 import { products } from "@/app/masters/products";
+import Image from "next/image";
 
 const ProductDetails = () => {
   const params = useParams();
@@ -24,14 +25,14 @@ const ProductDetails = () => {
 
         {/* Background Images */}
         <div className="absolute inset-0 -z-50 -left-[18rem] -top-[35rem]">
-          <img
+          <Image
             src={pebbleImage.src}
             alt="Pebble"
             className="object-cover rounded-lg blur-xl"
           />
         </div>
         <div className="absolute inset-0 -z-50 left-[75vw] top-[55vh]">
-          <img
+          <Image
             src={pebbleImage.src}
             alt="Pebble"
             className="object-cover rounded-lg blur-md"
