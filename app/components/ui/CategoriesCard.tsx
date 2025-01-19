@@ -2,10 +2,12 @@ export const ProductCategoryCard = ({
   name,
   packs,
   onClick,
+  imageUrl,
 }: {
   name: string;
   packs?: number[];
   onClick?: () => void;
+  imageUrl: string | undefined;
 }) => {
   return (
     <div
@@ -13,11 +15,11 @@ export const ProductCategoryCard = ({
       onClick={onClick}
     >
       {/* Image */}
-      <div className="p-4">
+      <div className="p-2 relative w-full h-56 overflow-hidden rounded-t-md bg-gray-200">
         <img
-          src="https://res.cloudinary.com/djdlol0qe/image/upload/f_webp/v1736845886/mib-product-1.png"
+          src={imageUrl}
           alt={`Image of ${name} category`}
-          className="w-10/12 mx-auto object-cover rounded-md"
+          className="w-full h-full object-cover"
         />
       </div>
 
