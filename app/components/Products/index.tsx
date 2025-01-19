@@ -1,5 +1,4 @@
 import { products } from "@/app/masters/products";
-import { ProductCategoryCard } from "../ui/CategoriesCard";
 import { useRouter } from "next/navigation";
 import ProductCard from "../ui/ProductCard";
 
