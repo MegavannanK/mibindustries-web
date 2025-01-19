@@ -1,7 +1,7 @@
 import React from "react";
 //importing image as of now
 import ExportImage from "@/app/assets/images/export.png";
-import Image from "next/image";
+
 interface ProductCardProps {
   title: string;
   description: string;

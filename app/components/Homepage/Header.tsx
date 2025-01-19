@@ -1,4 +1,3 @@
-import Image from "next/image";
 import headerImage from "../../assets/images/export.png";
 export const Header = () => {
   return (

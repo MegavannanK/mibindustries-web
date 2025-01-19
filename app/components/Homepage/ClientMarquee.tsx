@@ -4,7 +4,6 @@ import client2 from "../../assets/images/clients/Pinterest.png";
 import client3 from "../../assets/images/clients/Spotify.png";
 import client4 from "../../assets/images/clients/Stripe.png";
 import client5 from "../../assets/images/clients/Reddit.png";
-import Image from "next/image";
 
 const clients = [client1, client2, client3, client4, client5];
 

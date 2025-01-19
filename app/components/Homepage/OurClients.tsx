@@ -1,4 +1,3 @@
-import Image from "next/image";
 import happyPeople from "../../assets/images/happyPeople.png";
 const ourCLientData = [
   {

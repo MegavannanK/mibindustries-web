@@ -6,7 +6,6 @@ import { useParams } from "next/navigation";
 import pebbleImage from "@/app/assets/images/pebble.png";
 import { ModifiedBreadCrumb } from "@/app/components/ui/ModifiedBreadCrumb";
 import { products } from "@/app/masters/products";
-import Image from "next/image";
 
 const ProductDetails = () => {
   const params = useParams();

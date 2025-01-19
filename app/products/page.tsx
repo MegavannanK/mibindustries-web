@@ -3,7 +3,6 @@ import { ProductPage } from "../components/Products";
 import Layout from "../components/Layout";
 import pebbleImage from "@/app/assets/images/pebble.png";
 import { ModifiedBreadCrumb } from "../components/ui/ModifiedBreadCrumb";
-import Image from "next/image";
 
 const ProductsView = () => {
   return (

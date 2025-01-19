@@ -1,4 +1,3 @@
-import Image from "next/image";
 import ourWorkImage from "../../assets/images/ourWork.png";
 import Container from "../ui/Container";
 export const OurWork = () => {

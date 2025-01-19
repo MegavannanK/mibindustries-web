@@ -1,4 +1,3 @@
-import Image from "next/image";
 import aboutUsImage from "../../assets/images/about-us.svg";
 
 export const AboutUs = () => {

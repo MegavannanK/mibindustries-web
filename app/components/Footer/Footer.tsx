@@ -1,7 +1,6 @@
 import { PhoneIcon } from "./PhoneIcon";
 import { EmailIcon } from "./EmailIcon";
 import Logo from "@/app/assets/images/logo.png";
-import Image from "next/image";
 
 export const Footer = () => {
   return (

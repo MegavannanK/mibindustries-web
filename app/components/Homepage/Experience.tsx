@@ -2,7 +2,6 @@ import experienceHeroImage from "../../assets/images/experience-hero.svg";
 import customerExperienceImage from "../../assets/images/customer-satisfaction.png";
 import customerImage from "../../assets/images/customer.png";
 import shippingImage from "../../assets/images/shipping.png";
-import Image from "next/image";
 
 const stats = [
   {
