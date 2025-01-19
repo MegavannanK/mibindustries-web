@@ -14,7 +14,7 @@ type Brand = {
 // Mustafa
 // Narasus
 
-export const Brands = [
+export const Brands: Brand[] = [
   {
     id: 1,
     name: "Asian",
