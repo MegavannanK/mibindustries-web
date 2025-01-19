@@ -1,11 +1,5 @@
 import Marquee from "react-fast-marquee";
-import client1 from "../../assets/images/clients/Google.png";
-import client2 from "../../assets/images/clients/Pinterest.png";
-import client3 from "../../assets/images/clients/Spotify.png";
-import client4 from "../../assets/images/clients/Stripe.png";
-import client5 from "../../assets/images/clients/Reddit.png";
-
-const clients = [client1, client2, client3, client4, client5];
+import { Brands } from "@/app/masters/brands";
 
 export const PartnersMarquee = () => {
   return (
@@ -15,11 +9,11 @@ export const PartnersMarquee = () => {
       </h2>
       <Marquee>
         <div className="flex gap-10 justify-between">
-          {clients.map((client, index) => (
+          {Brands.map((brand) => (
             <img
-              key={index}
-              src={client.src}
-              alt="Client"
+              key={brand.id}
+              src={brand.image} // Use the `image` property here
+              alt={brand.name} // Use `name` for the alt text
               className="w-[120px] h-[120px] object-contain"
             />
           ))}
