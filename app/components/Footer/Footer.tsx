@@ -10,7 +10,7 @@ export const Footer = () => {
         {/* First Row: Logo */}
         <div className="flex justify-center items-center">
           <div className="flex flex-col items-center">
-            <Image
+            <img
               src={Logo.src} // Replace with your logo's path
               alt="Logo"
               className="h-12 w-12 object-contain"

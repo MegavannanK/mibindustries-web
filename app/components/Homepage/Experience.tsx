@@ -26,7 +26,7 @@ export const Experience = () => {
   return (
     <div className="bg-primary-800 px-4 py-6 h-[45vh] md:h-[50vh] overflow-hidden">
       <div className="relative">
-        <Image
+        <img
           className="md:w-full absolute md:-top-[160px] opacity-50"
           src={experienceHeroImage.src}
           alt="Hero Background"
@@ -44,7 +44,7 @@ export const Experience = () => {
               }`}
             >
               <div className="bg-primary-700 h-10 w-10 md:h-20 md:w-20 flex items-center justify-center rounded-md">
-                <Image src={stat.image.src} alt={stat.label} className="w-12" />
+                <img src={stat.image.src} alt={stat.label} className="w-12" />
               </div>
               <div className="text-center">
                 <h2 className="text-primary-900 text-title-9 md:text-title-7 font-semibold">

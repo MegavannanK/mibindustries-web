@@ -12,7 +12,7 @@ const ProductCard: React.FC<ProductCardProps> = ({ title, description }) => {
   return (
     <div className="flex-shrink-0 w-80 p-4">
       <div className="bg-white drop-shadow-secondary rounded-lg overflow-hidden">
-        <Image
+        <img
           src={ExportImage.src}
           alt={title}
           className="h-40 w-full object-cover"

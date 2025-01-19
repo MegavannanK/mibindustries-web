@@ -25,7 +25,7 @@ export const OurWork = () => {
             </p>
           </div>
         </div>
-        <Image src={ourWorkImage.src} alt="Our Work" />
+        <img src={ourWorkImage.src} alt="Our Work" />
       </Container>
     </div>
   );

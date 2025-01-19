@@ -5,7 +5,7 @@ export const AboutUs = () => {
   return (
     <div className="bg-primary-100">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-5 items-center px-4 sm:px-6 md:px-10">
-        <Image
+        <img
           src={aboutUsImage.src}
           alt="About Us"
           className="w-full object-contain"

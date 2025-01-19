@@ -16,7 +16,7 @@ export const Header = () => {
           </p>
         </div>
         <div className="relative w-full">
-          <Image
+          <img
             src={headerImage.src}
             className="w-full absolute md:-top-[360px]  -right-28"
             alt="Hero"

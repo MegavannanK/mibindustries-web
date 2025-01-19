@@ -17,7 +17,7 @@ export const PartnersMarquee = () => {
       <Marquee>
         <div className="flex gap-10 justify-between">
           {clients.map((client, index) => (
-            <Image
+            <img
               key={index}
               src={client.src}
               alt="Client"

@@ -20,7 +20,7 @@ export const OurClients = () => {
     <div className="bg-primary-900 px-4 py-6 h-[45vh] md:h-[50vh] overflow-hidden">
       <div className="relative">
         <div className="absolute -top-[30rem]">
-          <Image
+          <img
             className=" opacity-20 "
             src={happyPeople.src}
             alt="Happy People"

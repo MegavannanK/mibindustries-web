@@ -47,7 +47,7 @@ export const Navbar = () => {
       >
         <div className="grid grid-cols-4 text-blue-900 justify-between items-center h-full px-10">
           <div className="col-span-2">
-            <Image
+            <img
               onClick={() => router.push("/")}
               src={logo.src}
               alt="Logo"

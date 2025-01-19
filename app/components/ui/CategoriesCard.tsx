@@ -16,7 +16,7 @@ export const ProductCategoryCard = ({
     >
       {/* Image */}
       <div className="p-4">
-        <Image
+        <img
           src="https://res.cloudinary.com/djdlol0qe/image/upload/f_webp/v1736845886/mib-product-1.png"
           alt={`Image of ${name} category`}
           className="w-10/12 mx-auto object-cover rounded-md"

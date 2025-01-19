@@ -25,14 +25,14 @@ const ProductDetails = () => {
 
         {/* Background Images */}
         <div className="absolute inset-0 -z-50 -left-[18rem] -top-[35rem]">
-          <Image
+          <img
             src={pebbleImage.src}
             alt="Pebble"
             className="object-cover rounded-lg blur-xl"
           />
         </div>
         <div className="absolute inset-0 -z-50 left-[75vw] top-[55vh]">
-          <Image
+          <img
             src={pebbleImage.src}
             alt="Pebble"
             className="object-cover rounded-lg blur-md"
