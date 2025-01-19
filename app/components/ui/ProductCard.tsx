@@ -5,18 +5,20 @@ import ExportImage from "@/app/assets/images/export.png";
 interface ProductCardProps {
   title: string;
   description: string;
-  // image?: string;
+  image: string;
 }
 
-const ProductCard: React.FC<ProductCardProps> = ({ title, description }) => {
+const ProductCard: React.FC<ProductCardProps> = ({
+  title,
+  description,
+  image,
+}) => {
   return (
     <div className="flex-shrink-0 w-80 p-4">
-      <div className="bg-white drop-shadow-secondary rounded-lg overflow-hidden">
-        <img
-          src={ExportImage.src}
-          alt={title}
-          className="h-40 w-full object-cover"
-        />
+      <div className="bg-primary-100 drop-shadow-secondary rounded-lg overflow-hidden p-4">
+        <div className="w-11/12 h-40 mx-auto">
+          <img src={image} alt={title} className="w-full h-full object-fit" />
+        </div>
         <div className="p-4 bg-primary-100 flex flex-col gap-4">
           <div className="flex flex-col gap-2">
             <h2 className="text-title-8 font-bold text-primary-800">{title}</h2>

@@ -1,10 +1,32 @@
-import { PhoneIcon } from "./PhoneIcon";
-import { EmailIcon } from "./EmailIcon";
+import { MailIcon, PhoneIncomingIcon } from "@heroicons/react/solid";
 import Logo from "@/app/assets/images/logo.png";
 
+const contactData = [
+  {
+    icon: PhoneIncomingIcon,
+    text: "+91 9600261109",
+    link: "tel:+919600261109",
+  },
+  {
+    icon: MailIcon,
+    text: " Email@Email.Com",
+    href: "mailto:Email@Email.com",
+  },
+];
+
+const companyData = [
+  {
+    text: "Licenses",
+    href: "#",
+  },
+  {
+    text: "Products",
+    href: "#",
+  },
+];
 export const Footer = () => {
   return (
-    <footer className="bg-sky-100 text-gray-800 py-6">
+    <div className="bg-sky-100 text-gray-800 py-6">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* First Row: Logo */}
         <div className="flex justify-center items-center">
@@ -24,26 +46,24 @@ export const Footer = () => {
           <div className="text-center md:text-left">
             <p className="text-lg font-semibold mb-3">Stay In Touch</p>
             <ul className="space-y-2">
-              <li className="flex items-center justify-center md:justify-start space-x-2">
-                <PhoneIcon />
-
-                <a
-                  href="tel:+919600261109"
-                  className="text-gray-600 hover:text-gray-800"
+              {contactData.map((contact, index) => (
+                <li
+                  key={index}
+                  className="flex items-center justify-center md:justify-start space-x-2"
                 >
-                  +91 9600261109
-                </a>
-              </li>
-              <li className="flex items-center justify-center md:justify-start space-x-2">
-                <EmailIcon />
-
-                <a
-                  href="mailto:Email@Email.com"
-                  className="text-gray-600 hover:text-gray-800"
-                >
-                  Email@Email.Com
-                </a>
-              </li>
+                  <contact.icon
+                    width={24}
+                    height={24}
+                    className="text-blue-300"
+                  />
+                  <a
+                    href={contact.link}
+                    className="text-gray-600 hover:text-gray-800"
+                  >
+                    {contact.text}
+                  </a>
+                </li>
+              ))}
             </ul>
           </div>
 
@@ -51,16 +71,16 @@ export const Footer = () => {
           <div className="text-center md:text-right hidden md:block">
             <p className="text-lg font-semibold mb-3">Company</p>
             <ul className="space-y-2">
-              <li>
-                <a href="#" className="text-gray-600 hover:text-gray-800">
-                  Licenses
-                </a>
-              </li>
-              <li>
-                <a href="#" className="text-gray-600 hover:text-gray-800">
-                  Products
-                </a>
-              </li>
+              {companyData.map((company, index) => (
+                <li key={index}>
+                  <a
+                    href={company.href}
+                    className="text-gray-600 hover:text-gray-800"
+                  >
+                    {company.text}
+                  </a>
+                </li>
+              ))}
             </ul>
           </div>
         </div>
@@ -73,6 +93,6 @@ export const Footer = () => {
           <p className="text-gray-500">© 2025 MIB. All Rights Reserved</p>
         </div>
       </div>
-    </footer>
+    </div>
   );
 };

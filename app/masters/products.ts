@@ -1,5 +1,7 @@
 //this is to make array of products:
 
+import { CLOUDINARY_BASE_URL } from "./cloudinary";
+
 type Variant = {
   name: string;
   packs: number[];
@@ -7,7 +9,7 @@ type Variant = {
 
 type Product = {
   id: number;
-  image?: string;
+  image: string;
   name: string;
   variants?: Variant[];
   slug: string;
@@ -17,7 +19,7 @@ type Product = {
 export const products: Product[] = [
   {
     id: 1,
-    name: "Steel",
+    name: "Rice",
     variants: [
       {
         name: "Carbon Steel",
@@ -28,12 +30,13 @@ export const products: Product[] = [
         packs: [15, 30, 60],
       },
     ],
-    slug: "steel",
+    slug: "Rice",
     description: "High-quality steel products.",
+    image: `${CLOUDINARY_BASE_URL}/v1737311760/MIB-website/Homepage/Products/pjo8xfdpzkauayipda9v.png`,
   },
   {
     id: 2,
-    name: "Plastic",
+    name: "Red chillies",
     variants: [
       {
         name: "Polyethylene",
@@ -44,12 +47,13 @@ export const products: Product[] = [
         packs: [8, 16, 32],
       },
     ],
-    slug: "plastic",
+    slug: "red-chillies",
     description: "Durable plastic products.",
+    image: `${CLOUDINARY_BASE_URL}/v1737311763/MIB-website/Homepage/Products/vfsnl7s6rdzxowbivyxc.png`,
   },
   {
     id: 3,
-    name: "Cement",
+    name: "Urid dhall / dhalls",
     variants: [
       {
         name: "Portland Cement",
@@ -60,12 +64,13 @@ export const products: Product[] = [
         packs: [25, 50, 75],
       },
     ],
-    slug: "cement",
+    slug: "urid-dhall",
     description: "Premium cement products.",
+    image: `https://res.cloudinary.com/dd7bw6igp/image/upload/v1737313818/MIB-website/Homepage/Products/bxzhd3s4zbsbqpqf09a6.jpg`,
   },
   {
     id: 4,
-    name: "Timber",
+    name: "Spices",
     variants: [
       {
         name: "Softwood",
@@ -76,12 +81,13 @@ export const products: Product[] = [
         packs: [15, 25, 35],
       },
     ],
-    slug: "timber",
+    slug: "spices",
     description: "Sustainable timber solutions.",
+    image: `${CLOUDINARY_BASE_URL}/v1737311761/MIB-website/Homepage/Products/tdhmeimhzyhlniqqm8st.jpg`,
   },
   {
     id: 5,
-    name: "Glass",
+    name: "Pooja items",
     variants: [
       {
         name: "Tempered Glass",
@@ -92,12 +98,13 @@ export const products: Product[] = [
         packs: [7, 14, 21],
       },
     ],
-    slug: "glass",
+    slug: "pooja-items",
     description: "Premium glass materials.",
+    image: `${CLOUDINARY_BASE_URL}/v1737311763/MIB-website/Homepage/Products/vfsnl7s6rdzxowbivyxc.png`,
   },
   {
     id: 6,
-    name: "Iron",
+    name: "Oil",
     variants: [
       {
         name: "Wrought Iron",
@@ -108,7 +115,8 @@ export const products: Product[] = [
         packs: [75, 125, 175],
       },
     ],
-    slug: "iron",
+    slug: "oil",
     description: "Reliable iron products.",
+    image: `${CLOUDINARY_BASE_URL}/v1737311763/MIB-website/Homepage/Products/iee5javiettgkgpem4xm.jpg`,
   },
 ];

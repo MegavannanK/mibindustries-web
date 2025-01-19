@@ -41,6 +41,7 @@ export const Products = () => {
       <div className="flex flex-col items-center gap-4 md:hidden px-4 mx-auto">
         {products.slice(0, 3).map((product, index) => (
           <ProductCard
+            image={product.image}
             key={index}
             title={product.name}
             description={product.description}
@@ -63,6 +64,7 @@ export const Products = () => {
         <div className="flex justify-center space-x-4 px-4 w-full">
           {visibleProducts.map((product) => (
             <ProductCard
+              image={product.image}
               key={product.id}
               title={product.name}
               description={product.description}
