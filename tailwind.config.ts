@@ -13,8 +13,6 @@ export default {
         secondary: "0px 4px 10px rgb(72, 202, 228)",
       },
       colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
         "blue-light": "#4DE1FF",
         primary: {
           100: "#CAF0F8",

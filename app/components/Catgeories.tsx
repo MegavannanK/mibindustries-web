@@ -1,6 +1,7 @@
 import { useParams } from "next/navigation";
 import { products } from "../masters/products";
 import { ProductCategoryCard } from "./ui/CategoriesCard";
+import ProductCard from "./ui/ProductCard";
 
 export const Category = () => {
   const params = useParams();
@@ -9,16 +10,17 @@ export const Category = () => {
     (product) => product.slug === slug
   )?.variants;
 
-  const imageUrl = products.find((product) => product.slug === slug)?.image;
+  const imageUrl =
+    products.find((product) => product.slug === slug)?.image ?? "";
 
   return (
     <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5">
       {categoryData?.map((category, index) => (
-        <ProductCategoryCard
-          imageUrl={imageUrl}
+        <ProductCard
+          image={imageUrl}
           key={index}
-          name={category.name}
-          packs={category.packs}
+          title={category.name}
+          // packs={category.packs}
         />
       ))}
     </div>

@@ -16,7 +16,7 @@ const ProductCard: React.FC<ProductCardProps> = ({
   onClick,
 }) => {
   return (
-    <div className="flex-shrink-0 p-4 cursor-pointer" onClick={onClick}>
+    <div className="p-4 cursor-pointer w-[350px]" onClick={onClick}>
       <div className="bg-primary-100 drop-shadow-secondary rounded-lg overflow-hidden p-4">
         {/* <div className="w-11/12 h-40 mx-auto">
           <img src={image} alt={title} className="w-full h-full object-fit" />

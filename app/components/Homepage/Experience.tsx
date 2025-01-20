@@ -26,36 +26,36 @@ export const Experience = () => {
     <div className="bg-primary-800 px-4 py-6 h-[45vh] md:h-[50vh] overflow-hidden">
       <div className="relative">
         <img
-          className="md:w-full absolute md:-top-[160px] opacity-50"
+          className="md:w-full absolute md:-top-[160px] opacity-10"
           src={experienceHeroImage.src}
           alt="Hero Background"
         />
-        <div
-          className={`relative grid grid-cols-2 ${
-            stats.length > 1 ? "md:grid-cols-3" : "justify-center"
-          } gap-10 md:w-1/2 mx-auto mt-5 md:mt-20 items-center`}
-        >
-          {stats.map((stat, index) => (
-            <div
-              key={index}
-              className={`bg-white rounded-lg shadow-[0px_4px_10px_rgba(255,255,255,0.3)] p-4 flex flex-col gap-4 md:w-[300px] md:h-56 items-center justify-between ${
-                stat.label === "Happy Users" ? "md:mt-16" : ""
-              }`}
-            >
-              <div className="bg-primary-700 h-10 w-10 md:h-20 md:w-20 flex items-center justify-center rounded-md">
-                <img src={stat.image.src} alt={stat.label} className="w-12" />
-              </div>
-              <div className="text-center">
-                <h2 className="text-primary-900 text-title-9 md:text-title-7 font-semibold">
-                  {stat.count}
-                </h2>
-                <p className="text-body-3 md:text-title-9 text-primary-500 font-medium">
-                  {stat.label}
-                </p>
-              </div>
+      </div>
+      <div
+        className={`w-8/12 mx-auto z-100 grid grid-cols-2 ${
+          stats.length > 1 ? "md:grid-cols-3" : "justify-center"
+        } gap-10 mt-5 md:mt-20 items-center`}
+      >
+        {stats.map((stat, index) => (
+          <div
+            key={index}
+            className={`bg-white rounded-lg shadow-[0px_4px_10px_rgba(255,255,255,0.3)] p-4 flex flex-col gap-4 md:w-[300px] md:h-56 items-center justify-between ${
+              stat.label === "Happy Users" ? "md:mt-16" : ""
+            }`}
+          >
+            <div className="bg-primary-700 h-10 w-10 md:h-20 md:w-20 flex items-center justify-center rounded-md">
+              <img src={stat.image.src} alt={stat.label} className="w-12" />
             </div>
-          ))}
-        </div>
+            <div className="text-center">
+              <h2 className="text-primary-900 text-title-9 md:text-title-7 font-semibold">
+                {stat.count}
+              </h2>
+              <p className="text-body-3 md:text-title-9 text-primary-500 font-medium">
+                {stat.label}
+              </p>
+            </div>
+          </div>
+        ))}
       </div>
     </div>
   );
