@@ -1,6 +1,5 @@
 import { useParams } from "next/navigation";
 import { products } from "../masters/products";
-import { ProductCategoryCard } from "./ui/CategoriesCard";
 import ProductCard from "./ui/ProductCard";
 
 export const Category = () => {
