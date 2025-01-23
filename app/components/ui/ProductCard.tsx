@@ -1,3 +1,4 @@
+import Image from "next/image";
 import React from "react";
 
 interface ProductCardProps {
@@ -22,11 +23,7 @@ const ProductCard: React.FC<ProductCardProps> = ({
           <img src={image} alt={title} className="w-full h-full object-fit" />
         </div> */}
         <div className="relative w-full h-56 overflow-hidden rounded-t-md">
-          <img
-            src={image}
-            alt={`Image of ${title}`}
-            className="w-full h-full object-cover"
-          />
+          <Image src={image} alt={title} layout="fill" objectFit="cover" />
         </div>
         {showDescription ? (
           <div className="p-4 bg-primary-100 flex flex-col gap-4">
