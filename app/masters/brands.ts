@@ -6,7 +6,7 @@ type Brand = {
   image: string;
 };
 
-export const Brands: Brand[] = [
+export const brands: Brand[] = [
   {
     id: 1,
     name: "Asian",
@@ -31,7 +31,7 @@ export const Brands: Brand[] = [
     id: 5,
     name: "Grand",
     image: `${CLOUDINARY_BASE_URL}/v1737312877/MIB-website/Homepage/Brands/ssovut1yroppvoyyzr1f.png`,
-  }, 
+  },
   {
     id: 6,
     name: "Mustafa",

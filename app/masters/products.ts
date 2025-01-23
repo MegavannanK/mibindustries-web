@@ -66,7 +66,7 @@ export const products: Product[] = [
     ],
     slug: "urid-dhall",
     description: "Premium cement products.",
-    image: `https://res.cloudinary.com/dd7bw6igp/image/upload/v1737313818/MIB-website/Homepage/Products/bxzhd3s4zbsbqpqf09a6.jpg`,
+    image: `${CLOUDINARY_BASE_URL}/v1737313818/MIB-website/Homepage/Products/bxzhd3s4zbsbqpqf09a6.jpg`,
   },
   {
     id: 4,
