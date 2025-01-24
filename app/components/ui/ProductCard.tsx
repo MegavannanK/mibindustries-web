@@ -23,7 +23,13 @@ const ProductCard: React.FC<ProductCardProps> = ({
           <img src={image} alt={title} className="w-full h-full object-fit" />
         </div> */}
         <div className="relative w-full h-56 overflow-hidden rounded-t-md">
-          <Image src={image} alt={title} layout="fill" objectFit="cover" />
+          <Image
+            unoptimized
+            src={image}
+            alt={title}
+            layout="fill"
+            objectFit="cover"
+          />
         </div>
         {showDescription ? (
           <div className="p-4 bg-primary-100 flex flex-col gap-4">
