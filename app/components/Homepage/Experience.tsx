@@ -34,23 +34,23 @@ export const Experience = () => {
       <div
         className={`w-8/12 mx-auto z-100 grid grid-cols-2 ${
           stats.length > 1 ? "md:grid-cols-3" : "justify-center"
-        } gap-10 mt-5 md:mt-20 items-center`}
+        } gap-10 mt-5 md:mt-10 items-center`}
       >
         {stats.map((stat, index) => (
           <div
             key={index}
-            className={`bg-white rounded-lg shadow-[0px_4px_10px_rgba(255,255,255,0.3)] p-4 flex flex-col gap-4 md:w-[300px] md:h-56 items-center justify-between ${
+            className={`bg-white rounded-lg shadow-[0px_4px_10px_rgba(255,255,255,0.3)] p-4 flex flex-col gap-4 xl:w-[300px] xl:h-56 items-center justify-between ${
               stat.label === "Happy Users" ? "md:mt-16" : ""
             }`}
           >
-            <div className="bg-primary-700 h-10 w-10 md:h-20 md:w-20 flex items-center justify-center rounded-md">
+            <div className="bg-primary-700 h-10 w-10 md:h-16 md:w-16 xl:h-20 xl:w-20 flex items-center justify-center rounded-md">
               <img src={stat.image.src} alt={stat.label} className="w-12" />
             </div>
             <div className="text-center">
-              <h2 className="text-primary-900 text-title-9 md:text-title-7 font-semibold">
+              <h2 className="text-primary-900 text-body-1 md:text-title-7 font-semibold">
                 {stat.count}
               </h2>
-              <p className="text-body-3 md:text-title-9 text-primary-500 font-medium">
+              <p className="text-body-3 md:text-body-1 text-primary-500 font-medium">
                 {stat.label}
               </p>
             </div>

@@ -1,7 +1,7 @@
 import headerImage from "../../assets/images/export.png";
 export const Header = () => {
   return (
-    <div className="bg-primary-200 h-auto md:h-[90vh] pt-20 overflow-hidden">
+    <div className="bg-primary-200 h-auto md:h-[90vh] pt-40 md:pt-20 overflow-hidden">
       <div className="px-10 flex flex-col md:flex-row gap-5 h-[50vh] md:h-full items-center relative">
         <div>
           <h1 className="text-primary-800 text-title-5 md:text-title-1 font-bold">
