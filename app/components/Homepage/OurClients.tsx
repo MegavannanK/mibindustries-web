@@ -16,22 +16,22 @@ const ourCLientData = [
 
 export const OurClients = () => {
   return (
-    <div className="bg-primary-900 px-4 py-6 h-[45vh] md:h-[50vh] overflow-hidden">
+    <div className="bg-primary-900 px-4 py-6 h-[30vh] md:h-[50vh] overflow-hidden">
       <div className="relative">
-        <div className="absolute -top-[30rem]">
+        <div className="absolute -top-[10rem] xl:-top-[30rem]">
           <img
             className=" opacity-20 "
             src={happyPeople.src}
             alt="Happy People"
           />
         </div>
-        <div className="flex flex-col gap-5 left-1/2 -translate-x-1/2 top-[12rem] absolute">
+        <div className="flex flex-col gap-5 left-1/2 -translate-x-1/2 top-[5rem] md:top-[10rem] absolute">
           {ourCLientData.map((client, index) => (
             <div className="flex gap-6" key={index}>
-              <p className="text-title-3 font-bold text-blue-light">
+              <p className="text-title-8 lg:text-title-5 xl:text-title-3 font-bold text-blue-light">
                 {client.count} +
               </p>
-              <p className="text-title-3 font-semibold text-white">
+              <p className="text-title-8 lg:text-title-5 xl:text-title-3 font-semibold text-white">
                 {client.label}
               </p>
             </div>

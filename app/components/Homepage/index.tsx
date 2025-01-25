@@ -1,6 +1,6 @@
 import { AboutUs } from "./AboutUs";
 import { Products } from "./Products";
-import { PartnersMarquee } from "./ClientMarquee";
+import { BrandsMarquee } from "./BrandsMarquee";
 import { Experience } from "./Experience";
 import { Header } from "./Header";
 import { OurClients } from "./OurClients";
@@ -12,7 +12,7 @@ export const Homepage = () => {
       <Header />
       <AboutUs />
       <Products />
-      <PartnersMarquee />
+      <BrandsMarquee />
       <Experience />
       <OurWork />
       <OurClients />

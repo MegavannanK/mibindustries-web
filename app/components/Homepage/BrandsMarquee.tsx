@@ -2,7 +2,7 @@ import Marquee from "react-fast-marquee";
 import { brands } from "@/app/masters/brands";
 import Image from "next/image";
 
-export const PartnersMarquee = () => {
+export const BrandsMarquee = () => {
   return (
     <div className="bg-white">
       <h2 className="pb-4 text-title-7 md:text-title-4 text-primary-700 text-center font-bold">
@@ -12,6 +12,7 @@ export const PartnersMarquee = () => {
         <div className="flex gap-10 justify-between">
           {brands.map((brand) => (
             <Image
+              unoptimized
               key={brand.id}
               src={brand.image}
               alt={brand.name}
