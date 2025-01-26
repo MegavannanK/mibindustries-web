@@ -3,7 +3,7 @@
 import { useState, useEffect, useCallback } from "react";
 import { usePathname, useRouter } from "next/navigation";
 import logo from "@/app/assets/images/logo.png";
-import { XIcon, MenuIcon } from "@heroicons/react/solid";
+import { MenuIcon } from "@heroicons/react/solid";
 
 const navItems = [
   { label: "Home", target: "/" },
