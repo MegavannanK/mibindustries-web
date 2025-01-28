@@ -11,15 +11,19 @@ export const BrandsMarquee = () => {
       <Marquee className="py-5">
         <div className="flex gap-10 justify-between">
           {brands.map((brand) => (
-            <Image
-              unoptimized
-              key={brand.id}
-              src={brand.image}
-              alt={brand.name}
-              width={120}
-              height={100}
-            />
+            <div key={brand.id} className="flex-shrink-0">
+              <Image
+                unoptimized
+                key={brand.id}
+                src={brand.image}
+                alt={brand.name}
+                width={120}
+                height={100}
+                className="object-contain"
+              />
+            </div>
           ))}
+          <div className="flex-shrink-0" style={{ width: "10px" }}></div>
         </div>
       </Marquee>
     </div>
