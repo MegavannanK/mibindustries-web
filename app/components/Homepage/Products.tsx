@@ -35,7 +35,7 @@ export const Products = () => {
   return (
     <div className="bg-blue-900 py-8 w-full mx-auto">
       <h2 className="text-center text-2xl font-bold text-white mb-6">
-        Services
+        Products
       </h2>
 
       {/* Mobile View */}
