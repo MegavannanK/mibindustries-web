@@ -1,3 +1,5 @@
+import { motion } from "framer-motion";
+import { useEffect, useState } from "react";
 import experienceHeroImage from "../../assets/images/experience-hero.svg";
 import customerExperienceImage from "../../assets/images/customer-satisfaction.png";
 import customerImage from "../../assets/images/customer.png";
@@ -6,17 +8,17 @@ import shippingImage from "../../assets/images/shipping.png";
 const stats = [
   {
     image: shippingImage,
-    count: "1500+",
+    count: 2000,
     label: "Consignments Done",
   },
   {
     image: customerImage,
-    count: "150+",
+    count: 500,
     label: "Happy Users",
   },
   {
     image: customerExperienceImage,
-    count: "10+",
+    count: 20,
     label: "Years Experience",
   },
 ];
@@ -47,9 +49,7 @@ export const Experience = () => {
               <img src={stat.image.src} alt={stat.label} className="w-12" />
             </div>
             <div className="text-center">
-              <h2 className="text-primary-900 text-body-1 md:text-title-7 font-semibold">
-                {stat.count}
-              </h2>
+              <AnimatedCount count={stat.count} />
               <p className="text-body-3 md:text-body-1 text-primary-500 font-medium">
                 {stat.label}
               </p>
@@ -58,5 +58,46 @@ export const Experience = () => {
         ))}
       </div>
     </div>
+  );
+};
+
+const AnimatedCount = ({ count }: { count: number }) => {
+  const [currentCount, setCurrentCount] = useState(0);
+
+  useEffect(() => {
+    let start = 0;
+    const end = count;
+    const duration = 2000; // Duration of the animation in ms
+    const increment = end / (duration / 100);
+
+    const interval = setInterval(() => {
+      start += increment;
+      if (start >= end) {
+        setCurrentCount(end);
+        clearInterval(interval);
+      } else {
+        setCurrentCount(Math.floor(start));
+      }
+    }, 100);
+
+    return () => clearInterval(interval); // Cleanup the interval on unmount
+  }, [count]);
+
+  return (
+    <motion.h2
+      className="text-primary-900 text-body-1 md:text-title-7 font-semibold"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 1 }}
+    >
+      <motion.span
+        key={count}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 1 }}
+      >
+        {currentCount} +
+      </motion.span>
+    </motion.h2>
   );
 };
