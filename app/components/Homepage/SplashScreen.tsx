@@ -18,6 +18,7 @@ export const SplashScreen = ({
 
     window.addEventListener("scroll", handleScroll);
 
+    // Animate the splash screen opacity when the page loads
     controls.start({ opacity: 1 }).then(() => {
       setTimeout(() => {
         controls
@@ -25,8 +26,6 @@ export const SplashScreen = ({
             opacity: 0,
             x: "-50vw",
             y: "-50vh",
-            scale: 0.5,
-            rotate: 360,
             transition: { duration: 1.5, ease: "easeInOut" },
           })
           .then(() => {
@@ -51,8 +50,17 @@ export const SplashScreen = ({
         src={logo.src}
         alt="Logo"
         className="w-32 h-32"
-        animate={{ rotate: 360 }}
-        transition={{ repeat: Infinity, duration: 2, ease: "linear" }}
+        animate={{
+          scale: [0.7, 1.2, 0.7, 1], // Zoom in and out (scale from smaller to larger, then back)
+          boxShadow:
+            "0 0 20px rgba(255, 255, 255, 0.8), 0 0 30px rgba(255, 255, 255, 0.6)",
+        }}
+        transition={{
+          repeat: Infinity,
+          repeatType: "loop", // Loop the animation
+          duration: 1.5, // Duration for each cycle (zoom in or out)
+          ease: "easeInOut",
+        }}
       />
     </motion.div>
   );
