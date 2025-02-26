@@ -1,9 +1,11 @@
+"use client";
+
 import { AboutUs } from "./AboutUs";
 import { Products } from "./Products";
 import { BrandsMarquee } from "./BrandsMarquee";
 import { Experience } from "./Experience";
 import { Header } from "./Header";
-import { OurClients } from "./OurClients";
+// import { OurClients } from "./OurClients";
 import { OurWork } from "./OurWork";
 import { Contactus } from "./../Contactus/Contactus";
 
@@ -11,13 +13,12 @@ export const Homepage = () => {
   return (
     <div>
       <Header />
-      <AboutUs />
       <Products />
-      <BrandsMarquee />
+      <AboutUs />
       <Experience />
       <OurWork />
-      <OurClients />
-      <Contactus />
+      <BrandsMarquee />
+      {/* <OurClients /> */}
     </div>
   );
 };
