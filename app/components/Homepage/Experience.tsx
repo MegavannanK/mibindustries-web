@@ -25,10 +25,13 @@ const stats = [
 ];
 
 export const Experience = () => {
-  const isInView = useInView(); // Get whether the Experience section is in view
+  const [isInView, elementRef] = useInView(); // Get whether the Experience section is in view
 
   return (
-    <div className="experience-section bg-primary-800 px-4 py-6 h-[45vh] md:h-[50vh] overflow-hidden">
+    <div
+      ref={elementRef}
+      className="bg-primary-800 px-4 py-6 h-[45vh] md:h-[50vh] overflow-hidden"
+    >
       <div className="bg-primary-800 px-4 py-6 h-[45vh] md:h-[50vh] overflow-hidden">
         <div className="relative">
           <img
