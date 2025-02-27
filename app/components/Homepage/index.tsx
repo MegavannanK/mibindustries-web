@@ -7,7 +7,6 @@ import { Experience } from "./Experience";
 import { Header } from "./Header";
 // import { OurClients } from "./OurClients";
 import { OurWork } from "./OurWork";
-import { Contactus } from "./../Contactus/Contactus";
 
 export const Homepage = () => {
   return (
