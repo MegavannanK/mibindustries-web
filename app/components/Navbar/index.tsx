@@ -8,7 +8,7 @@ import { MenuIcon } from "@heroicons/react/solid";
 const navItems = [
   { label: "Home", target: "/" },
   { label: "Products", target: "/products" },
-  { label: "Contact Us", target: "/contact" },
+  { label: "Contact Us", target: "/contact-us" },
   { label: "Partners", target: "/partners" },
 ];
 

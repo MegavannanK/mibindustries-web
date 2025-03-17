@@ -18,29 +18,33 @@ export const OurWork = () => {
     },
   ];
 
-  const [currentIndex, setCurrentIndex] = useState(0);
+  const [currentIndex, setCurrentIndex] = useState(1); // Start at the second image
   const totalImages = images.length;
-
   const galleryRef = useRef<HTMLDivElement>(null);
 
-  // Auto-scroll functionality every 2 seconds
+  // Auto-scroll functionality every 5 seconds
   useEffect(() => {
     const interval = setInterval(() => {
-      setCurrentIndex((prevIndex) => (prevIndex + 1) % totalImages);
-    }, 5000); // Change every 2 seconds
+      setCurrentIndex((prevIndex) => (prevIndex + 1) % (totalImages + 2)); // Loop around images
+    }, 5000); // Change every 5 seconds
 
     return () => clearInterval(interval); // Clean up interval on component unmount
   }, []);
 
   // Handle next slide
   const handleNext = () => {
-    setCurrentIndex((prevIndex) => (prevIndex + 1) % totalImages);
+    setCurrentIndex((prevIndex) => (prevIndex + 1) % (totalImages + 2));
   };
 
   // Handle previous slide
   const handlePrev = () => {
-    setCurrentIndex((prevIndex) => (prevIndex - 1 + totalImages) % totalImages);
+    setCurrentIndex(
+      (prevIndex) => (prevIndex - 1 + totalImages + 2) % (totalImages + 2)
+    );
   };
+
+  // Calculate position for smooth scrolling
+  const translateX = `-${(currentIndex * 100) / (totalImages + 2)}%`;
 
   return (
     <div className="bg-white">
@@ -82,12 +86,24 @@ export const OurWork = () => {
             <div
               className="flex transition-transform duration-500 ease-in-out"
               style={{
-                transform: `translateX(-${
-                  (currentIndex % totalImages) * 100
-                }%)`,
+                transform: translateX, // Adjust the translateX based on current index
               }}
             >
-              {/* Render images */}
+              {/* Duplicate last image at the beginning */}
+              <div className="flex-shrink-0 w-full h-full flex justify-center items-center relative group">
+                <img
+                  src={images[totalImages - 1].src}
+                  alt={images[totalImages - 1].alt}
+                  className="object-contain w-full h-full rounded-lg shadow-lg"
+                />
+                <div className="absolute inset-0 bg-black bg-opacity-50 text-white opacity-0 group-hover:opacity-100 flex items-center justify-center transition-opacity duration-300">
+                  <p className="text-center text-lg">
+                    {images[totalImages - 1].description}
+                  </p>
+                </div>
+              </div>
+
+              {/* Render all images */}
               {images.map((image, index) => (
                 <div
                   key={index}
@@ -98,12 +114,23 @@ export const OurWork = () => {
                     alt={image.alt}
                     className="object-contain w-full h-full rounded-lg shadow-lg"
                   />
-                  {/* Hover effect */}
                   <div className="absolute inset-0 bg-black bg-opacity-50 text-white opacity-0 group-hover:opacity-100 flex items-center justify-center transition-opacity duration-300">
                     <p className="text-center text-lg">{image.description}</p>
                   </div>
                 </div>
               ))}
+
+              {/* Duplicate first image at the end */}
+              <div className="flex-shrink-0 w-full h-full flex justify-center items-center relative group">
+                <img
+                  src={images[0].src}
+                  alt={images[0].alt}
+                  className="object-contain w-full h-full rounded-lg shadow-lg"
+                />
+                <div className="absolute inset-0 bg-black bg-opacity-50 text-white opacity-0 group-hover:opacity-100 flex items-center justify-center transition-opacity duration-300">
+                  <p className="text-center text-lg">{images[0].description}</p>
+                </div>
+              </div>
             </div>
           </div>
 

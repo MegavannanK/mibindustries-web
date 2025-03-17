@@ -1,7 +1,8 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 
 export const useInView = (threshold = 0.1) => {
   const [isInView, setIsInView] = useState(false);
+  const elementRef = useRef(null);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -10,12 +11,10 @@ export const useInView = (threshold = 0.1) => {
           setIsInView(true);
         }
       },
-      {
-        threshold, // The percentage of the element visible before triggering the animation
-      }
+      { threshold }
     );
 
-    const element = document.querySelector(".experience-section"); // Add a class for the target
+    const element = elementRef.current;
     if (element) observer.observe(element);
 
     return () => {
@@ -23,5 +22,5 @@ export const useInView = (threshold = 0.1) => {
     };
   }, [threshold]);
 
-  return isInView;
+  return [isInView, elementRef];
 };
