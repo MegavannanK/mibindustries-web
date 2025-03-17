@@ -41,6 +41,19 @@ export default {
         "body-4": "10px",
         "body-5": "8px",
       },
+      animation: {
+        'spin-smooth': 'spin-smooth 10s linear infinite',
+      },
+      keyframes: {
+        'spin-smooth': {
+          '0%': {
+            transform: 'rotate(0deg)',
+          },
+          '100%': {
+            transform: 'rotate(360deg)',
+          },
+        },
+      },
     },
   },
   plugins: [],
