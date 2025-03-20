@@ -3,7 +3,7 @@
 import { useState, useEffect, useCallback } from "react";
 import { usePathname, useRouter } from "next/navigation";
 import logo from "@/app/assets/images/logo.png";
-import { MenuIcon } from "@heroicons/react/solid";
+import { MenuIcon, XIcon } from "@heroicons/react/solid";
 
 const navItems = [
   { label: "Home", target: "/" },
@@ -77,6 +77,7 @@ export const NavbarDesktop = () => {
 
 export const NavbarMobile = () => {
   const [isScrolled, setIsScrolled] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false); // State for menu visibility
   const pathname = usePathname(); // Get the current route
 
   const handleScroll = useCallback(() => {
@@ -96,6 +97,7 @@ export const NavbarMobile = () => {
 
   const isHomePage = pathname === "/";
   const router = useRouter();
+
   return (
     <div
       className={`h-20 rounded-md transition-all duration-300 z-50 ${
@@ -116,8 +118,39 @@ export const NavbarMobile = () => {
           />
         </div>
 
-        <MenuIcon className="h-8 w-8 text-blue-900" />
+        {/* Conditional rendering of the MenuIcon and XIcon */}
+        {isMenuOpen ? (
+          <XIcon
+            className="h-8 w-8 text-blue-900 cursor-pointer"
+            onClick={() => setIsMenuOpen(false)} // Close the menu on click
+          />
+        ) : (
+          <MenuIcon
+            className="h-8 w-8 text-blue-900 cursor-pointer"
+            onClick={() => setIsMenuOpen(true)} // Open the menu on click
+          />
+        )}
       </div>
+
+      {/* Mobile Menu */}
+      {isMenuOpen && (
+        <div className="absolute top-20 left-0 right-0 bg-primary-400 text-blue-900 p-5">
+          <div className="flex flex-col items-center">
+            {navItems.map((item, index) => (
+              <p
+                key={index}
+                className="py-2 text-center text-title-7 font-semibold cursor-pointer"
+                onClick={() => {
+                  router.push(item.target);
+                  setIsMenuOpen(false); // Close the menu after clicking an item
+                }}
+              >
+                {item.label}
+              </p>
+            ))}
+          </div>
+        </div>
+      )}
     </div>
   );
 };
