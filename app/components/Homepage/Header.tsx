@@ -4,13 +4,13 @@ import headerImage from "../../assets/images/export.png";
 export const Header = () => {
   return (
     <div className="bg-primary-200 h-auto md:h-[90vh] pt-40 md:pt-20 overflow-hidden">
-      <div className="px-10 flex flex-col md:flex-row gap-5 h-[50vh] md:h-full items-center relative">
+      <div className="px-10 flex flex-col md:flex-row gap-5 h-auto md:h-full items-center relative">
         {/* Text Section with chunky fall-down animation */}
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 2 }}
-          className="flex flex-col gap-5"
+          className="flex flex-col gap-5 w-full md:w-1/2"
         >
           {/* Wrapping text elements inside motion.div to make them animate separately */}
           <motion.h1
@@ -43,14 +43,14 @@ export const Header = () => {
 
         {/* Image Section */}
         <motion.div
-          className="relative w-full"
+          className="relative w-full md:w-1/2"
           initial={{ opacity: 0, x: 100 }} // Image slides in from the right
           animate={{ opacity: 1, x: 0 }} // Image comes to its normal position
           transition={{ duration: 1 }}
         >
           <img
             src={headerImage.src}
-            className="w-full absolute md:-top-[40vh] -right-28"
+            className="w-full object-contain md:object-cover"
             alt="Hero"
           />
         </motion.div>
