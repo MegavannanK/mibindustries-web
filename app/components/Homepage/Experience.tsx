@@ -1,12 +1,19 @@
 import { motion } from "framer-motion";
 import { useState, useEffect } from "react";
-import { useInView } from "./useInView"; // Make sure to import the hook
+import { useInView } from "./useInView"; // Ensure this custom hook is typed
+import Image, { StaticImageData } from "next/image"; // Import StaticImageData type for images
 import experienceHeroImage from "../../assets/images/experience-hero.svg";
 import customerExperienceImage from "../../assets/images/customer-satisfaction.png";
 import customerImage from "../../assets/images/customer.png";
 import shippingImage from "../../assets/images/shipping.png";
 
-const stats = [
+type Stat = {
+  image: StaticImageData; // Use StaticImageData instead of string
+  count: number;
+  label: string;
+};
+
+const stats: Stat[] = [
   {
     image: shippingImage,
     count: 2000,
@@ -25,11 +32,11 @@ const stats = [
 ];
 
 export const Experience = () => {
-  const [isInView, elementRef] = useInView(); // Get whether the Experience section is in view
+  const [isInView, elementRef] = useInView(); // Ensure this custom hook is typed
 
   return (
     <div
-      ref={elementRef} // This will now be typed properly
+      ref={elementRef}
       className="bg-primary-800 px-4 py-6 h-[45vh] md:h-[50vh] overflow-hidden"
     >
       <div className="relative">
@@ -39,22 +46,23 @@ export const Experience = () => {
           alt="Hero Background"
         />
       </div>
-      <div
-        className={`w-8/12 mx-auto z-100 grid grid-cols-2 ${
-          stats.length > 1 ? "md:grid-cols-3" : "justify-center"
-        } gap-10 mt-5 md:mt-10 items-center`}
-      >
+      <div className="w-full max-w-6xl mx-auto flex justify-center gap-10 sm:gap-14 lg:gap-24 mt-5 md:mt-10">
         {stats.map((stat, index) => (
           <div
             key={index}
-            className={`bg-white rounded-lg shadow-[0px_4px_10px_rgba(255,255,255,0.3)] p-4 flex flex-col gap-4 xl:w-[300px] xl:h-56 items-center justify-between ${
-              stat.label === "Happy Users" ? "md:mt-16" : ""
+            className={`bg-white rounded-lg shadow-md p-4 flex flex-col items-center justify-between w-[200px] h-[200px] sm:w-[220px] sm:h-[220px] lg:w-[300px] lg:h-[250px] ${
+              index === 1 ? "transform translate-y-10" : ""
             }`}
           >
-            <div className="bg-primary-700 h-10 w-10 md:h-16 md:w-16 xl:h-20 xl:w-20 flex items-center justify-center rounded-md">
-              <img src={stat.image.src} alt={stat.label} className="w-12" />
+            <div className="bg-primary-700 h-16 w-16 sm:h-20 sm:w-20 lg:h-24 lg:w-24 flex items-center justify-center rounded-md">
+              <Image
+                src={stat.image}
+                alt={stat.label}
+                width={48} // Size of the image (adjust as needed)
+                height={48} // Size of the image (adjust as needed)
+              />
             </div>
-            <div className="text-center">
+            <div className="text-center mt-4">
               <AnimatedCount count={stat.count} isInView={isInView} />
               <p className="text-body-3 md:text-body-1 text-primary-500 font-medium">
                 {stat.label}
@@ -67,13 +75,12 @@ export const Experience = () => {
   );
 };
 
-const AnimatedCount = ({
-  count,
-  isInView,
-}: {
+interface AnimatedCountProps {
   count: number;
   isInView: boolean;
-}) => {
+}
+
+const AnimatedCount = ({ count, isInView }: AnimatedCountProps) => {
   const [currentCount, setCurrentCount] = useState(0);
 
   useEffect(() => {
