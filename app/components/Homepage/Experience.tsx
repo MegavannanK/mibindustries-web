@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { useState, useEffect } from "react";
 import { useInView } from "./useInView"; // Ensure this custom hook is typed
-import Image, { StaticImageData } from "next/image"; // Import StaticImageData type for images
+import Image, { StaticImageData } from "next/image"; // Import StaticImageData type for images using next/image
 import experienceHeroImage from "../../assets/images/experience-hero.svg";
 import customerExperienceImage from "../../assets/images/customer-satisfaction.png";
 import customerImage from "../../assets/images/customer.png";
