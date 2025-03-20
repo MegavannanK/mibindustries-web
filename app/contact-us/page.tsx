@@ -14,8 +14,8 @@ const Contactus = () => {
       <div className="p-6 w-11/12 mx-auto mt-[5rem] relative">
         {/* Back button */}
         <ModifiedBreadCrumb text="Contact Us" />
-        <div className="min-h-screen bg-blue-900 flex items-center justify-center p-6">
-          <div className="lg:w-1/2 md:w-8/12 w-10/12 bg-white rounded-lg shadow-lg p-8">
+        <div className="min-h-screen flex items-center justify-center p-6 bg-transparent sm:bg-blue-900">
+          <div className="lg:w-1/2 md:w-8/12 w-full max-w-2xl bg-white rounded-lg shadow-lg p-8">
             <h2 className="text-title-5 font-bold text-gray-900 mb-4">
               Get In <span className="text-blue-300">Touch</span>
             </h2>
