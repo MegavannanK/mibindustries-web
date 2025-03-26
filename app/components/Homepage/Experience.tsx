@@ -16,13 +16,13 @@ type Stat = {
 const stats: Stat[] = [
   {
     image: shippingImage,
-    count: 2000,
+    count: 2150,
     label: "Consignments Done",
   },
   {
     image: customerImage,
     count: 500,
-    label: "Happy Users",
+    label: "Happy Customers",
   },
   {
     image: customerExperienceImage,
@@ -40,10 +40,13 @@ export const Experience = () => {
       className="bg-primary-800 px-4 py-6 h-[45vh] md:h-[50vh] overflow-hidden"
     >
       <div className="relative">
-        <img
+        {/* Replacing <img> with next/image */}
+        <Image
           className="md:w-full absolute md:-top-[160px] opacity-10"
-          src={experienceHeroImage.src}
+          src={experienceHeroImage}
           alt="Hero Background"
+          layout="fill" // Ensures the image fills its parent container
+          objectFit="cover" // Optional: to make sure the image is properly fitted
         />
       </div>
       <div className="w-full max-w-6xl mx-auto flex justify-center gap-10 sm:gap-14 lg:gap-24 mt-5 md:mt-10">
@@ -60,6 +63,7 @@ export const Experience = () => {
                 alt={stat.label}
                 width={48} // Size of the image (adjust as needed)
                 height={48} // Size of the image (adjust as needed)
+                layout="intrinsic" // Ensures the image keeps its aspect ratio
               />
             </div>
             <div className="text-center mt-4">

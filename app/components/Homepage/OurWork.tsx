@@ -1,6 +1,9 @@
-import ourWorkImage from "../../assets/images/ourWork.png";
 import React, { useState, useRef, useEffect } from "react";
 import Container from "../ui/Container";
+import Link from "next/link";
+import { ArrowRightIcon } from "@heroicons/react/solid"; // Importing the ArrowRightIcon from Heroicons
+import Image from "next/image"; // Importing Next.js Image component
+import ourWorkImage from "../../assets/images/ourWork.png"; // Adjust if necessary
 
 export const OurWork = () => {
   const images = [
@@ -68,6 +71,17 @@ export const OurWork = () => {
               products worldwide and establish the product in appropriate
               market.
             </p>
+
+            {/* See More Link */}
+            <div className="text-center mt-5">
+              <Link
+                href="/our-work-details"
+                className="text-primary-700 font-semibold flex items-center justify-center hover:text-primary-800 transition-all"
+              >
+                See More
+                <ArrowRightIcon className="ml-2 w-5 h-5" />
+              </Link>
+            </div>
           </div>
         </div>
 
@@ -91,10 +105,12 @@ export const OurWork = () => {
             >
               {/* Duplicate last image at the beginning */}
               <div className="flex-shrink-0 w-full h-full flex justify-center items-center relative group">
-                <img
+                <Image
                   src={images[totalImages - 1].src}
                   alt={images[totalImages - 1].alt}
                   className="object-contain w-full h-full rounded-lg shadow-lg"
+                  layout="fill" // Ensures the image fills the container
+                  objectFit="contain" // Prevents distortion of images
                 />
                 <div className="absolute inset-0 bg-black bg-opacity-50 text-white opacity-0 group-hover:opacity-100 flex items-center justify-center transition-opacity duration-300">
                   <p className="text-center text-lg">
@@ -109,10 +125,12 @@ export const OurWork = () => {
                   key={index}
                   className="flex-shrink-0 w-full h-full flex justify-center items-center relative group"
                 >
-                  <img
+                  <Image
                     src={image.src}
                     alt={image.alt}
                     className="object-contain w-full h-full rounded-lg shadow-lg"
+                    layout="fill" // Ensures the image fills the container
+                    objectFit="contain" // Prevents distortion of images
                   />
                   <div className="absolute inset-0 bg-black bg-opacity-50 text-white opacity-0 group-hover:opacity-100 flex items-center justify-center transition-opacity duration-300">
                     <p className="text-center text-lg">{image.description}</p>
@@ -122,10 +140,12 @@ export const OurWork = () => {
 
               {/* Duplicate first image at the end */}
               <div className="flex-shrink-0 w-full h-full flex justify-center items-center relative group">
-                <img
+                <Image
                   src={images[0].src}
                   alt={images[0].alt}
                   className="object-contain w-full h-full rounded-lg shadow-lg"
+                  layout="fill" // Ensures the image fills the container
+                  objectFit="contain" // Prevents distortion of images
                 />
                 <div className="absolute inset-0 bg-black bg-opacity-50 text-white opacity-0 group-hover:opacity-100 flex items-center justify-center transition-opacity duration-300">
                   <p className="text-center text-lg">{images[0].description}</p>

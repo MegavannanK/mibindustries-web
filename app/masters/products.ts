@@ -66,7 +66,7 @@ export const products: Product[] = [
     ],
     slug: "urid-dhall",
     description: "Premium cement products.",
-    image: `${CLOUDINARY_BASE_URL}/v1737313818/MIB-website/Homepage/Products/bxzhd3s4zbsbqpqf09a6.jpg`,
+    image: `${CLOUDINARY_BASE_URL}/v1742585491/MIB-website/Homepage/Products/n4m0owzntgvcphjnkd2g.png`,
   },
   {
     id: 4,
@@ -83,7 +83,7 @@ export const products: Product[] = [
     ],
     slug: "spices",
     description: "Sustainable timber solutions.",
-    image: `${CLOUDINARY_BASE_URL}/v1737311761/MIB-website/Homepage/Products/tdhmeimhzyhlniqqm8st.jpg`,
+    image: `${CLOUDINARY_BASE_URL}/v1742586696/MIB-website/Homepage/Products/nsm2uzgf6nq5ppf7qohe.png`,
   },
   {
     id: 5,
@@ -100,11 +100,11 @@ export const products: Product[] = [
     ],
     slug: "pooja-items",
     description: "Premium glass materials.",
-    image: `${CLOUDINARY_BASE_URL}/v1737311763/MIB-website/Homepage/Products/vfsnl7s6rdzxowbivyxc.png`,
+    image: `${CLOUDINARY_BASE_URL}/v1742585847/MIB-website/Homepage/Products/wcnurzsoviynizrrnki2.jpg`,
   },
   {
     id: 6,
-    name: "Oil",
+    name: "Cooking Oil",
     variants: [
       {
         name: "Wrought Iron",
