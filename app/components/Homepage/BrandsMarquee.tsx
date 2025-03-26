@@ -1,10 +1,14 @@
+// BrandsMarquee.tsx
+import { useRef } from "react";
 import Marquee from "react-fast-marquee";
 import { brands } from "@/app/masters/brands";
 import Image from "next/image";
 
 export const BrandsMarquee = () => {
+  const brandsRef = useRef<HTMLDivElement | null>(null);
+
   return (
-    <div className="bg-white">
+    <div id="brands" ref={brandsRef} className="bg-white">
       <h2 className="pb-4 text-title-7 md:text-title-4 text-primary-700 text-center font-bold">
         Brands
       </h2>
@@ -23,7 +27,6 @@ export const BrandsMarquee = () => {
               />
             </div>
           ))}
-          <div className="flex-shrink-0" style={{ width: "10px" }}></div>
         </div>
       </Marquee>
     </div>

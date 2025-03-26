@@ -2,19 +2,21 @@
 
 import { useState, useEffect, useCallback } from "react";
 import { usePathname, useRouter } from "next/navigation";
-import logo from "@/app/assets/images/logo.png";
+import Image from "next/image"; // Import Image from next/image
+import logo from "@/app/assets/images/logo.png"; // Import the logo image
 import { MenuIcon, XIcon } from "@heroicons/react/solid";
 
 const navItems = [
   { label: "Home", target: "/" },
   { label: "Products", target: "/products" },
   { label: "Contact Us", target: "/contact-us" },
-  { label: "Partners", target: "/partners" },
+  { label: "Brands", target: "#brands" },
 ];
 
 export const NavbarDesktop = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const pathname = usePathname(); // Get the current route
+  const router = useRouter();
 
   const handleScroll = useCallback(() => {
     if (window.scrollY > 50) {
@@ -32,46 +34,57 @@ export const NavbarDesktop = () => {
   }, [handleScroll]);
 
   const isHomePage = pathname === "/";
-  const router = useRouter();
+
+  const handleNavItemClick = (target: string) => {
+    if (target === "#brands") {
+      // Check if we're already on the Brands section
+      const brandsSection = document.getElementById("brands");
+      if (brandsSection) {
+        brandsSection.scrollIntoView({ behavior: "smooth" });
+      } else {
+        // Navigate to the homepage and scroll to the Brands section
+        router.push("/#brands");
+      }
+    } else {
+      router.push(target); // Navigate to other routes
+    }
+  };
 
   return (
-    <>
-      {/* Navbar */}
-      <div
-        className={`h-20 rounded-md transition-all duration-300 z-50 ${
-          isHomePage
-            ? isScrolled
-              ? "fixed top-0 left-0 right-0 shadow-md w-full bg-primary-400"
-              : "absolute top-4 left-1/2 -translate-x-1/2 w-11/12 bg-primary-400"
-            : "fixed top-0 left-0 right-0 shadow-md w-full bg-white"
-        }`}
-      >
-        <div className="grid grid-cols-4 text-blue-900 justify-between items-center h-full px-10">
-          <div className="col-span-2">
-            <img
-              onClick={() => router.push("/")}
-              src={logo.src}
-              alt="Logo"
-              className="h-14 cursor-pointer col"
-            />
-          </div>
+    <div
+      className={`h-20 rounded-md transition-all duration-300 z-50 ${
+        isHomePage
+          ? isScrolled
+            ? "fixed top-0 left-0 right-0 shadow-md w-full bg-primary-400"
+            : "absolute top-4 left-1/2 -translate-x-1/2 w-11/12 bg-primary-400"
+          : "fixed top-0 left-0 right-0 shadow-md w-full bg-white"
+      }`}
+    >
+      <div className="grid grid-cols-4 text-blue-900 justify-between items-center h-full px-10">
+        <div className="col-span-2">
+          <Image
+            onClick={() => router.push("/")}
+            src={logo.src} // Use the imported logo.src here
+            alt="Logo"
+            width={56} // Define the width for the image
+            height={56} // Define the height for the image
+            className="cursor-pointer col"
+          />
+        </div>
 
-          <div className="cursor-pointer flex gap-4 items-center justify-between col-span-2">
-            {navItems.map((item, index) => (
-              <p
-                className="cursor-pointer text-title-7 font-semibold"
-                key={index}
-                onClick={() => {
-                  router.push(item.target);
-                }}
-              >
-                {item.label}
-              </p>
-            ))}
-          </div>
+        <div className="cursor-pointer flex gap-4 items-center justify-between col-span-2">
+          {navItems.map((item, index) => (
+            <p
+              className="cursor-pointer text-title-7 font-semibold"
+              key={index}
+              onClick={() => handleNavItemClick(item.target)} // Updated click handler
+            >
+              {item.label}
+            </p>
+          ))}
         </div>
       </div>
-    </>
+    </div>
   );
 };
 
@@ -79,6 +92,7 @@ export const NavbarMobile = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false); // State for menu visibility
   const pathname = usePathname(); // Get the current route
+  const router = useRouter();
 
   const handleScroll = useCallback(() => {
     if (window.scrollY > 50) {
@@ -96,7 +110,21 @@ export const NavbarMobile = () => {
   }, [handleScroll]);
 
   const isHomePage = pathname === "/";
-  const router = useRouter();
+
+  const handleNavItemClick = (target: string) => {
+    if (target === "#brands") {
+      // Check if we're already on the Brands section
+      const brandsSection = document.getElementById("brands");
+      if (brandsSection) {
+        brandsSection.scrollIntoView({ behavior: "smooth" });
+      } else {
+        // Navigate to the homepage and scroll to the Brands section
+        router.push("/#brands");
+      }
+    } else {
+      router.push(target); // Navigate to other routes
+    }
+  };
 
   return (
     <div
@@ -110,11 +138,13 @@ export const NavbarMobile = () => {
     >
       <div className="flex text-blue-900 justify-between items-center h-full px-10">
         <div>
-          <img
+          <Image
             onClick={() => router.push("/")}
-            src={logo.src}
+            src={logo.src} // Use the imported logo.src here
             alt="Logo"
-            className="h-14 cursor-pointer col"
+            width={56} // Define the width for the image
+            height={56} // Define the height for the image
+            className="cursor-pointer col"
           />
         </div>
 
@@ -141,7 +171,7 @@ export const NavbarMobile = () => {
                 key={index}
                 className="py-2 text-center text-title-7 font-semibold cursor-pointer"
                 onClick={() => {
-                  router.push(item.target);
+                  handleNavItemClick(item.target); // Updated click handler
                   setIsMenuOpen(false); // Close the menu after clicking an item
                 }}
               >
