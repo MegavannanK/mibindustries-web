@@ -1,53 +1,42 @@
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import Container from "../ui/Container";
 import Link from "next/link";
-import { ArrowRightIcon } from "@heroicons/react/solid"; // Importing the ArrowRightIcon from Heroicons
+import {
+  ArrowRightIcon,
+  ChevronLeftIcon,
+  ChevronRightIcon,
+} from "@heroicons/react/solid";
 import Image from "next/image"; // Importing Next.js Image component
-import ourWorkImage from "../../assets/images/ourWork.png"; // Adjust if necessary
+import ourWorkImage from "../../assets/images/ourWork.png";
+import happyPeople from "../../assets/images/happyPeople.png";
 
-export const OurWork = () => {
+export const OurWork: React.FC = () => {
   const images = [
     { src: ourWorkImage.src, alt: "Packing", description: "Packing Details" },
-    { src: ourWorkImage.src, alt: "Shipment", description: "Shipment Details" },
+    { src: happyPeople.src, alt: "Shipment", description: "Shipment Details" },
     {
       src: ourWorkImage.src,
       alt: "Container",
       description: "Container Details",
     },
     {
-      src: ourWorkImage.src,
+      src: happyPeople.src,
       alt: "Manufacturing",
       description: "Manufacturing Details",
     },
   ];
 
-  const [currentIndex, setCurrentIndex] = useState(1); // Start at the second image
+  const [currentIndex, setCurrentIndex] = useState(0); // Start at the first image
   const totalImages = images.length;
-  const galleryRef = useRef<HTMLDivElement>(null);
 
-  // Auto-scroll functionality every 5 seconds
+  // Auto-scroll functionality every 2 seconds
   useEffect(() => {
     const interval = setInterval(() => {
-      setCurrentIndex((prevIndex) => (prevIndex + 1) % (totalImages + 2)); // Loop around images
-    }, 5000); // Change every 5 seconds
+      setCurrentIndex((prevIndex) => (prevIndex + 1) % totalImages); // Loop around images
+    }, 2000); // Change every 2 seconds
 
     return () => clearInterval(interval); // Clean up interval on component unmount
-  }, []);
-
-  // Handle next slide
-  const handleNext = () => {
-    setCurrentIndex((prevIndex) => (prevIndex + 1) % (totalImages + 2));
-  };
-
-  // Handle previous slide
-  const handlePrev = () => {
-    setCurrentIndex(
-      (prevIndex) => (prevIndex - 1 + totalImages + 2) % (totalImages + 2)
-    );
-  };
-
-  // Calculate position for smooth scrolling
-  const translateX = `-${(currentIndex * 100) / (totalImages + 2)}%`;
+  }, [totalImages]);
 
   return (
     <div className="bg-white">
@@ -85,82 +74,42 @@ export const OurWork = () => {
           </div>
         </div>
 
-        {/* Horizontal Scrollable Gallery */}
-        <div className="relative w-full h-full" ref={galleryRef}>
-          {/* Previous Button */}
-          <button
-            onClick={handlePrev}
-            className="absolute left-0 top-1/2 transform -translate-y-1/2 bg-gray-700 text-white p-2 rounded-full z-10"
-          >
-            {"<"}
-          </button>
-
-          {/* Gallery */}
-          <div className="overflow-hidden h-full">
-            <div
-              className="flex transition-transform duration-500 ease-in-out"
-              style={{
-                transform: translateX, // Adjust the translateX based on current index
-              }}
-            >
-              {/* Duplicate last image at the beginning */}
-              <div className="flex-shrink-0 w-full h-full flex justify-center items-center relative group">
-                <Image
-                  src={images[totalImages - 1].src}
-                  alt={images[totalImages - 1].alt}
-                  className="object-contain w-full h-full rounded-lg shadow-lg"
-                  layout="fill" // Ensures the image fills the container
-                  objectFit="contain" // Prevents distortion of images
-                />
-                <div className="absolute inset-0 bg-black bg-opacity-50 text-white opacity-0 group-hover:opacity-100 flex items-center justify-center transition-opacity duration-300">
-                  <p className="text-center text-lg">
-                    {images[totalImages - 1].description}
-                  </p>
-                </div>
-              </div>
-
-              {/* Render all images */}
-              {images.map((image, index) => (
-                <div
-                  key={index}
-                  className="flex-shrink-0 w-full h-full flex justify-center items-center relative group"
-                >
-                  <Image
-                    src={image.src}
-                    alt={image.alt}
-                    className="object-contain w-full h-full rounded-lg shadow-lg"
-                    layout="fill" // Ensures the image fills the container
-                    objectFit="contain" // Prevents distortion of images
-                  />
-                  <div className="absolute inset-0 bg-black bg-opacity-50 text-white opacity-0 group-hover:opacity-100 flex items-center justify-center transition-opacity duration-300">
-                    <p className="text-center text-lg">{image.description}</p>
-                  </div>
-                </div>
-              ))}
-
-              {/* Duplicate first image at the end */}
-              <div className="flex-shrink-0 w-full h-full flex justify-center items-center relative group">
-                <Image
-                  src={images[0].src}
-                  alt={images[0].alt}
-                  className="object-contain w-full h-full rounded-lg shadow-lg"
-                  layout="fill" // Ensures the image fills the container
-                  objectFit="contain" // Prevents distortion of images
-                />
-                <div className="absolute inset-0 bg-black bg-opacity-50 text-white opacity-0 group-hover:opacity-100 flex items-center justify-center transition-opacity duration-300">
-                  <p className="text-center text-lg">{images[0].description}</p>
-                </div>
-              </div>
+        {/* Image Carousel */}
+        <div className="relative w-full h-[400px] overflow-hidden">
+          {/* Dynamically render only the current image */}
+          <div className="flex justify-center items-center">
+            <div className="relative w-full h-full flex justify-center items-center">
+              <Image
+                src={images[currentIndex].src}
+                alt={images[currentIndex].alt}
+                className="object-contain w-full h-full rounded-lg shadow-lg"
+                layout="intrinsic"
+                priority={true} // Prioritize loading for better performance
+                width={500} // Set a fixed width for the image
+                height={300} // Set a fixed height for the image
+              />
             </div>
           </div>
-
-          {/* Next Button */}
-          <button
-            onClick={handleNext}
-            className="absolute right-0 top-1/2 transform -translate-y-1/2 bg-gray-700 text-white p-2 rounded-full z-10"
-          >
-            {">"}
-          </button>
+          <div className="absolute top-1/2 left-5 transform -translate-y-1/2 cursor-pointer">
+            <button
+              onClick={() =>
+                setCurrentIndex(
+                  (prevIndex) => (prevIndex - 1 + totalImages) % totalImages
+                )
+              }
+            >
+              <ChevronLeftIcon className="w-6 h-6 text-primary-700" />
+            </button>
+          </div>
+          <div className="absolute top-1/2 right-5 transform -translate-y-1/2 cursor-pointer">
+            <button
+              onClick={() =>
+                setCurrentIndex((prevIndex) => (prevIndex + 1) % totalImages)
+              }
+            >
+              <ChevronRightIcon className="w-6 h-6 text-primary-700" />
+            </button>
+          </div>
         </div>
       </Container>
     </div>

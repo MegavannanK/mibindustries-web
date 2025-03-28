@@ -1,3 +1,4 @@
+import Image from "next/image";
 import aboutUsImage from "../../assets/images/about-us.svg";
 import { useEffect } from "react";
 import { motion, useAnimation } from "framer-motion";
@@ -30,10 +31,13 @@ export const AboutUs = () => {
           animate={controls}
           transition={{ duration: 1 }}
         >
-          <img
-            src={aboutUsImage.src}
+          <Image
+            src={aboutUsImage}
             alt="About Us"
             className="w-full object-contain"
+            layout="responsive"
+            width={500} // Adjust width to suit your needs
+            height={300} // Adjust height to suit your needs
           />
         </motion.div>
 
