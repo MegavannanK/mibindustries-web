@@ -2,11 +2,10 @@ import { useState, useEffect } from "react";
 import { flags } from "@/app/masters/flags";
 import { motion, useAnimation } from "framer-motion";
 import Image from "next/image"; // Import Next.js Image component
-import { g } from "framer-motion/client";
+// import { g } from "framer-motion/client";
 
 export const Flags = () => {
-  const [currentFlags, setCurrentFlags] = useState<string[]>(flags.slice(0, 3));
-  const[startIndex, setStartIndex] = useState(0); // Display 3 flags initially
+  const [currentFlags, setCurrentFlags] = useState<string[]>(flags.slice(0, 3)); // Display 3 flags initially
   const [index, setIndex] = useState(0); // Track which set of flags to show
   const controls = useAnimation(); // Controls for animation
 
