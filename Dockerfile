@@ -27,8 +27,9 @@ COPY --from=build /app/node_modules ./node_modules
 COPY --from=build /app/package.json ./
 COPY --from=build /app/.next ./.next
 COPY --from=build /app/public ./public
+COPY --from=build /app/next.config.ts ./
 
-# # Expose the port the app runs on
+# # Expose the port the app runs onl
 EXPOSE 3000
 
 ENV HOST=0.0.0.0

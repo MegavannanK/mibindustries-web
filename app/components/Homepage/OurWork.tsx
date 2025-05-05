@@ -7,25 +7,27 @@ import {
   ChevronRightIcon,
 } from "@heroicons/react/solid";
 import Image from "next/image"; // Importing Next.js Image component
-import ourWorkImage from "../../assets/images/ourWork.png";
-import happyPeople from "../../assets/images/happyPeople.png";
+import { success_story } from "@/app/masters/sucess_story";
+
+// import ourWorkImage from "../../assets/images/ourWork.png";
+// import happyPeople from "../../assets/images/happyPeople.png";
 
 export const OurWork: React.FC = () => {
-  const images = [
-    { src: ourWorkImage.src, alt: "Packing", description: "Packing Details" },
-    { src: happyPeople.src, alt: "Shipment", description: "Shipment Details" },
-    {
-      src: ourWorkImage.src,
-      alt: "Container",
-      description: "Container Details",
-    },
-    {
-      src: happyPeople.src,
-      alt: "Manufacturing",
-      description: "Manufacturing Details",
-    },
-  ];
-
+  // const images = [
+  //   { src: ourWorkImage.src, alt: "Packing", description: "Packing Details" },
+  //   { src: happyPeople.src, alt: "Shipment", description: "Shipment Details" },
+  //   {
+  //     src: ourWorkImage.src,
+  //     alt: "Container",
+  //     description: "Container Details",
+  //   },
+  //   {
+  //     src: happyPeople.src,
+  //     alt: "Manufacturing",
+  //     description: "Manufacturing Details",
+  //   },
+  // ];
+  const images = success_story
   const [currentIndex, setCurrentIndex] = useState(0); // Start at the first image
   const totalImages = images.length;
 
@@ -80,8 +82,8 @@ export const OurWork: React.FC = () => {
           <div className="flex justify-center items-center">
             <div className="relative w-full h-full flex justify-center items-center">
               <Image
-                src={images[currentIndex].src}
-                alt={images[currentIndex].alt}
+                src={images[currentIndex]}
+                alt= "Our Brand Blue elephant"
                 className="object-contain w-full h-full rounded-lg shadow-lg"
                 layout="intrinsic"
                 priority={true} // Prioritize loading for better performance

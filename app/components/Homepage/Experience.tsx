@@ -37,7 +37,7 @@ export const Experience = () => {
   return (
     <div
       ref={elementRef}
-      className="bg-primary-800 px-4 py-6 h-[45vh] md:h-[50vh] overflow-hidden"
+      className="bg-primary-800 px-4 py-6 min-h-[50vh] md:h-[70vh] overflow-hidden"
     >
       <div className="relative">
         {/* Replacing <img> with next/image */}
@@ -49,7 +49,7 @@ export const Experience = () => {
           objectFit="cover" // Optional: to make sure the image is properly fitted
         />
       </div>
-      <div className="w-full max-w-6xl mx-auto flex justify-center gap-10 sm:gap-14 lg:gap-24 mt-5 md:mt-10">
+      <div className="w-full max-w-6xl mx-auto flex flex-wrap justify-center gap-6 sm:gap-10 lg:gap-24 mt-5 md:mt-10">
         {stats.map((stat, index) => (
           <div
             key={index}
