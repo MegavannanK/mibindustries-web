@@ -86,7 +86,7 @@ export const OurWork: React.FC = () => {
                 alt= "Our Brand Blue elephant"
                 className="object-contain w-full h-full rounded-lg shadow-lg"
                 layout="intrinsic"
-                priority={true} // Prioritize loading for better performance
+                // priority={true} // Prioritize loading for better performance
                 width={500} // Set a fixed width for the image
                 height={300} // Set a fixed height for the image
               />
