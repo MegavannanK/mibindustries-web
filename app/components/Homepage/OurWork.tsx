@@ -2,31 +2,14 @@ import React, { useState, useEffect } from "react";
 import Container from "../ui/Container";
 import Link from "next/link";
 import {
-  ArrowRightIcon,
-  ChevronLeftIcon,
-  ChevronRightIcon,
+  ArrowRightIcon
 } from "@heroicons/react/solid";
 import Image from "next/image"; // Importing Next.js Image component
 import { success_story } from "@/app/masters/sucess_story";
 
-// import ourWorkImage from "../../assets/images/ourWork.png";
-// import happyPeople from "../../assets/images/happyPeople.png";
 
 export const OurWork: React.FC = () => {
-  // const images = [
-  //   { src: ourWorkImage.src, alt: "Packing", description: "Packing Details" },
-  //   { src: happyPeople.src, alt: "Shipment", description: "Shipment Details" },
-  //   {
-  //     src: ourWorkImage.src,
-  //     alt: "Container",
-  //     description: "Container Details",
-  //   },
-  //   {
-  //     src: happyPeople.src,
-  //     alt: "Manufacturing",
-  //     description: "Manufacturing Details",
-  //   },
-  // ];
+
   const images = success_story
   const [currentIndex, setCurrentIndex] = useState(0); // Start at the first image
   const totalImages = images.length;
@@ -44,8 +27,8 @@ export const OurWork: React.FC = () => {
     <div className="bg-white">
       <Container className="grid grid-cols-1 md:grid-cols-2 gap-5 w-11/12 mx-auto items-center">
         {/* Left-side Text Content */}
-        <div className="flex flex-col gap-4">
-          <h2 className="text-title-8 md:text-title-5 text-primary-700 font-bold">
+        <div className="flex flex-col gap-5">
+          <h2 className="text-title-8 md:text-title-5 text-primary-700 font-bold mt-14">
             Our Success Story
           </h2>
           <h3 className="text-body-2 md:text-title-7 font-semibold">
@@ -77,22 +60,23 @@ export const OurWork: React.FC = () => {
         </div>
 
         {/* Image Carousel */}
-        <div className="relative w-full h-[400px] overflow-hidden">
+        <div className="relative w-full overflow-hidden">
           {/* Dynamically render only the current image */}
           <div className="flex justify-center items-center">
-            <div className="relative w-full h-full flex justify-center items-center">
+            <div className="relative w-full h-0 pb-[75%]">
               <Image
                 src={images[currentIndex]}
                 alt= "Our Brand Blue elephant"
-                className="object-contain w-full h-full rounded-lg shadow-lg"
-                layout="intrinsic"
-                // priority={true} // Prioritize loading for better performance
-                width={500} // Set a fixed width for the image
-                height={300} // Set a fixed height for the image
+                className="object-contain w-full h-full rounded-2xl"
+                layout="fill"
+                priority={true} // Prioritize loading for better performance
+                // width={500} // Set a fixed width for the image
+                // height={300} // Set a fixed height for the image
               />
             </div>
           </div>
-          <div className="absolute top-1/2 left-5 transform -translate-y-1/2 cursor-pointer">
+          {/* This is the code to delete for removing the arrow from sliding on the sides  */}
+          {/* <div className="absolute top-1/2 left-5 transform -translate-y-1/2 cursor-pointer">
             <button
               onClick={() =>
                 setCurrentIndex(
@@ -111,7 +95,7 @@ export const OurWork: React.FC = () => {
             >
               <ChevronRightIcon className="w-6 h-6 text-primary-700" />
             </button>
-          </div>
+          </div> */}
         </div>
       </Container>
     </div>

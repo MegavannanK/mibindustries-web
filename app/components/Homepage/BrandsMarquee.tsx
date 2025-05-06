@@ -9,7 +9,7 @@ export const BrandsMarquee = () => {
 
   return (
     <div id="brands" ref={brandsRef} className="bg-white">
-      <h2 className="pb-4 text-title-7 md:text-title-4 text-primary-700 text-center font-bold">
+      <h2 className="pb-4 text-title-7 md:text-title-4 text-primary-700 text-center font-bold mt-8">
         Brands
       </h2>
       <Marquee className="py-5">
