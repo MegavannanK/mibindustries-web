@@ -7,9 +7,9 @@ export const AboutUs = () => {
   const controls = useAnimation();
 
   useEffect(() => {
-    const handleScroll = () => {
+    const handleScroll = () => {  
       const scrollPosition = window.scrollY;
-      if (scrollPosition > 100) {
+      if (scrollPosition > 825) {
         controls.start({ opacity: 1 });
       } else {
         controls.start({ opacity: 0 });
@@ -44,12 +44,12 @@ export const AboutUs = () => {
         <motion.div
           initial={{ opacity: 0 }}
           animate={controls}
-          transition={{ duration: 1 }}
+          transition={{ duration: 2 }}
         >
           <div className="flex flex-col gap-5 md:mt-10 mx-auto">
             <div className="text-title-5 md:text-title-2 font-bold text-center md:text-left">
               <p className="text-primary-800">About</p>
-              <h2 className="ml-0 md:ml-6 text-primary-700">TradeLinkGlobal</h2>
+              <h2 className="ml-0 md:ml-6 text-primary-700">MIB Industries</h2>
             </div>
             <p className="text-black text-body-1 md:text-title-5 font-semibold text-center md:text-left">
               Insights and Resources to help drive your Business Forward Faster.

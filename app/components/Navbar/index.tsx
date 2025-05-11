@@ -10,7 +10,7 @@ const navItems = [
   { label: "Home", target: "/" },
   { label: "Products", target: "/products" },
   { label: "Contact Us", target: "/contact-us" },
-  { label: "Brands", target: "#brands" },
+  { label: "Brands", target: "brands" },
 ];
 
 export const NavbarDesktop = () => {
@@ -36,7 +36,7 @@ export const NavbarDesktop = () => {
   const isHomePage = pathname === "/";
 
   const handleNavItemClick = (target: string) => {
-    if (target === "#brands") {
+    if (target === "brands") {
       // Check if we're already on the Brands section
       const brandsSection = document.getElementById("brands");
       if (brandsSection) {
@@ -112,14 +112,14 @@ export const NavbarMobile = () => {
   const isHomePage = pathname === "/";
 
   const handleNavItemClick = (target: string) => {
-    if (target === "#brands") {
+    if (target === "brands") {
       // Check if we're already on the Brands section
       const brandsSection = document.getElementById("brands");
       if (brandsSection) {
         brandsSection.scrollIntoView({ behavior: "smooth" });
       } else {
         // Navigate to the homepage and scroll to the Brands section
-        router.push("/#brands");
+        router.push("");
       }
     } else {
       router.push(target); // Navigate to other routes
@@ -136,7 +136,7 @@ export const NavbarMobile = () => {
           : "fixed top-0 left-0 right-0 shadow-md w-full bg-white"
       }`}
     >
-      <div className="flex text-blue-900 justify-between items-center h-full px-10">
+      <div className="max-w-screen-xl mx-auto flex justify-between items-center h-full px-4 sm:px-6 md:px-10">
         <div>
           <Image
             onClick={() => router.push("/")}
@@ -144,11 +144,12 @@ export const NavbarMobile = () => {
             alt="Logo"
             width={56} // Define the width for the image
             height={56} // Define the height for the image
-            className="cursor-pointer col"
+            className="cursor-pointer"
           />
         </div>
 
         {/* Conditional rendering of the MenuIcon and XIcon */}
+        <div className="w-10 h-10 flex items-center justify-center">
         {isMenuOpen ? (
           <XIcon
             className="h-8 w-8 text-blue-900 cursor-pointer"
@@ -160,6 +161,7 @@ export const NavbarMobile = () => {
             onClick={() => setIsMenuOpen(true)} // Open the menu on click
           />
         )}
+      </div>
       </div>
 
       {/* Mobile Menu */}
