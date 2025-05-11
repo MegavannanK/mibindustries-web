@@ -2,7 +2,6 @@
 import { useRef } from "react";
 import Marquee from "react-fast-marquee";
 import { brands } from "@/app/masters/brands";
-import { useEffect } from "react";
 import Image from "next/image";
 
 export const BrandsMarquee = () => {
