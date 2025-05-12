@@ -34,7 +34,7 @@ export const Products = () => {
 
   return (
     <div className="bg-blue-900 py-8 w-full mx-auto">
-      <h2 className="text-center text-2xl font-bold text-white mb-6">
+      <h2 className="text-primary-100 text-center text-title-4 md:text-title-3 mb-10 mt-8">
         Products
       </h2>
 
@@ -51,7 +51,7 @@ export const Products = () => {
       </div>
 
       {/* Desktop View */}
-      <div className="hidden md:flex relative items-center">
+      <div className="hidden md:flex overflow-x-auto items-center gap-6 px-4 mx-auto max-w-full md:max-w-screen-md lg:max-w-screen-xl whitespace-nowrap">
         {/* Left Arrow */}
         <motion.button
           onClick={handleScrollLeft}
@@ -75,7 +75,7 @@ export const Products = () => {
               key={product.id}
               initial={{ opacity: 0, x: 50 }} // Animation for each product card
               animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.5 }}
+              transition={{ duration: 2.0 }}
             >
               <ProductCard
                 image={product.image}

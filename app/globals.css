@@ -19,3 +19,7 @@ body {
 .scrollbar-hide::-webkit-scrollbar {
   display: none; /* Chrome, Safari, and Opera */
 }
+
+html, body {
+  overflow-x: hidden;
+}

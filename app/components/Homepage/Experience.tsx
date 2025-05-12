@@ -21,12 +21,12 @@ const stats: Stat[] = [
   },
   {
     image: customerImage,
-    count: 500,
+    count: 550,
     label: "Happy Customers",
   },
   {
     image: customerExperienceImage,
-    count: 20,
+    count: 21,
     label: "Years Experience",
   },
 ];
@@ -37,7 +37,7 @@ export const Experience = () => {
   return (
     <div
       ref={elementRef}
-      className="bg-primary-800 px-4 py-6 min-h-[50vh] md:h-[70vh] overflow-hidden"
+      className="bg-primary-800 px-4 py-12 md:py-16 lg:py-20 flex flex-col flex flex-col items-center justify-center"
     >
       <div className="relative">
         {/* Replacing <img> with next/image */}
@@ -49,12 +49,15 @@ export const Experience = () => {
           objectFit="cover" // Optional: to make sure the image is properly fitted
         />
       </div>
+      <h2 className="text-primary-100 text-center text-title-4 md:text-title-3 mb-8">
+        Our Presence
+      </h2>
       <div className="w-full max-w-6xl mx-auto flex flex-wrap justify-center gap-6 sm:gap-10 lg:gap-24 mt-5 md:mt-10">
         {stats.map((stat, index) => (
           <div
             key={index}
             className={`bg-white rounded-lg shadow-md p-4 flex flex-col items-center justify-between w-[200px] h-[200px] sm:w-[220px] sm:h-[220px] lg:w-[300px] lg:h-[250px] ${
-              index === 1 ? "transform translate-y-10" : ""
+              index === 1 ? "lg:transform lg:translate-y-10" : ""
             }`}
           >
             <div className="bg-primary-700 h-16 w-16 sm:h-20 sm:w-20 lg:h-24 lg:w-24 flex items-center justify-center rounded-md">
@@ -91,7 +94,7 @@ const AnimatedCount = ({ count, isInView }: AnimatedCountProps) => {
     if (isInView) {
       let start = 0;
       const end = count;
-      const duration = 2000; // Duration of the animation in ms
+      const duration = 5000; // Duration of the animation in ms
       const increment = end / (duration / 100);
 
       const interval = setInterval(() => {
