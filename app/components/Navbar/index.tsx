@@ -33,7 +33,7 @@ export const NavbarDesktop = () => {
     };
   }, [handleScroll]);
 
-  const isHomePage = pathname === "/";
+  // const isHomePage = pathname === "/";
 
   const handleNavItemClick = (target: string) => {
     if (target === "brands") {
@@ -53,29 +53,30 @@ export const NavbarDesktop = () => {
   return (
     <div
       className={`h-20 rounded-md transition-all duration-300 z-50 ${
-        isHomePage
-          ? isScrolled
+        // isHomePage
+          isScrolled
             ? "fixed top-0 left-0 right-0 shadow-md w-full bg-primary-400"
-            : "absolute top-4 left-1/2 -translate-x-1/2 w-11/12 bg-primary-400"
-          : "fixed top-0 left-0 right-0 shadow-md w-full bg-white"
+            : "absolute top-4 left-1/2 -translate-x-1/2 w-11/12 bg-primary-300"
+          // : "fixed top-0 left-0 right-0 shadow-md w-full bg-white"
       }`}
     >
-      <div className="grid grid-cols-4 text-blue-900 justify-between items-center h-full px-10">
-        <div className="col-span-2">
+      <div className="grid grid-cols-4 text-primary-800 justify-between items-center h-full px-10">
+        <div className="col-span-2 md:col-span-1 ">
           <Image
             onClick={() => router.push("/")}
+            className="cursor-pointer"
             src={logo.src} // Use the imported logo.src here
             alt="Logo"
             width={56} // Define the width for the image
             height={56} // Define the height for the image
-            className="cursor-pointer col"
+            
           />
         </div>
 
-        <div className="cursor-pointer flex gap-4 items-center justify-between col-span-2">
+        <div className="cursor-pointer flex gap-10 items-center justify-between col-span-2">
           {navItems.map((item, index) => (
             <p
-              className="cursor-pointer text-title-7 font-semibold"
+              className="cursor-pointer text-title-7 font-semibold whitespace-nowrap"
               key={index}
               onClick={() => handleNavItemClick(item.target)} // Updated click handler
             >
@@ -129,11 +130,11 @@ export const NavbarMobile = () => {
   return (
     <div
       className={`h-20 rounded-md transition-all duration-300 z-50 ${
-        isHomePage
-          ? isScrolled
+        // isHomePage
+          isScrolled
             ? "fixed top-0 left-0 right-0 shadow-md w-full bg-primary-400"
-            : "absolute top-4 left-1/2 -translate-x-1/2 w-11/12 bg-primary-400"
-          : "fixed top-0 left-0 right-0 shadow-md w-full bg-white"
+            : "absolute top-4 left-1/2 -translate-x-1/2 w-11/12 bg-primary-300"
+          // : "fixed top-0 left-0 right-0 shadow-md w-full bg-white"
       }`}
     >
       <div className="max-w-screen-xl mx-auto flex justify-between items-center h-full px-4 sm:px-6 md:px-10">
@@ -152,12 +153,12 @@ export const NavbarMobile = () => {
         <div className="w-10 h-10 flex items-center justify-center">
         {isMenuOpen ? (
           <XIcon
-            className="h-8 w-8 text-blue-900 cursor-pointer"
+            className="h-8 w-8 text-primary-800 cursor-pointer"
             onClick={() => setIsMenuOpen(false)} // Close the menu on click
           />
         ) : (
           <MenuIcon
-            className="h-8 w-8 text-blue-900 cursor-pointer"
+            className="h-8 w-8 text-primary-800 cursor-pointer"
             onClick={() => setIsMenuOpen(true)} // Open the menu on click
           />
         )}
@@ -166,7 +167,7 @@ export const NavbarMobile = () => {
 
       {/* Mobile Menu */}
       {isMenuOpen && (
-        <div className="absolute top-20 left-0 right-0 bg-primary-400 text-blue-900 p-5">
+        <div className="absolute top-20 left-0 right-0 bg-primary-300 text-primary-800 p-5">
           <div className="flex flex-col items-center">
             {navItems.map((item, index) => (
               <p

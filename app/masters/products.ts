@@ -32,7 +32,8 @@ export const products: Product[] = [
     ],
     slug: "Rice",
     description: "High-quality steel products.",
-    image: `${CLOUDINARY_BASE_URL}/v1737311760/MIB-website/Homepage/Products/pjo8xfdpzkauayipda9v.png`,
+    // image: `${CLOUDINARY_BASE_URL}/v1737311760/MIB-website/Homepage/Products/pjo8xfdpzkauayipda9v.png`,
+    image: "https://res.cloudinary.com/dd7bw6igp/image/upload/v1748661250/MIB-website/Homepage/Products/wnoc8vv2x9l6v2vj3nmh.png",
   },
   {
     id: 2,
@@ -49,11 +50,12 @@ export const products: Product[] = [
     ],
     slug: "red-chillies",
     description: "Durable plastic products.",
-    image: `${CLOUDINARY_BASE_URL}/v1737311763/MIB-website/Homepage/Products/vfsnl7s6rdzxowbivyxc.png`,
+    // image: `${CLOUDINARY_BASE_URL}/v1737311763/MIB-website/Homepage/Products/vfsnl7s6rdzxowbivyxc.png`,
+    image:"https://res.cloudinary.com/dd7bw6igp/image/upload/v1748661250/MIB-website/Homepage/Products/tgh2fpy49jlcnx1aux4o.png",
   },
   {
     id: 3,
-    name: "Urid dhall / dhalls",
+    name: "Indian Spices",
     variants: [
       {
         name: "Portland Cement",
@@ -64,13 +66,14 @@ export const products: Product[] = [
         packs: [25, 50, 75],
       },
     ],
-    slug: "urid-dhall",
-    description: "Premium cement products.",
-    image: `${CLOUDINARY_BASE_URL}/v1742585491/MIB-website/Homepage/Products/n4m0owzntgvcphjnkd2g.png`,
+    slug: "Indian Spices",
+    description: "Special Aromatic spices.",
+    // image: `${CLOUDINARY_BASE_URL}/v1742585491/MIB-website/Homepage/Products/n4m0owzntgvcphjnkd2g.png`,
+    image: "https://res.cloudinary.com/dd7bw6igp/image/upload/v1748661250/MIB-website/Homepage/Products/qc0can5un6uve6qxl64o.png",
   },
   {
     id: 4,
-    name: "Spices",
+    name: "Lentils & Pulses",
     variants: [
       {
         name: "Softwood",
@@ -81,9 +84,11 @@ export const products: Product[] = [
         packs: [15, 25, 35],
       },
     ],
-    slug: "spices",
-    description: "Sustainable timber solutions.",
-    image: `${CLOUDINARY_BASE_URL}/v1742586696/MIB-website/Homepage/Products/nsm2uzgf6nq5ppf7qohe.png`,
+    slug: "lentils-pulses",
+    description: "Premium lentils for good health",
+    // image: `${CLOUDINARY_BASE_URL}/v1742586696/MIB-website/Homepage/Products/nsm2uzgf6nq5ppf7qohe.png`,
+    image: " https://res.cloudinary.com/dd7bw6igp/image/upload/v1748661250/MIB-website/Homepage/Products/j7mkfhesydtv5kzum94a.png",
+    
   },
   {
     id: 5,
@@ -99,8 +104,9 @@ export const products: Product[] = [
       },
     ],
     slug: "pooja-items",
-    description: "Premium glass materials.",
-    image: `${CLOUDINARY_BASE_URL}/v1742585847/MIB-website/Homepage/Products/wcnurzsoviynizrrnki2.jpg`,
+    description: "Traditional & Holy Pooja products.",
+    // image: `${CLOUDINARY_BASE_URL}/v1742585847/MIB-website/Homepage/Products/wcnurzsoviynizrrnki2.jpg`,
+    image: "https://res.cloudinary.com/dd7bw6igp/image/upload/v1748661251/MIB-website/Homepage/Products/ue9lfva8gnvnjvg4dxqh.png",
   },
   {
     id: 6,
@@ -117,6 +123,7 @@ export const products: Product[] = [
     ],
     slug: "oil",
     description: "Reliable iron products.",
-    image: `${CLOUDINARY_BASE_URL}/v1737311763/MIB-website/Homepage/Products/iee5javiettgkgpem4xm.jpg`,
+    // image: `${CLOUDINARY_BASE_URL}/v1737311763/MIB-website/Homepage/Products/iee5javiettgkgpem4xm.jpg`,
+    image:" https://res.cloudinary.com/dd7bw6igp/image/upload/v1748661250/MIB-website/Homepage/Products/h0ucpr6cqrlnjcwmlk4d.png",
   },
 ];

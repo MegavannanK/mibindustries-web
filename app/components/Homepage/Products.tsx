@@ -39,7 +39,7 @@ export const Products = () => {
       </h2>
 
       {/* Mobile View */}
-      <div className="flex flex-col items-center gap-4 md:hidden px-4 mx-auto">
+      {/* <div className="">
         {products.slice(0, 3).map((product, index) => (
           <ProductCard
             image={product.image}
@@ -48,24 +48,26 @@ export const Products = () => {
             description={product.description}
           />
         ))}
-      </div>
+      </div> */}
 
       {/* Desktop View */}
-      <div className="hidden md:flex overflow-x-auto items-center gap-6 px-4 mx-auto max-w-full md:max-w-screen-md lg:max-w-screen-xl whitespace-nowrap">
+      <div>
         {/* Left Arrow */}
+        <div className="relative">
         <motion.button
           onClick={handleScrollLeft}
           aria-label="Scroll left"
-          className="absolute left-4 z-10 bg-white text-blue-900 p-3 rounded-full shadow-md hover:bg-blue-700 hover:text-white transition-all duration-200 focus:ring-2 focus:ring-blue-500"
+          className=" absolute bottom-100px bg-white text-blue-900 p-3 rounded-full shadow-md hover:bg-blue-700 hover:text-white transition-all duration-200 focus:ring-2 focus:ring-blue-500"
           whileHover={{ scale: 1.2 }} // Scale up on hover
           whileTap={{ scale: 0.9 }}
         >
           &lt;
         </motion.button>
+        </div>
 
         {/* Scrollable Container */}
         <motion.div
-          className="flex justify-center space-x-4 px-4 w-full"
+          className="lg:flex lg:flex-row justify-center 2xl:gap-14"
           initial={{ opacity: 0 }} // Start with opacity 0
           animate={{ opacity: 1 }} // Animate to opacity 1 (fade-in)
           transition={{ duration: 0.5 }} // Duration of the animation
@@ -81,22 +83,23 @@ export const Products = () => {
                 image={product.image}
                 title={product.name}
                 description={product.description}
+                variant="homepage"
               />
             </motion.div>
           ))}
         </motion.div>
 
         {/* Right Arrow */}
-        <motion.button
+        {/* <motion.button
           onClick={handleScrollRight}
           aria-label="Scroll right"
-          className="absolute right-4 z-10 bg-white text-blue-900 p-3 rounded-full shadow-md hover:bg-blue-700 hover:text-white transition-all duration-200 focus:ring-2 focus:ring-blue-500"
+          className=" bg-white text-blue-900 p-3 rounded-full shadow-md hover:bg-blue-700 hover:text-white transition-all duration-200 focus:ring-2 focus:ring-blue-500  "
           whileHover={{ scale: 1.2 }} // Scale up on hover
           whileTap={{ scale: 0.9 }}
         >
           &gt;
-        </motion.button>
+        </motion.button> */}
+        </div>
       </div>
-    </div>
   );
 };

@@ -1,11 +1,10 @@
 import Image from "next/image";
 import aboutUsImage from "../../assets/images/about-us.svg";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { motion, useAnimation } from "framer-motion";
 
 export const AboutUs = () => {
   const controls = useAnimation();
-
   useEffect(() => {
     const handleScroll = () => {  
       const scrollPosition = window.scrollY;
