@@ -1,6 +1,6 @@
 import Image from "next/image";
 import aboutUsImage from "../../assets/images/about-us.svg";
-import { useEffect, useState } from "react";
+import { useEffect} from "react";
 import { motion, useAnimation } from "framer-motion";
 
 export const AboutUs = () => {

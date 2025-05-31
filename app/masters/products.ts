@@ -1,7 +1,5 @@
 //this is to make array of products:
-
-import { CLOUDINARY_BASE_URL } from "./cloudinary";
-
+// import { CLOUDINARY_BASE_URL } from "./cloudinary";
 type Variant = {
   name: string;
   packs: number[];
@@ -86,7 +84,7 @@ export const products: Product[] = [
     ],
     slug: "lentils-pulses",
     description: "Premium lentils for good health",
-    // image: `${CLOUDINARY_BASE_URL}/v1742586696/MIB-website/Homepage/Products/nsm2uzgf6nq5ppf7qohe.png`,
+    //image: `${CLOUDINARY_BASE_URL}/v1742586696/MIB-website/Homepage/Products/nsm2uzgf6nq5ppf7qohe.png`,
     image: " https://res.cloudinary.com/dd7bw6igp/image/upload/v1748661250/MIB-website/Homepage/Products/j7mkfhesydtv5kzum94a.png",
     
   },

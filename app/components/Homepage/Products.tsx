@@ -89,8 +89,8 @@ export const Products = () => {
           ))}
         </motion.div>
 
-        {/* Right Arrow */}
-        {/* <motion.button
+        {/* { Right Arrow } */}
+        {<motion.button
           onClick={handleScrollRight}
           aria-label="Scroll right"
           className=" bg-white text-blue-900 p-3 rounded-full shadow-md hover:bg-blue-700 hover:text-white transition-all duration-200 focus:ring-2 focus:ring-blue-500  "
@@ -98,7 +98,7 @@ export const Products = () => {
           whileTap={{ scale: 0.9 }}
         >
           &gt;
-        </motion.button> */}
+        </motion.button>}
         </div>
       </div>
   );

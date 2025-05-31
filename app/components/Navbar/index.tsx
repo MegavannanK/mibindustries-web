@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect, useCallback } from "react";
-import { usePathname, useRouter } from "next/navigation";
+import { useRouter } from "next/navigation";
 import Image from "next/image"; // Import Image from next/image
 import logo from "@/app/assets/images/logo.png"; // Import the logo image
 import { MenuIcon, XIcon } from "@heroicons/react/solid";
@@ -15,7 +15,7 @@ const navItems = [
 
 export const NavbarDesktop = () => {
   const [isScrolled, setIsScrolled] = useState(false);
-  const pathname = usePathname(); // Get the current route
+  // const pathname = usePathname(); // Get the current route
   const router = useRouter();
 
   const handleScroll = useCallback(() => {
@@ -92,7 +92,7 @@ export const NavbarDesktop = () => {
 export const NavbarMobile = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false); // State for menu visibility
-  const pathname = usePathname(); // Get the current route
+  // const pathname = usePathname(); // Get the current route
   const router = useRouter();
 
   const handleScroll = useCallback(() => {
@@ -110,7 +110,7 @@ export const NavbarMobile = () => {
     };
   }, [handleScroll]);
 
-  const isHomePage = pathname === "/";
+  // const isHomePage = pathname === "/";
 
   const handleNavItemClick = (target: string) => {
     if (target === "brands") {
