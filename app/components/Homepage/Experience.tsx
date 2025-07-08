@@ -49,7 +49,7 @@ export const Experience = () => {
           objectFit="cover" // Optional: to make sure the image is properly fitted
         />
       </div>
-      <h2 className="text-primary-100 text-center text-title-4 md:text-title-3 mb-8">
+      <h2 className="text-white text-center text-title-4 md:text-title-3 mb-8">
         Our Presence
       </h2>
       <div className="w-full max-w-6xl mx-auto flex flex-wrap justify-center gap-6 sm:gap-10 lg:gap-24 mt-5 md:mt-10">
@@ -71,7 +71,7 @@ export const Experience = () => {
             </div>
             <div className="text-center mt-4">
               <AnimatedCount count={stat.count} isInView={isInView} />
-              <p className="text-body-3 md:text-body-1 text-primary-500 font-medium">
+              <p className="text-body-3 md:text-body-1 text-primary-700 font-medium">
                 {stat.label}
               </p>
             </div>

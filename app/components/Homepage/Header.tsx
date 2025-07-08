@@ -3,7 +3,7 @@ import headerImage from "../../assets/images/export.png";
 
 export const Header = () => {
   return (
-    <div className="bg-primary-300 h-auto md:h-[90vh] pt-40 md:pt-20 overflow-hidden">
+    <div className="bg-white h-auto md:h-[90vh] pt-40 md:pt-20 overflow-hidden">
       <div className="px-10 flex flex-col md:flex-row gap-5 h-auto md:h-full items-center relative">
         {/* Text Section with chunky fall-down animation */}
         <motion.div
@@ -35,7 +35,7 @@ export const Header = () => {
             initial={{ opacity: 0, y: -100 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, ease: "easeOut", delay: 0.4 }}
-            className="text-primary-600 text-title-8 md:text-title-7 mt-10"
+            className="text-primary-700 text-title-8 md:text-title-7 mt-10"
           >
             Boost global business with our highly recommended trading company.
           </motion.p>

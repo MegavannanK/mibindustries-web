@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 export const ProductCategoryCard = ({
   name,
   packs,
@@ -16,15 +18,24 @@ export const ProductCategoryCard = ({
     >
       {/* Image */}
       <div className="p-2 relative w-full h-56 overflow-hidden rounded-t-md bg-gray-200">
-        <img
-          src={imageUrl}
-          alt={`Image of ${name} category`}
-          className="w-full h-full object-cover"
-        />
+        {imageUrl ? (
+          <Image
+            src={imageUrl}
+            alt={`Image of ${name} category`}
+            fill
+            className="object-cover"
+            // sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+            priority={false}
+          />
+        ) : (
+          <div className="w-full h-full bg-gray-300 flex items-center justify-center">
+            <span className="text-gray-500">No Image</span>
+          </div>
+        )}
       </div>
 
       {/* Content */}
-      <div className="rounded-b-md bg-primary-800 text-center py-4 px-4 text-primary-100 text-left flex flex-col gap-2">
+      <div className="rounded-b-md bg-primary-800 text-center py-4 px-4 text-primary-100  flex flex-col gap-2">
         <h3 className="font-bold text-body-2 sm:text-body-1 lg:text-title-8 xl:text-title-7">
           {name}
         </h3>

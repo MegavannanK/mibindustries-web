@@ -4,13 +4,13 @@ import Logo from "@/app/assets/images/logo.png";
 const contactData = [
   {
     icon: PhoneIncomingIcon,
-    text: "+91 9600261109",
-    link: "tel:+919600261109",
+    text: "+91 9363291001",
+    link: "tel:+919363291001",
   },
   {
     icon: MailIcon,
-    text: " Email@Email.Com",
-    href: "mailto:Email@Email.com",
+    text: "info@mibindustries.in",
+    href: "mailto:info@mibindustries.in",
   },
 ];
 
@@ -34,9 +34,9 @@ export const Footer = () => {
             <img
               src={Logo.src} // Replace with your logo's path
               alt="Logo"
-              className="h-12 w-12 object-contain"
+              className="h-[100px] w-[100px] object-contain"
             />
-            {/* <p className="text-2xl font-semibold text-red-600 mt-2">MIB</p> */}
+            {/* <h4 className="text-2xl font-semibold text-primary-600 mt-2">MIB INDUSTRIES</h4> */}
           </div>
         </div>
 

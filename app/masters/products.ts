@@ -20,16 +20,16 @@ export const products: Product[] = [
     name: "Rice",
     variants: [
       {
-        name: "Carbon Steel",
+        name: "Ponni Raw Rice",
         packs: [10, 20, 50],
       },
       {
-        name: "Alloy Steel",
+        name: "Ponni Parboiled Rice",
         packs: [15, 30, 60],
       },
     ],
     slug: "Rice",
-    description: "High-quality steel products.",
+    description: "High-quality rice products.",
     // image: `${CLOUDINARY_BASE_URL}/v1737311760/MIB-website/Homepage/Products/pjo8xfdpzkauayipda9v.png`,
     image: "https://res.cloudinary.com/dd7bw6igp/image/upload/v1748661250/MIB-website/Homepage/Products/wnoc8vv2x9l6v2vj3nmh.png",
   },
@@ -38,16 +38,16 @@ export const products: Product[] = [
     name: "Red chillies",
     variants: [
       {
-        name: "Polyethylene",
+        name: "Dry Red Chillies",
         packs: [5, 10, 25],
       },
       {
-        name: "Polypropylene",
+        name: "Red Chilli Powder",
         packs: [8, 16, 32],
       },
     ],
     slug: "red-chillies",
-    description: "Durable plastic products.",
+    description: "Spicy and flavorful red chillies.",
     // image: `${CLOUDINARY_BASE_URL}/v1737311763/MIB-website/Homepage/Products/vfsnl7s6rdzxowbivyxc.png`,
     image:"https://res.cloudinary.com/dd7bw6igp/image/upload/v1748661250/MIB-website/Homepage/Products/tgh2fpy49jlcnx1aux4o.png",
   },
@@ -56,11 +56,11 @@ export const products: Product[] = [
     name: "Indian Spices",
     variants: [
       {
-        name: "Portland Cement",
+        name: "Cloves",
         packs: [50, 100, 200],
       },
       {
-        name: "White Cement",
+        name: "Cinnamon",
         packs: [25, 50, 75],
       },
     ],
@@ -74,11 +74,11 @@ export const products: Product[] = [
     name: "Lentils & Pulses",
     variants: [
       {
-        name: "Softwood",
+        name: "Urad Dal",
         packs: [10, 20, 30],
       },
       {
-        name: "Hardwood",
+        name: "Toor Daal",
         packs: [15, 25, 35],
       },
     ],
@@ -93,11 +93,11 @@ export const products: Product[] = [
     name: "Pooja items",
     variants: [
       {
-        name: "Tempered Glass",
+        name: "Candles",
         packs: [5, 10, 15],
       },
       {
-        name: "Laminated Glass",
+        name: "Flowers",
         packs: [7, 14, 21],
       },
     ],
@@ -111,16 +111,16 @@ export const products: Product[] = [
     name: "Cooking Oil",
     variants: [
       {
-        name: "Wrought Iron",
+        name: "Peanut Oil",
         packs: [50, 100, 150],
       },
       {
-        name: "Cast Iron",
+        name: "Coconut Oil",
         packs: [75, 125, 175],
       },
     ],
     slug: "oil",
-    description: "Reliable iron products.",
+    description: "Cold-pressed cooking oil",
     // image: `${CLOUDINARY_BASE_URL}/v1737311763/MIB-website/Homepage/Products/iee5javiettgkgpem4xm.jpg`,
     image:" https://res.cloudinary.com/dd7bw6igp/image/upload/v1748661250/MIB-website/Homepage/Products/h0ucpr6cqrlnjcwmlk4d.png",
   },

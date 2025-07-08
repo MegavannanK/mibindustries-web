@@ -1,9 +1,5 @@
 import React, { useState, useEffect } from "react";
 import Container from "../ui/Container";
-import Link from "next/link";
-import {
-  ArrowRightIcon
-} from "@heroicons/react/solid";
 import Image from "next/image"; // Importing Next.js Image component
 import { success_story } from "@/app/masters/sucess_story";
 
@@ -28,13 +24,13 @@ export const OurWork: React.FC = () => {
       <Container className="grid grid-cols-1 md:grid-cols-2 gap-5 w-11/12 mx-auto items-center">
         {/* Left-side Text Content */}
         <div className="flex flex-col gap-5">
-          <h2 className="text-title-8 md:text-title-5 text-primary-700 font-bold mt-14">
+          <h2 className="text-title-8 md:text-title-5 text-primary-800 font-bold mt-14">
             Our Success Story
           </h2>
-          <h3 className="text-body-2 md:text-title-7 font-semibold">
+          <h3 className="text-body-2 md:text-title-7 font-semibold text-primary-700">
             Tailoring services for global exporters with personalized attention.
           </h3>
-          <div className="text-body-3 md:text-title-8 flex flex-col gap-2 md:gap-10">
+          <div className="text-body-3 md:text-title-8 flex flex-col gap-2 md:gap-10 text-primary-700">
             <p>
               Our creativity is driven by depth study in an effort to give you
               the best result and position of your product successfully in
@@ -47,7 +43,7 @@ export const OurWork: React.FC = () => {
             </p>
 
             {/* See More Link */}
-            <div className="text-center mt-5">
+            {/* <div className="text-center mt-5">
               <Link
                 href="/our-work-details"
                 className="text-primary-700 font-semibold flex items-center justify-center hover:text-primary-800 transition-all"
@@ -55,7 +51,7 @@ export const OurWork: React.FC = () => {
                 See More
                 <ArrowRightIcon className="ml-2 w-5 h-5" />
               </Link>
-            </div>
+            </div> */}
           </div>
         </div>
 

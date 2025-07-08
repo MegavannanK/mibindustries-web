@@ -4,6 +4,9 @@ import React, { useState } from "react";
 import { products } from "@/app/masters/products";
 import ProductCard from "../ui/ProductCard";
 import { motion } from "framer-motion";
+import Image from "next/image";
+import right_arrow from "@/app/assets/images/rightarrow.png"; 
+import left_arrow from "@/app/assets/images/leftarrow.png";// Import the arrow image
 
 export const Products = () => {
   const [visibleProducts, setVisibleProducts] = useState(products.slice(0, 3)); // Initial set of 3 products
@@ -34,10 +37,9 @@ export const Products = () => {
 
   return (
     <div className="bg-blue-900 py-8 w-full mx-auto">
-      <h2 className="text-primary-100 text-center text-title-4 md:text-title-3 mb-10 mt-8">
+      <h2 className="text-white text-center text-title-4 md:text-title-3 mb-10 mt-8">
         Products
       </h2>
-
       {/* Mobile View */}
       {/* <div className="">
         {products.slice(0, 3).map((product, index) => (
@@ -50,20 +52,18 @@ export const Products = () => {
         ))}
       </div> */}
 
-      {/* Desktop View */}
-      <div>
-        {/* Left Arrow */}
-        <div className="relative">
-        <motion.button
-          onClick={handleScrollLeft}
-          aria-label="Scroll left"
-          className=" absolute bottom-100px bg-white text-blue-900 p-3 rounded-full shadow-md hover:bg-blue-700 hover:text-white transition-all duration-200 focus:ring-2 focus:ring-blue-500"
-          whileHover={{ scale: 1.2 }} // Scale up on hover
-          whileTap={{ scale: 0.9 }}
-        >
-          &lt;
-        </motion.button>
-        </div>
+      <div className= "relative lg:flex lg:flex-row justify-center">
+
+          <motion.button
+            onClick={handleScrollLeft}
+            whileHover={{ scale: 1.2 }}
+            whileTap={{ scale: 0.9 }}
+            className="hidden lg:block"
+            aria-label="Scroll left"
+          >
+
+          <Image src={left_arrow} alt="temp" className="max-w-8" />
+          </motion.button>
 
         {/* Scrollable Container */}
         <motion.div
@@ -89,8 +89,20 @@ export const Products = () => {
           ))}
         </motion.div>
 
+          <motion.button
+            onClick={handleScrollRight}
+            whileHover={{ scale: 1.2 }}
+            whileTap={{ scale: 0.9 }}
+            className="hidden lg:block"
+            aria-label="Scroll right"
+          >
+
+            <Image src={right_arrow} alt="temp"  className="max-w-8" />
+          </motion.button>
+          
+
         {/* { Right Arrow } */}
-        {<motion.button
+        {/* {<motion.button
           onClick={handleScrollRight}
           aria-label="Scroll right"
           className=" bg-white text-blue-900 p-3 rounded-full shadow-md hover:bg-blue-700 hover:text-white transition-all duration-200 focus:ring-2 focus:ring-blue-500  "
@@ -98,7 +110,7 @@ export const Products = () => {
           whileTap={{ scale: 0.9 }}
         >
           &gt;
-        </motion.button>}
+        </motion.button>} */}
         </div>
       </div>
   );

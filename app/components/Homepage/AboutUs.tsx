@@ -1,25 +1,51 @@
 import Image from "next/image";
 import aboutUsImage from "../../assets/images/about-us.svg";
-import { useEffect} from "react";
+import { useEffect, useRef, useState } from "react";
 import { motion, useAnimation } from "framer-motion";
 
 export const AboutUs = () => {
   const controls = useAnimation();
+  const isMountedRef = useRef(false);
+  const [isVisible, setIsVisible] = useState(false);
+
   useEffect(() => {
+    isMountedRef.current = true;
+
     const handleScroll = () => {  
+      // Only proceed if component is still mounted
+      if (!isMountedRef.current) return;
+      
       const scrollPosition = window.scrollY;
-      if (scrollPosition > 825) {
-        controls.start({ opacity: 1 });
-      } else {
-        controls.start({ opacity: 0 });
-      }
+      const shouldBeVisible = scrollPosition > 825;
+      
+      // Only update if visibility state changes
+      setIsVisible(prev => {
+        if (prev !== shouldBeVisible) {
+          return shouldBeVisible;
+        }
+        return prev;
+      });
     };
 
     window.addEventListener("scroll", handleScroll);
+    
     return () => {
+      // Set mounted to false when component unmounts
+      isMountedRef.current = false;
       window.removeEventListener("scroll", handleScroll);
     };
-  }, [controls]);
+  }, []);
+
+  // Separate effect for controlling animations
+  useEffect(() => {
+    if (!isMountedRef.current) return;
+    
+    if (isVisible) {
+      controls.start({ opacity: 1 });
+    } else {
+      controls.start({ opacity: 0 });
+    }
+  }, [isVisible, controls]);
 
   return (
     <div className="bg-primary-100">
