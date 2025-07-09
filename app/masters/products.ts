@@ -31,7 +31,8 @@ export const products: Product[] = [
     slug: "Rice",
     description: "High-quality rice products.",
     // image: `${CLOUDINARY_BASE_URL}/v1737311760/MIB-website/Homepage/Products/pjo8xfdpzkauayipda9v.png`,
-    image: "https://res.cloudinary.com/dd7bw6igp/image/upload/v1748661250/MIB-website/Homepage/Products/wnoc8vv2x9l6v2vj3nmh.png",
+    // image: "https://res.cloudinary.com/dd7bw6igp/image/upload/v1748661250/MIB-website/Homepage/Products/wnoc8vv2x9l6v2vj3nmh.png",
+    image: "https://res.cloudinary.com/dd7bw6igp/image/upload/v1752072008/RICE_FRONT_PAGE_ofyz99.png",
   },
   {
     id: 2,
@@ -49,7 +50,8 @@ export const products: Product[] = [
     slug: "red-chillies",
     description: "Spicy and flavorful red chillies.",
     // image: `${CLOUDINARY_BASE_URL}/v1737311763/MIB-website/Homepage/Products/vfsnl7s6rdzxowbivyxc.png`,
-    image:"https://res.cloudinary.com/dd7bw6igp/image/upload/v1748661250/MIB-website/Homepage/Products/tgh2fpy49jlcnx1aux4o.png",
+    // image:"https://res.cloudinary.com/dd7bw6igp/image/upload/v1748661250/MIB-website/Homepage/Products/tgh2fpy49jlcnx1aux4o.png",
+    image: "https://res.cloudinary.com/dd7bw6igp/image/upload/v1752072251/CHILLI_FRONT_PAGE_lywwly.png",
   },
   {
     id: 3,
@@ -67,7 +69,7 @@ export const products: Product[] = [
     slug: "Indian Spices",
     description: "Special Aromatic spices.",
     // image: `${CLOUDINARY_BASE_URL}/v1742585491/MIB-website/Homepage/Products/n4m0owzntgvcphjnkd2g.png`,
-    image: "https://res.cloudinary.com/dd7bw6igp/image/upload/v1748661250/MIB-website/Homepage/Products/qc0can5un6uve6qxl64o.png",
+    image:"https://res.cloudinary.com/dd7bw6igp/image/upload/v1752072231/SPICES_FRONT_PAGES_wekkg2.png",
   },
   {
     id: 4,
@@ -85,8 +87,9 @@ export const products: Product[] = [
     slug: "lentils-pulses",
     description: "Premium lentils for good health",
     //image: `${CLOUDINARY_BASE_URL}/v1742586696/MIB-website/Homepage/Products/nsm2uzgf6nq5ppf7qohe.png`,
-    image: " https://res.cloudinary.com/dd7bw6igp/image/upload/v1748661250/MIB-website/Homepage/Products/j7mkfhesydtv5kzum94a.png",
+    image: "https://res.cloudinary.com/dd7bw6igp/image/upload/v1748661250/MIB-website/Homepage/Products/j7mkfhesydtv5kzum94a.png",
     
+
   },
   {
     id: 5,
