@@ -2,12 +2,29 @@
 
 import React, { useState } from "react";
 import { products } from "@/app/masters/products";
-import { motion } from "framer-motion";
-import { SearchIcon, FilterIcon } from "@heroicons/react/outline";
+import { motion, AnimatePresence } from "framer-motion";
+import { SearchIcon, FilterIcon, XIcon } from "@heroicons/react/outline";
+
+// Define types
+type Product = {
+  id: number;
+  image: string;
+  name: string;
+  variants?: Variant[];
+  slug: string;
+  description: string;
+};
+
+type Variant = {
+  name: string;
+  packs: number[];
+};
 
 export const ProductsPage = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedCategory, setSelectedCategory] = useState("all");
+  const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   // Get unique categories
   const categories = ["all", ...new Set(products.map(product => product.name.toLowerCase()))];
@@ -20,6 +37,19 @@ export const ProductsPage = () => {
                            product.name.toLowerCase().includes(selectedCategory);
     return matchesSearch && matchesCategory;
   });
+
+  // Modal handlers
+  const openModal = (product: Product) => {
+    setSelectedProduct(product);
+    setIsModalOpen(true);
+    document.body.style.overflow = 'hidden'; // Prevent background scroll
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false);
+    setSelectedProduct(null);
+    document.body.style.overflow = 'unset'; // Restore scroll
+  };
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -163,16 +193,22 @@ export const ProductsPage = () => {
                           </span>
                         ))}
                         {product.variants.length > 2 && (
-                          <span className="px-2 py-1 bg-primary-200 text-primary-700 rounded-full text-xs font-medium">
+                          <button
+                            onClick={() => openModal(product)}
+                            className="px-2 py-1 bg-primary-200 text-primary-700 rounded-full text-xs font-medium hover:bg-primary-300 transition-colors cursor-pointer"
+                          >
                             +{product.variants.length - 2} more
-                          </span>
+                          </button>
                         )}
                       </div>
                     </div>
                   )}
 
                   {/* Action Button */}
-                  <button className="w-full bg-gradient-to-r from-primary-600 to-primary-700 text-white py-3 px-4 rounded-lg hover:from-primary-700 hover:to-primary-800 transition-all duration-300 font-semibold shadow-md hover:shadow-lg">
+                  <button 
+                    onClick={() => openModal(product)}
+                    className="w-full bg-gradient-to-r from-primary-600 to-primary-700 text-white py-3 px-4 rounded-lg hover:from-primary-700 hover:to-primary-800 transition-all duration-300 font-semibold shadow-md hover:shadow-lg"
+                  >
                     View Details
                   </button>
                 </div>
@@ -234,6 +270,116 @@ export const ProductsPage = () => {
           </motion.div>
         </div>
       </div>
+
+      {/* Product Details Modal */}
+      <AnimatePresence>
+        {isModalOpen && selectedProduct && (
+          <motion.div
+            className="fixed inset-0 bg-black bg-opacity-50 backdrop-blur-sm z-50 flex items-center justify-center p-4"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            onClick={closeModal}
+          >
+            <motion.div
+              className="bg-white rounded-2xl max-w-4xl w-full max-h-[90vh] overflow-hidden shadow-2xl"
+              initial={{ scale: 0.9, opacity: 0, y: 20 }}
+              animate={{ scale: 1, opacity: 1, y: 0 }}
+              exit={{ scale: 0.9, opacity: 0, y: 20 }}
+              transition={{ type: "spring", damping: 25, stiffness: 300 }}
+              onClick={(e) => e.stopPropagation()}
+            >
+              {/* Modal Header */}
+              <div className="flex items-center justify-between p-6 border-b border-gray-200">
+                <h2 className="text-2xl font-bold text-primary-800">Product Details</h2>
+                <button
+                  onClick={closeModal}
+                  className="p-2 hover:bg-gray-100 rounded-full transition-colors"
+                >
+                  <XIcon className="h-6 w-6 text-gray-500" />
+                </button>
+              </div>
+
+              {/* Modal Content */}
+              <div className="overflow-y-auto max-h-[calc(90vh-80px)]">
+                <div className="p-6">
+                  <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                    {/* Product Image */}
+                    <div className="space-y-4">
+                      <div className="relative h-80 bg-gradient-to-br from-primary-50 to-primary-100 rounded-2xl overflow-hidden">
+                        <img
+                          src={selectedProduct.image}
+                          alt={selectedProduct.name}
+                          className="w-full h-full object-cover"
+                        />
+                      </div>
+                    </div>
+
+                    {/* Product Info */}
+                    <div className="space-y-6">
+                      <div>
+                        <h1 className="text-3xl font-bold text-primary-800 mb-2">
+                          {selectedProduct.name}
+                        </h1>
+                        <p className="text-primary-600 text-lg leading-relaxed">
+                          {selectedProduct.description}
+                        </p>
+                      </div>
+
+                      {/* All Variants */}
+                      {selectedProduct.variants && selectedProduct.variants.length > 0 && (
+                        <div>
+                          <h3 className="text-xl font-semibold text-primary-800 mb-4">
+                            Available Variants
+                          </h3>
+                          <div className="space-y-4">
+                            {selectedProduct.variants.map((variant: Variant, index: number) => (
+                              <motion.div
+                                key={index}
+                                className="bg-gray-50 rounded-xl p-4 hover:bg-gray-100 transition-colors"
+                                initial={{ opacity: 0, x: -20 }}
+                                animate={{ opacity: 1, x: 0 }}
+                                transition={{ delay: index * 0.1 }}
+                              >
+                                <h4 className="font-semibold text-primary-800 mb-2">
+                                  {variant.name}
+                                </h4>
+                                <div className="flex flex-wrap gap-2">
+                                  <span className="text-sm text-primary-600 font-medium">
+                                    Pack Sizes:
+                                  </span>
+                                  {variant.packs.map((pack: number, packIndex: number) => (
+                                    <span
+                                      key={packIndex}
+                                      className="inline-block bg-primary-100 text-primary-700 px-3 py-1 rounded-full text-sm font-medium"
+                                    >
+                                      {pack}kg
+                                    </span>
+                                  ))}
+                                </div>
+                              </motion.div>
+                            ))}
+                          </div>
+                        </div>
+                      )}
+
+                      {/* Action Buttons */}
+                      <div className="flex flex-col sm:flex-row gap-3 pt-4">
+                        <button className="flex-1 bg-gradient-to-r from-primary-600 to-primary-700 text-white py-3 px-6 rounded-lg hover:from-primary-700 hover:to-primary-800 transition-all duration-300 font-semibold shadow-lg hover:shadow-xl">
+                          Request Quote
+                        </button>
+                        <button className="flex-1 border-2 border-primary-600 text-primary-600 py-3 px-6 rounded-lg hover:bg-primary-600 hover:text-white transition-all duration-300 font-semibold">
+                          Contact Sales
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </div>
   );
 };
