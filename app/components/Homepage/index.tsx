@@ -9,6 +9,7 @@ import { Experience } from "./Experience";
 import { Header } from "./Header";
 // import { OurClients } from "./OurClients"; 
 import { OurWork } from "./OurWork";
+import { Services } from "./Services";
 
 
 export const Homepage = () => {
@@ -19,6 +20,7 @@ export const Homepage = () => {
       <AboutUs />
       <Flags />
       <Experience />
+      <Services />
       <OurWork />
       <BrandsMarquee />
       <BrandScroll />

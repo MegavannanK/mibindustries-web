@@ -1,5 +1,5 @@
 "use client";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { motion, useAnimation } from "framer-motion";
 import logo from "@/app/assets/images/logo.png";
 
@@ -9,8 +9,15 @@ export const SplashScreen = ({
   onAnimationComplete: () => void;
 }) => {
   const controls = useAnimation();
+  const [isClient, setIsClient] = useState(false);
 
   useEffect(() => {
+    setIsClient(true);
+  }, []);
+
+  useEffect(() => {
+    if (!isClient) return;
+
     const handleScroll = () => {
       controls.stop();
       onAnimationComplete();
@@ -37,7 +44,7 @@ export const SplashScreen = ({
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
-  }, [controls, onAnimationComplete]);
+  }, [controls, onAnimationComplete, isClient]);
 
   return (
     <motion.div

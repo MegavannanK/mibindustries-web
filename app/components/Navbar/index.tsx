@@ -10,7 +10,7 @@ const navItems = [
   { label: "Home", target: "/" },
   { label: "Products", target: "/products" },
   { label: "Contact Us", target: "/contact-us" },
-  { label: "Brands", target: "brands" },
+  { label: "Services", target: "/services" },
 ];
 
 export const NavbarDesktop = () => {
@@ -36,18 +36,7 @@ export const NavbarDesktop = () => {
   // const isHomePage = pathname === "/";
 
   const handleNavItemClick = (target: string) => {
-    if (target === "brands") {
-      // Check if we're already on the Brands section
-      const brandsSection = document.getElementById("brands");
-      if (brandsSection) {
-        brandsSection.scrollIntoView({ behavior: "smooth" });
-      } else {
-        // Navigate to the homepage and scroll to the Brands section
-        router.push("/#brands");
-      }
-    } else {
-      router.push(target); // Navigate to other routes
-    }
+    router.push(target); // Navigate to target route
   };
 
   return (
@@ -117,18 +106,7 @@ export const NavbarMobile = () => {
   // const isHomePage = pathname === "/";
 
   const handleNavItemClick = (target: string) => {
-    if (target === "brands") {
-      // Check if we're already on the Brands section
-      const brandsSection = document.getElementById("brands");
-      if (brandsSection) {
-        brandsSection.scrollIntoView({ behavior: "smooth" });
-      } else {
-        // Navigate to the homepage and scroll to the Brands section
-        router.push("");
-      }
-    } else {
-      router.push(target); // Navigate to other routes
-    }
+    router.push(target); // Navigate to target route
   };
 
   return (

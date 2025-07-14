@@ -24,15 +24,15 @@ export const products: Product[] = [
         packs: [10, 20, 50],
       },
       {
+        name: "Sona Masoori Rice",
+        packs: [15, 30, 60],
+      },
+      {
+        name: "Basmati Rice",
+        packs: [15, 30, 60],
+      },
+      {
         name: "Ponni Parboiled Rice",
-        packs: [15, 30, 60],
-      },
-      {
-        name: "Basmati",
-        packs: [15, 30, 60],
-      },
-      {
-        name: "Sona Masoori",
         packs: [15, 30, 60],
       },
     ],
@@ -52,6 +52,14 @@ export const products: Product[] = [
       },
       {
         name: "Cinnamon",
+        packs: [8, 16, 32],
+      },
+      {
+        name: "Cardamom",
+        packs: [8, 16, 32],
+      },
+            {
+        name: "Cardamom",
         packs: [8, 16, 32],
       },
     ],

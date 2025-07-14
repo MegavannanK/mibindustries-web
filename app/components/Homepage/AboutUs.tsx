@@ -48,7 +48,7 @@ export const AboutUs = () => {
   }, [isVisible, controls]);
 
   return (
-    <div className="bg-white">
+    <div className="bg-primary-100">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-5 items-center px-4 sm:px-6 md:px-10">
         <motion.div
           className="relative w-full"

@@ -1,18 +1,22 @@
 "use client";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Homepage } from "./components/Homepage";
 import Layout from "./components/Layout";
 import { SplashScreen } from "./components/Homepage/SplashScreen";
 
 export default function Home() {
-  const [showSplash, setShowSplash] = useState(() => {
+  const [showSplash, setShowSplash] = useState(true);
+  const [isClient, setIsClient] = useState(false);
 
-    // This runs only on the client-side(Browser)
-    if (typeof window !== 'undefined') {
-      return !sessionStorage.getItem('splashShown');
+  useEffect(() => {
+    setIsClient(true);
+    
+    // Check if splash was already shown in this session
+    const splashShown = sessionStorage.getItem('splashShown');
+    if (splashShown) {
+      setShowSplash(false);
     }
-    return true; // Default to true for SSR
-  });
+  }, []);
 
   const handleAnimationComplete = () => {
     // Mark splash as shown only when animation completes
@@ -20,7 +24,8 @@ export default function Home() {
     setShowSplash(false);
   };
 
-  if (showSplash) {
+  // Always render the same structure on server and initial client render
+  if (!isClient || showSplash) {
     return <SplashScreen onAnimationComplete={handleAnimationComplete} />;
   }
 

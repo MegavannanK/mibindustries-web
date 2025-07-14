@@ -15,6 +15,11 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "MIB Exports",
   description: "MIB Leading Exporters from India",
+  icons: {
+    icon: '/assets/images/logo.png',
+    shortcut: '/assets/images/logo.png',
+    apple: '/assets/images/logo.png',
+  },
 };
 
 export default function RootLayout({
@@ -24,6 +29,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <link rel="icon" href="/assets/images/logo.png" type="image/png" />
+      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >

@@ -37,7 +37,7 @@ export const Experience = () => {
   return (
     <div
       ref={elementRef}
-      className="bg-primary-800 px-4 py-12 md:py-16 lg:py-20 flex flex-col flex flex-col items-center justify-center"
+      className="bg-primary-800 px-4 py-12 md:py-16 lg:py-20 flex flex-col items-center justify-center"
     >
       <div className="relative">
         {/* Replacing <img> with next/image */}
