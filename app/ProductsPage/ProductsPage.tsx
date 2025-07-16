@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
+import Image from "next/image";
 import { products } from "@/app/masters/products";
 import { motion, AnimatePresence } from "framer-motion";
 import { SearchIcon, FilterIcon, XIcon } from "@heroicons/react/outline";
@@ -161,9 +162,10 @@ export const ProductsPage = () => {
               <div className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1">
                 {/* Product Image */}
                 <div className="relative h-64 bg-gradient-to-br from-primary-50 to-primary-100 overflow-hidden">
-                  <img
+                  <Image
                     src={product.image}
                     alt={product.name}
+                    fill
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
                   />
                   {/* Overlay */}
@@ -307,9 +309,10 @@ export const ProductsPage = () => {
                     {/* Product Image */}
                     <div className="space-y-4">
                       <div className="relative h-80 bg-gradient-to-br from-primary-50 to-primary-100 rounded-2xl overflow-hidden">
-                        <img
+                        <Image
                           src={selectedProduct.image}
                           alt={selectedProduct.name}
+                          fill
                           className="w-full h-full object-cover"
                         />
                       </div>

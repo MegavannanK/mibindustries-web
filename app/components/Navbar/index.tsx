@@ -156,7 +156,7 @@ export const NavbarMobile = () => {
         <div className={`absolute top-20 left-0 right-0 p-5 rounded-b-md transition-all duration-500 ${
           isScrolled 
             ? "bg-white/85 backdrop-blur-md border-b border-primary-200/50 text-primary-800" 
-            : "bg-primary-300/90 backdrop-blur-sm border border-primary-200/30 text-primary-800"
+            : "bg-transparent backdrop-blur-sm border-b border-primary-200/30 text-primary-800"
         }`}>
           <div className="flex flex-col items-center">
             {navItems.map((item, index) => (

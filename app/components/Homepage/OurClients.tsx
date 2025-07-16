@@ -1,3 +1,4 @@
+import Image from "next/image";
 import happyPeople from "../../assets/images/happyPeople.png";
 const ourCLientData = [
   {
@@ -18,11 +19,13 @@ export const OurClients = () => {
   return (
     <div className="bg-primary-900 px-4 py-6 h-[30vh] md:h-[50vh] overflow-hidden">
       <div className="relative">
-        <div className="absolute -top-[10rem] xl:-top-[30rem]">
-          <img
-            className=" opacity-20 "
-            src={happyPeople.src}
+        <div className="absolute -top-[10rem] xl:-top-[30rem] w-full h-full">
+          <Image
+            className="opacity-20"
+            src={happyPeople}
             alt="Happy People"
+            fill
+            style={{ objectFit: 'cover' }}
           />
         </div>
         <div className="flex flex-col gap-5 left-1/2 -translate-x-1/2 top-[5rem] md:top-[10rem] absolute">

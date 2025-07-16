@@ -10,6 +10,7 @@ import { Header } from "./Header";
 // import { OurClients } from "./OurClients"; 
 import { OurWork } from "./OurWork";
 import { Services } from "./Services";
+import { GlobalPresence } from "./GlobalPresence";
 
 
 export const Homepage = () => {
@@ -17,6 +18,7 @@ export const Homepage = () => {
     <div>
       <Header />
       <Products />
+      <GlobalPresence />
       <AboutUs />
       <Flags />
       <Experience />

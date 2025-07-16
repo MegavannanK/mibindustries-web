@@ -37,9 +37,6 @@ const ProductCard: React.FC<ProductCardProps> = ({
   return (
     <div className="p-4" onClick={onClick}>
       <div className="bg-white drop-shadow-primary rounded-lg overflow-hidden p-4 mx-auto">
-        {/* <div className="w-11/12 h-40 mx-auto">
-          <img src={image} alt={title} className="w-full h-full object-fit" />
-        </div> */}
         <div className={imageContainerClass}>
           <Image
             unoptimized

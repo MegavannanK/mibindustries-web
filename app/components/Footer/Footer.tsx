@@ -1,4 +1,5 @@
 import { MailIcon, PhoneIncomingIcon } from "@heroicons/react/solid";
+import Image from "next/image";
 import Logo from "@/app/assets/images/logo.png";
 
 const contactData = [
@@ -31,11 +32,14 @@ export const Footer = () => {
         {/* First Row: Logo */}
         <div className="flex justify-center items-center">
           <div className="flex flex-col items-center">
-            <img
-              src={Logo.src} // Replace with your logo's path
-              alt="Logo"
-              className="h-[100px] w-[100px] object-contain"
-            />
+            <div className="relative h-[100px] w-[100px]">
+              <Image
+                src={Logo}
+                alt="Logo"
+                fill
+                className="object-contain"
+              />
+            </div>
             {/* <h4 className="text-2xl font-semibold text-primary-600 mt-2">MIB INDUSTRIES</h4> */}
           </div>
         </div>
