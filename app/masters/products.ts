@@ -20,15 +20,15 @@ export const products: Product[] = [
     name: "Rice",
     variants: [
       {
-        name: "Ponni Raw Rice",
+        name: "Ponni Raw",
         packs: [10, 20, 50],
       },
       {
-        name: "Sona Masoori Rice",
+        name: "Basmati",
         packs: [15, 30, 60],
       },
       {
-        name: "Basmati Rice",
+        name: "Sona Masoori",
         packs: [15, 30, 60],
       },
       {
@@ -40,7 +40,7 @@ export const products: Product[] = [
     description: "High-quality rice products.",
     // image: `${CLOUDINARY_BASE_URL}/v1737311760/MIB-website/Homepage/Products/pjo8xfdpzkauayipda9v.png`,
     // image: "https://res.cloudinary.com/dd7bw6igp/image/upload/v1748661250/MIB-website/Homepage/Products/wnoc8vv2x9l6v2vj3nmh.png",
-    image: "https://res.cloudinary.com/dd7bw6igp/image/upload/v1752256247/rice_product_img_atnfyj.png",
+    image: "https://res.cloudinary.com/dd7bw6igp/image/upload/w_450,h_340,c_fill,f_auto,q_auto:good/v1752256247/rice_product_img_atnfyj.png",
   },
   {
     id: 2,
@@ -67,7 +67,7 @@ export const products: Product[] = [
     description: "Special Aromatic spices.",
     // image: `${CLOUDINARY_BASE_URL}/v1737311763/MIB-website/Homepage/Products/vfsnl7s6rdzxowbivyxc.png`,
     // image:"https://res.cloudinary.com/dd7bw6igp/image/upload/v1748661250/MIB-website/Homepage/Products/tgh2fpy49jlcnx1aux4o.png",
-    image: "https://res.cloudinary.com/dd7bw6igp/image/upload/v1752256127/Spices_product_img_gs0qes.png",
+    image: "https://res.cloudinary.com/dd7bw6igp/image/upload/w_450,h_340,c_fill,f_auto,q_auto:good/v1752256127/Spices_product_img_gs0qes.png",
   },
   {
     id: 3,
@@ -85,7 +85,7 @@ export const products: Product[] = [
     slug: "red-chillies",
     description: "Spicy and flavorful red chillies.",
     // image: `${CLOUDINARY_BASE_URL}/v1742585491/MIB-website/Homepage/Products/n4m0owzntgvcphjnkd2g.png`,
-    image:"https://res.cloudinary.com/dd7bw6igp/image/upload/v1752256206/RedChilli_product_img_uam3un.png",
+    image:"https://res.cloudinary.com/dd7bw6igp/image/upload/w_450,h_340,c_fill,f_auto,q_auto:good/v1752256206/RedChilli_product_img_uam3un.png",
   },
   {
     id: 4,
@@ -103,7 +103,7 @@ export const products: Product[] = [
     slug: "oil",
     description: "Cold-pressed cooking oil",
     // image: `${CLOUDINARY_BASE_URL}/v1737311763/MIB-website/Homepage/Products/iee5javiettgkgpem4xm.jpg`,
-    image:"https://res.cloudinary.com/dd7bw6igp/image/upload/v1752256173/Oil_product_img_e6smfw.png",
+    image:"https://res.cloudinary.com/dd7bw6igp/image/upload/w_450,h_340,c_fill,f_auto,q_auto:good/v1752256173/Oil_product_img_e6smfw.png",
   },
   {
     id: 5,
@@ -121,7 +121,7 @@ export const products: Product[] = [
     slug: "lentils-pulses",
     description: "Premium lentils for good health",
     //image: `${CLOUDINARY_BASE_URL}/v1742586696/MIB-website/Homepage/Products/nsm2uzgf6nq5ppf7qohe.png`,
-    image: "https://res.cloudinary.com/dd7bw6igp/image/upload/v1752256144/Lentils_product_img_p8dv5z.png",
+    image: "https://res.cloudinary.com/dd7bw6igp/image/upload/w_450,h_340,c_fill,f_auto,q_auto:good/v1752256144/Lentils_product_img_p8dv5z.png",
     
 
   },
@@ -141,7 +141,7 @@ export const products: Product[] = [
     slug: "indian-snacks",
     description: "Delicious and crispy Indian snacks.",
     // image: `${CLOUDINARY_BASE_URL}/v1742585847/MIB-website/Homepage/Products/wcnurzsoviynizrrnki2.jpg`,
-    image: "https://res.cloudinary.com/dd7bw6igp/image/upload/v1752256200/IndainSnacks_product_img_ihevtu.png",
+    image: "https://res.cloudinary.com/dd7bw6igp/image/upload/w_450,h_340,c_fill,f_auto,q_auto:good/v1752256200/IndainSnacks_product_img_ihevtu.png",
   },
      {
     id: 7,
@@ -157,9 +157,9 @@ export const products: Product[] = [
       },
     ],
     slug: "essentials",
-    description: "High-quality essentials for your daily needs.",
+    description: "High-quality essentials.",
     // image: `${CLOUDINARY_BASE_URL}/v1742585847/MIB-website/Homepage/Products/wcnurzsoviynizrrnki2.jpg`,
-    image: "https://res.cloudinary.com/dd7bw6igp/image/upload/v1752263406/jaggery_product_image.png",
+    image: "https://res.cloudinary.com/dd7bw6igp/image/upload/w_450,h_340,c_fill,f_auto,q_auto:good/v1752263406/jaggery_product_image.png",
   },
    {
     id: 8,
@@ -177,7 +177,7 @@ export const products: Product[] = [
     slug: "dry-fruits-nuts",
     description: "High-quality dry fruits and nuts.",
     // image: `${CLOUDINARY_BASE_URL}/v1742585847/MIB-website/Homepage/Products/wcnurzsoviynizrrnki2.jpg`,
-    image: "https://res.cloudinary.com/dd7bw6igp/image/upload/v1752260415/fruits_nuts_product_img_kju5au.png",
+    image: "https://res.cloudinary.com/dd7bw6igp/image/upload/w_450,h_340,c_fill,f_auto,q_auto:good/v1752260415/fruits_nuts_product_img_kju5au.png",
   },
 
     {
@@ -196,7 +196,7 @@ export const products: Product[] = [
     slug: "pooja-items",
     description: "Traditional & Holy Pooja products.",
     // image: `${CLOUDINARY_BASE_URL}/v1742585847/MIB-website/Homepage/Products/wcnurzsoviynizrrnki2.jpg`,
-    image: "https://res.cloudinary.com/dd7bw6igp/image/upload/v1752256312/poojaItem_products_img_mh6uzh.png",
+    image: "https://res.cloudinary.com/dd7bw6igp/image/upload/w_450,h_340,c_fill,f_auto,q_auto:good/v1752256312/poojaItem_products_img_mh6uzh.png",
   },
   {
     id: 10,
@@ -214,7 +214,7 @@ export const products: Product[] = [
     slug: "brass-items",
     description: "Traditional & Holy Brass products.",
     // image: `${CLOUDINARY_BASE_URL}/v1742585847/MIB-website/Homepage/Products/wcnurzsoviynizrrnki2.jpg`,
-    image: "https://res.cloudinary.com/dd7bw6igp/image/upload/v1752256185/BrassItem_product_img_nahszx.png",
+    image: "https://res.cloudinary.com/dd7bw6igp/image/upload/w_450,h_340,c_fill,f_auto,q_auto:good/v1752256185/BrassItem_product_img_nahszx.png",
   },
   {
     id: 11,
@@ -230,9 +230,9 @@ export const products: Product[] = [
       },
     ],
     slug: "cookwares",
-    description: "High-quality cooking utensils for your kitchen.",
+    description: "Premium ooking utensils.",
     // image: `${CLOUDINARY_BASE_URL}/v1742585847/MIB-website/Homepage/Products/wcnurzsoviynizrrnki2.jpg`,
-    image: "https://res.cloudinary.com/dd7bw6igp/image/upload/v1752256195/Cookware_product_img_mas12k.png",
+    image: "https://res.cloudinary.com/dd7bw6igp/image/upload/w_450,h_340,c_fill,f_auto,q_auto:good/v1752256195/Cookware_product_img_mas12k.png",
   },
   {
     id: 12,
@@ -248,9 +248,9 @@ export const products: Product[] = [
       },
     ],
     slug: "essentials",
-    description: "High-quality essentials for your daily needs.",
+    description: "Premium daily needs.",
     // image: `${CLOUDINARY_BASE_URL}/v1742585847/MIB-website/Homepage/Products/wcnurzsoviynizrrnki2.jpg`,
-    image: "https://res.cloudinary.com/dd7bw6igp/image/upload/v1752260408/daily_need_product_img_bzgp6z.png",
+    image: "https://res.cloudinary.com/dd7bw6igp/image/upload/w_450,h_340,c_fill,f_auto,q_auto:good/v1752260408/daily_need_product_img_bzgp6z.png",
   },
 
 
