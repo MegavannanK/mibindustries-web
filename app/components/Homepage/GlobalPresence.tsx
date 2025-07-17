@@ -20,15 +20,15 @@ interface Branch {
   bgGlow: string;
   icon: string;
   countryCode: string;
-  stats: {
-    employees: string;
-    clients: string;
-    projects: string;
-  };
-  contact: {
-    phone: string;
-    email: string;
-  };
+  // stats: {
+  //   employees: string;
+  //   clients: string;
+  //   projects: string;
+  // };
+  // contact: {
+  //   phone: string;
+  //   email: string;
+  // };
 }
 
 const branches: Branch[] = [
@@ -46,15 +46,15 @@ const branches: Branch[] = [
     bgGlow: "shadow-primary-500/20",
     icon: "🇸🇬",
     countryCode: "SG",
-    stats: {
-      employees: "15+",
-      clients: "Asia-Pacific",
-      projects: "Strategic Location"
-    },
-    contact: {
-      phone: "+65 8123 4567",
-      email: "singapore@mib.com"
-    }
+    // stats: {
+    //   employees: "15+",
+    //   clients: "Asia-Pacific",
+    //   projects: "Strategic Location"
+    // },
+    // contact: {
+    //   phone: "+65 8123 4567",
+    //   email: "singapore@mib.com"
+    // }
   },
   {
     id: 2,
@@ -70,15 +70,15 @@ const branches: Branch[] = [
     bgGlow: "shadow-primary-700/20",
     icon: "🇮🇳",
     countryCode: "IN",
-    stats: {
-      employees: "25+",
-      clients: "Manufacturing Hub",
-      projects: "Export Gateway"
-    },
-    contact: {
-      phone: "+91 44 1234 5678",
-      email: "chennai@mib.com"
-    }
+    // stats: {
+    //   employees: "25+",
+    //   clients: "Manufacturing Hub",
+    //   projects: "Export Gateway"
+    // },
+    // contact: {
+    //   phone: "+91 44 1234 5678",
+    //   email: "chennai@mib.com"
+    // }
   }
 ];
 
@@ -403,7 +403,7 @@ export const GlobalPresence = () => {
                     </motion.div>
 
                     {/* Modern Statistics Cards */}
-                    <motion.div 
+                    {/* <motion.div 
                       initial={{ opacity: 0, y: 40 }}
                       whileInView={{ opacity: 1, y: 0 }}
                       viewport={{ once: true, amount: 0.5 }}
@@ -411,9 +411,9 @@ export const GlobalPresence = () => {
                       className="grid grid-cols-3 gap-4"
                     >
                       {[
-                        { value: branch.stats.employees, label: "Countries" },
-                        { value: "500+", label: "Products" },
-                        { value: "24/7", label: "Operations" }
+                        // { value: branch.stats.employees, label: "Countries" },
+                        // { value: "500+", label: "Products" },
+                        // { value: "24/7", label: "Operations" }
                       ].map((stat, statIndex) => (
                         <motion.div
                           key={statIndex}
@@ -460,7 +460,7 @@ export const GlobalPresence = () => {
                           </div>
                         </motion.div>
                       ))}
-                    </motion.div>
+                    </motion.div> */}
 
                     {/* Modern Status Indicators */}
                     <motion.div 
