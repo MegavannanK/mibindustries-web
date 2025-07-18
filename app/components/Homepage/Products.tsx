@@ -36,10 +36,18 @@ export const Products = () => {
   };
 
   return (
-    <div className="bg-blue-900 py-8 w-full mx-auto">
-      <h2 className="text-white text-center text-title-4 md:text-title-3 mb-10 mt-8">
-        Products
-      </h2>
+    <div className="bg-gradient-to-r from-primary-600 via-primary-700 to-primary-800 py-8 w-full mx-auto relative overflow-hidden">
+      <div className="absolute inset-0 opacity-10">
+        <motion.div 
+          animate={{ scale: [1, 1.2, 1], rotate: [0, 180, 360] }}
+          transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+          className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_50%_120%,rgba(255,255,255,0.3),transparent)]"
+        ></motion.div>
+      </div>
+      <div className="relative z-10">
+        <h2 className="text-white text-center text-title-4 md:text-title-3 mb-10 mt-8">
+          Products
+        </h2>
       {/* Mobile View */}
       {/* <div className="">
         {products.slice(0, 3).map((product, index) => (
@@ -112,6 +120,7 @@ export const Products = () => {
           &gt;
         </motion.button>} */}
         </div>
+      </div>
       </div>
   );
 };

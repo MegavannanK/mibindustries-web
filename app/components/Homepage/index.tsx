@@ -17,12 +17,12 @@ export const Homepage = () => {
     <div>
       <Header />
       <Products />
+      <OurWork />
       <GlobalPresence />
       <AboutUs />
       <Flags />
       {/* <Experience /> */}
       <Services />
-      <OurWork />
       <BrandsMarquee />
       <BrandScroll />
       {/* <OurClients /> */}

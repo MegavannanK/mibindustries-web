@@ -36,10 +36,10 @@ const branches: Branch[] = [
     id: 1,
     country: "Singapore",
     city: "Trade Hub",
-    address: "Marina Bay Financial Centre, Singapore",
+    address: "21 BUKIT BATOK CRESENT, #12-75 SINGAPORE 658065",
     coordinates: { lat: 1.2833, lng: 103.8667 },
     timezone: "GMT+8",
-    established: "2020",
+    established: "2018",
     primaryColor: "from-primary-500 to-primary-700",
     accentColor: "bg-primary-100",
     textColor: "text-primary-700",
@@ -59,11 +59,11 @@ const branches: Branch[] = [
   {
     id: 2,
     country: "India",
-    city: "Chennai",
-    address: "Export Industrial Estate, Tamil Nadu",
+    city: "HeadQuarters",
+    address: "37/17, Reddy St, Periyar Nagar, Korattur, Chennai-600080",
     coordinates: { lat: 13.0827, lng: 80.2707 },
     timezone: "GMT+5:30",
-    established: "2018",
+    established: "2013",
     primaryColor: "from-primary-700 to-primary-900",
     accentColor: "bg-primary-50",
     textColor: "text-primary-800",
@@ -700,125 +700,133 @@ export const GlobalPresence = () => {
                 {[
                   { 
                     label: "GST Registration", 
-                    value: "33AABCS1234A1Z5", 
+                    value: "33ITKPM7611C1ZQ", 
                     description: "Goods & Services Tax",
                     icon: "📋"
                   },
                   { 
-                    label: "Export License", 
-                    value: "AEOP12345", 
-                    description: "Authorized Export Operations",
+                    label: "Import Export License", 
+                    value: "ITKPM7611C", 
+                    description: "Authorized Import & Export Operations",
                     icon: "🌍"
                   },
                   { 
                     label: "ISO Certified", 
-                    value: "ISO 9001:2015", 
+                    value: "ISO 22000:2005", 
                     description: "Quality Management",
                     icon: "🏆"
                   }
                 ].map((credential, index) => (
                   <motion.div
                     key={index}
-                    initial={{ opacity: 0, scale: 0.8, y: 40 }}
-                    whileInView={{ opacity: 1, scale: 1, y: 0 }}
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true, amount: 0.3 }}
                     transition={{ 
-                      duration: 0.8, 
-                      delay: 0.6 + index * 0.2,
-                      type: "spring",
-                      stiffness: 100
+                      duration: 0.5, 
+                      delay: index * 0.1,
+                      ease: "easeOut"
                     }}
                     whileHover={{ 
-                      scale: 1.05, 
-                      y: -10,
-                      transition: { duration: 0.3 }
+                      scale: 1.03,
+                      y: -5,
+                      transition: { duration: 0.2 }
                     }}
                     className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20 hover:border-white/40 transition-all duration-300"
                   >
                     <motion.div 
-                      animate={{ 
-                        rotate: [0, 5, 0, -5, 0]
-                      }}
-                      transition={{ 
-                        duration: 6 + index, 
-                        repeat: Infinity, 
-                        ease: "easeInOut",
-                        delay: index * 0.5
-                      }}
+                      initial={{ opacity: 0, y: 20 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ duration: 0.4, delay: 0.2 + index * 0.1 }}
                       className="text-2xl mb-3"
-                    >{credential.icon}</motion.div>
+                    >
+                      {credential.icon}
+                    </motion.div>
                     
                     <motion.div 
-                      initial={{ opacity: 0, y: 15 }}
+                      initial={{ opacity: 0, y: 20 }}
                       whileInView={{ opacity: 1, y: 0 }}
                       viewport={{ once: true }}
-                      transition={{ duration: 0.6, delay: 0.8 + index * 0.2 }}
+                      transition={{ duration: 0.4, delay: 0.3 + index * 0.1 }}
                       className="text-sm text-white/70 uppercase tracking-wider font-semibold mb-2"
-                    >{credential.label}</motion.div>
+                    >
+                      {credential.label}
+                    </motion.div>
                     
                     <motion.div 
-                      initial={{ opacity: 0, scale: 0.9 }}
-                      whileInView={{ opacity: 1, scale: 1 }}
-                      viewport={{ once: true }}
-                      transition={{ duration: 0.8, delay: 0.9 + index * 0.2 }}
-                      className="text-lg font-bold text-white mb-2 font-mono tracking-wide"
-                    >{credential.value}</motion.div>
-                    
-                    <motion.div 
-                      initial={{ opacity: 0, y: 10 }}
+                      initial={{ opacity: 0, y: 20 }}
                       whileInView={{ opacity: 1, y: 0 }}
                       viewport={{ once: true }}
-                      transition={{ duration: 0.6, delay: 1.0 + index * 0.2 }}
+                      transition={{ duration: 0.4, delay: 0.4 + index * 0.1 }}
+                      className="text-lg font-bold text-white mb-2 font-mono tracking-wide"
+                    >
+                      {credential.value}
+                    </motion.div>
+                    
+                    <motion.div 
+                      initial={{ opacity: 0, y: 20 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ duration: 0.4, delay: 0.5 + index * 0.1 }}
                       className="text-xs text-white/60"
-                    >{credential.description}</motion.div>
+                    >
+                      {credential.description}
+                    </motion.div>
                   </motion.div>
                 ))}
               </div>
 
               {/* Trust Indicators */}
-              <motion.div 
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, amount: 0.5 }}
-                transition={{ duration: 0.8, delay: 1.2 }}
-                className="flex items-center justify-center gap-8 mt-8 pt-6 border-t border-white/20"
-              >
+              <div className="flex items-center justify-center gap-8 mt-8 pt-6 border-t border-white/20">
                 <motion.div 
-                  whileHover={{ scale: 1.05 }}
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, amount: 0.5 }}
+                  transition={{ type: "spring", stiffness: 100, damping: 20, delay: 0.1 }}
+                  whileHover={{ scale: 1.03, y: -2, transition: { type: "tween", ease: "easeOut", duration: 0.3 } }}
                   className="flex items-center gap-2"
                 >
                   <motion.div 
-                    animate={{ scale: [1, 1.2, 1] }}
-                    transition={{ duration: 2, repeat: Infinity, delay: 0.5 }}
                     className="w-3 h-3 bg-green-400 rounded-full"
-                  ></motion.div>
+                    animate={{ scale: [1, 1.2, 1], opacity: [0.7, 1, 0.7] }}
+                    transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+                  />
                   <span className="text-sm font-semibold text-white/90 tracking-wide">Government Verified</span>
                 </motion.div>
                 
                 <motion.div 
-                  whileHover={{ scale: 1.05 }}
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, amount: 0.5 }}
+                  transition={{ type: "spring", stiffness: 100, damping: 20, delay: 0.2 }}
+                  whileHover={{ scale: 1.03, y: -2, transition: { type: "tween", ease: "easeOut", duration: 0.3 } }}
                   className="flex items-center gap-2"
                 >
                   <motion.div 
-                    animate={{ rotate: [0, 360] }}
-                    transition={{ duration: 8, repeat: Infinity, ease: "linear" }}
                     className="w-3 h-3 bg-blue-400 rounded-full"
-                  ></motion.div>
+                    animate={{ scale: [1, 1.2, 1], opacity: [0.7, 1, 0.7] }}
+                    transition={{ duration: 2.2, repeat: Infinity, ease: "easeInOut", delay: 0.2 }}
+                  />
                   <span className="text-sm font-semibold text-white/90 tracking-wide">Export Authorized</span>
                 </motion.div>
                 
                 <motion.div 
-                  whileHover={{ scale: 1.05 }}
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, amount: 0.5 }}
+                  transition={{ type: "spring", stiffness: 100, damping: 20, delay: 0.3 }}
+                  whileHover={{ scale: 1.03, y: -2, transition: { type: "tween", ease: "easeOut", duration: 0.3 } }}
                   className="flex items-center gap-2"
                 >
                   <motion.div 
-                    animate={{ scale: [1, 1.3, 1], opacity: [0.7, 1, 0.7] }}
-                    transition={{ duration: 3, repeat: Infinity, delay: 1 }}
                     className="w-3 h-3 bg-yellow-400 rounded-full"
-                  ></motion.div>
+                    animate={{ scale: [1, 1.2, 1], opacity: [0.7, 1, 0.7] }}
+                    transition={{ duration: 2.4, repeat: Infinity, ease: "easeInOut", delay: 0.4 }}
+                  />
                   <span className="text-sm font-semibold text-white/90 tracking-wide">Quality Certified</span>
                 </motion.div>
-              </motion.div>
+              </div>
             </div>
 
             {/* Enhanced Floating Elements */}
