@@ -96,42 +96,13 @@ const containerVariants = {
 const cardVariants = {
   hidden: { 
     opacity: 0, 
-    y: 80,
-    scale: 0.9,
-    rotateX: 15
+    y: 50
   },
   visible: { 
     opacity: 1, 
     y: 0,
-    scale: 1,
-    rotateX: 0,
     transition: {
-      type: "spring",
-      stiffness: 80,
-      damping: 20,
-      duration: 1.2,
-      ease: "easeOut"
-    }
-  }
-};
-
-const mobileCardVariants = {
-  hidden: { 
-    opacity: 0, 
-    y: 100,
-    scale: 0.85,
-    rotateY: 10
-  },
-  visible: { 
-    opacity: 1, 
-    y: 0,
-    scale: 1,
-    rotateY: 0,
-    transition: {
-      type: "spring",
-      stiffness: 60,
-      damping: 15,
-      duration: 1.5,
+      duration: 0.6,
       ease: "easeOut"
     }
   }
@@ -140,31 +111,14 @@ const mobileCardVariants = {
 const headerVariants = {
   hidden: { 
     opacity: 0, 
-    y: 50,
-    scale: 0.95
+    y: 30,
   },
   visible: { 
     opacity: 1, 
     y: 0,
-    scale: 1,
     transition: {
-      type: "spring",
-      stiffness: 100,
-      damping: 20,
-      duration: 1.0
-    }
-  }
-};
-
-const floatingVariants = {
-  initial: { y: 0, rotate: 0 },
-  animate: {
-    y: [-15, 15, -15],
-    rotate: [0, 5, 0, -5, 0],
-    transition: {
-      duration: 8,
-      repeat: Infinity,
-      ease: "easeInOut"
+      duration: 0.8,
+      ease: "easeOut"
     }
   }
 };
@@ -239,18 +193,11 @@ export const GlobalPresence = () => {
           {branches.map((branch, index) => (
             <motion.div
               key={branch.id}
-              variants={window.innerWidth < 768 ? mobileCardVariants : cardVariants}
+              variants={cardVariants}
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true, amount: 0.3 }}
-              transition={{ delay: index * 0.3 }}
-              whileHover={{ 
-                y: -12,
-                scale: 1.03,
-                rotateY: window.innerWidth < 768 ? 2 : 0,
-                transition: { type: "spring", stiffness: 300, damping: 25 }
-              }}
-              whileTap={{ scale: 0.98 }}
+              whileHover={{ y: -8, transition: { duration: 0.3, ease: "easeOut" } }}
               className="group relative"
             >
               {/* Ultra Modern Card Design */}
@@ -262,33 +209,13 @@ export const GlobalPresence = () => {
                   <div className={`relative h-40 bg-gradient-to-br ${branch.primaryColor} overflow-hidden`}>
                     {/* Dynamic Background Pattern */}
                     <div className="absolute inset-0">
-                      <motion.div 
-                        animate={{ scale: [1, 1.2, 1], opacity: [0.1, 0.2, 0.1] }}
-                        transition={{ duration: 4, repeat: Infinity, delay: index * 0.5 }}
-                        className="absolute top-4 right-6 w-20 h-20 bg-white/10 rounded-full blur-2xl"
-                      ></motion.div>
-                      <motion.div 
-                        animate={{ scale: [1.2, 1, 1.2], opacity: [0.15, 0.25, 0.15] }}
-                        transition={{ duration: 5, repeat: Infinity, delay: index * 0.7 }}
-                        className="absolute bottom-4 left-6 w-16 h-16 bg-white/15 rounded-full blur-xl"
-                      ></motion.div>
-                      <motion.div 
-                        animate={{ rotate: [0, 360] }}
-                        transition={{ duration: 25, repeat: Infinity, ease: "linear" }}
-                        className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-32 h-32 bg-white/5 rounded-full blur-3xl"
-                      ></motion.div>
+                      {/* Simplified background elements - no infinite animations */}
+                      <div className="absolute top-4 right-6 w-20 h-20 bg-white/10 rounded-full blur-2xl opacity-20"></div>
+                      <div className="absolute bottom-4 left-6 w-16 h-16 bg-white/15 rounded-full blur-xl opacity-25"></div>
                       
-                      {/* Geometric Shapes */}
-                      <motion.div 
-                        animate={{ rotate: [12, 25, 12], scale: [1, 1.1, 1] }}
-                        transition={{ duration: 6, repeat: Infinity, delay: index * 0.3 }}
-                        className="absolute top-6 left-8 w-8 h-8 border-2 border-white/20 rounded-lg"
-                      ></motion.div>
-                      <motion.div 
-                        animate={{ y: [0, -10, 0], scale: [1, 1.2, 1] }}
-                        transition={{ duration: 4, repeat: Infinity, delay: index * 0.4 }}
-                        className="absolute bottom-8 right-8 w-6 h-6 bg-white/20 rounded-full"
-                      ></motion.div>
+                      {/* Static geometric shapes */}
+                      <div className="absolute top-6 left-8 w-8 h-8 border-2 border-white/20 rounded-lg"></div>
+                      <div className="absolute bottom-8 right-8 w-6 h-6 bg-white/20 rounded-full"></div>
                     </div>
                     
                     {/* Country Info - Modern Layout */}
@@ -302,16 +229,7 @@ export const GlobalPresence = () => {
                           className="flex items-center gap-4"
                         >
                           <div className="relative">
-                            <motion.div 
-                              animate={{ rotate: [0, 5, 0, -5, 0] }}
-                              transition={{ duration: 8, repeat: Infinity, delay: index * 0.5 }}
-                              className="text-4xl filter drop-shadow-lg"
-                            >{branch.icon}</motion.div>
-                            <motion.div 
-                              animate={{ scale: [1, 1.3, 1] }}
-                              transition={{ duration: 2, repeat: Infinity, delay: index * 0.3 }}
-                              className="absolute -bottom-1 -right-1 w-3 h-3 bg-white/30 rounded-full"
-                            ></motion.div>
+                            <div className="text-4xl filter drop-shadow-lg">{branch.icon}</div>
                           </div>
                           <div className="text-white">
                             <motion.h3 
@@ -352,11 +270,7 @@ export const GlobalPresence = () => {
                         transition={{ duration: 0.6, delay: 0.6 + index * 0.1 }}
                         className="flex items-center gap-2 text-white/90"
                       >
-                        <motion.div 
-                          animate={{ scale: [1, 1.2, 1] }}
-                          transition={{ duration: 3, repeat: Infinity, delay: index * 0.5 }}
-                          className="w-2 h-2 bg-white/50 rounded-full"
-                        ></motion.div>
+                        <div className="w-2 h-2 bg-white/50 rounded-full"></div>
                         <span className="text-sm font-medium">Established {branch.established}</span>
                       </motion.div>
                     </div>
@@ -386,7 +300,7 @@ export const GlobalPresence = () => {
                             whileInView={{ opacity: 1, x: 0 }}
                             viewport={{ once: true }}
                             transition={{ duration: 0.6, delay: 0.3 + index * 0.1 }}
-                            className="text-gray-700 font-medium text-lg leading-relaxed"
+                            className="text-gray-700 font-medium text-sm sm:text-base md:text-lg leading-snug sm:leading-relaxed"
                           >{branch.address}</motion.p>
                           <motion.div 
                             initial={{ opacity: 0, x: 20 }}
@@ -477,18 +391,7 @@ export const GlobalPresence = () => {
                         transition={{ duration: 0.6, delay: 0.7 + index * 0.1 }}
                         className="flex items-center gap-3"
                       >
-                        <div className="relative">
-                          <motion.div 
-                            animate={{ scale: [1, 1.2, 1] }}
-                            transition={{ duration: 2, repeat: Infinity, delay: index * 0.5 }}
-                            className="w-4 h-4 bg-green-500 rounded-full"
-                          ></motion.div>
-                          <motion.div 
-                            animate={{ scale: [1, 1.6, 1], opacity: [0.3, 0, 0.3] }}
-                            transition={{ duration: 2, repeat: Infinity, delay: index * 0.5 }}
-                            className="absolute inset-0 w-4 h-4 bg-green-500 rounded-full"
-                          ></motion.div>
-                        </div>
+                        <div className="w-4 h-4 bg-green-500 rounded-full"></div>
                         <span className="text-sm font-semibold text-gray-700 tracking-wide">Live Operations</span>
                       </motion.div>
                       <motion.div 
@@ -498,23 +401,14 @@ export const GlobalPresence = () => {
                         transition={{ duration: 0.6, delay: 0.8 + index * 0.1 }}
                         className="flex items-center gap-3"
                       >
-                        <motion.div 
-                          animate={{ rotate: [0, 360] }}
-                          transition={{ duration: 10, repeat: Infinity, ease: "linear", delay: index * 2 }}
-                          className="w-4 h-4 bg-primary-500 rounded-full shadow-lg"
-                        ></motion.div>
+                        <div className="w-4 h-4 bg-primary-500 rounded-full shadow-lg"></div>
                         <span className="text-sm font-semibold text-gray-700 tracking-wide">Verified Hub</span>
                       </motion.div>
                     </motion.div>
                   </div>
 
-                  {/* Floating Corner Decoration */}
-                  <motion.div
-                    variants={floatingVariants}
-                    initial="initial"
-                    animate="animate"
-                    className="absolute bottom-6 right-6 w-4 h-4 bg-primary-400/60 rounded-full blur-sm"
-                  />
+                  {/* Floating Corner Decoration - Simplified */}
+                  <div className="absolute bottom-6 right-6 w-4 h-4 bg-primary-400/60 rounded-full blur-sm"></div>
                   
                   {/* Top Corner Accent */}
                   <div className="absolute top-0 right-0 w-20 h-20 bg-gradient-to-bl from-white/10 to-transparent"></div>
@@ -529,21 +423,17 @@ export const GlobalPresence = () => {
 
         {/* Bottom Statistics Section */}
         <motion.div
-          initial={{ opacity: 0, y: 60, scale: 0.95 }}
-          whileInView={{ opacity: 1, y: 0, scale: 1 }}
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.3 }}
-          transition={{ duration: 1.0, delay: 0.3 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
           className="text-center"
         >
           <div className="bg-gradient-to-r from-primary-600 via-primary-700 to-primary-800 rounded-3xl p-8 md:p-12 text-white shadow-2xl relative overflow-hidden">
             
-            {/* Background Pattern */}
+            {/* Simplified Background Pattern */}
             <div className="absolute inset-0 opacity-10">
-              <motion.div 
-                animate={{ scale: [1, 1.2, 1], rotate: [0, 180, 360] }}
-                transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-                className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_50%_120%,rgba(255,255,255,0.3),transparent)]"
-              ></motion.div>
+              <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_50%_120%,rgba(255,255,255,0.3),transparent)]"></div>
             </div>
 
             <div className="relative z-10">
@@ -576,88 +466,42 @@ export const GlobalPresence = () => {
                 ].map((stat, index) => (
                   <motion.div
                     key={index}
-                    initial={{ opacity: 0, scale: 0.5, y: 40 }}
-                    whileInView={{ opacity: 1, scale: 1, y: 0 }}
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true, amount: 0.3 }}
                     transition={{ 
-                      duration: 0.8, 
-                      delay: 0.6 + index * 0.2,
-                      type: "spring",
-                      stiffness: 100
-                    }}
-                    whileHover={{ 
-                      scale: 1.1, 
-                      y: -10,
-                      transition: { duration: 0.3 }
+                      duration: 0.5, 
+                      delay: 0.5 + index * 0.1,
+                      ease: "easeOut"
                     }}
                     className="text-center"
                   >
-                    <motion.div 
-                      animate={{ 
-                        y: [-5, 5, -5],
-                        rotate: [0, 2, 0, -2, 0]
-                      }}
-                      transition={{ 
-                        duration: 6 + index, 
-                        repeat: Infinity, 
-                        ease: "easeInOut",
-                        delay: index * 0.5
-                      }}
-                      className="text-3xl md:text-4xl font-bold mb-2"
-                    >{stat.value}</motion.div>
-                    <motion.div 
-                      initial={{ opacity: 0, y: 15 }}
-                      whileInView={{ opacity: 1, y: 0 }}
-                      viewport={{ once: true }}
-                      transition={{ duration: 0.6, delay: 0.8 + index * 0.2 }}
-                      className="text-sm opacity-80 uppercase tracking-wide"
-                    >{stat.label}</motion.div>
+                    <div className="text-3xl md:text-4xl font-bold mb-2">{stat.value}</div>
+                    <div className="text-sm opacity-80 uppercase tracking-wide">{stat.label}</div>
                   </motion.div>
                 ))}
               </div>
             </div>
 
-            {/* Enhanced Floating Elements */}
-            <motion.div
-              animate={{ 
-                scale: [1, 1.3, 1], 
-                opacity: [0.2, 0.4, 0.2],
-                x: [0, 20, 0],
-                y: [0, -15, 0]
-              }}
-              transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
-              className="absolute top-8 right-8 w-16 h-16 bg-white/20 rounded-full blur-xl"
-            />
-            <motion.div
-              animate={{ 
-                scale: [1.2, 1, 1.2], 
-                opacity: [0.1, 0.3, 0.1],
-                x: [0, -25, 0],
-                y: [0, 20, 0]
-              }}
-              transition={{ duration: 10, repeat: Infinity, ease: "easeInOut", delay: 2 }}
-              className="absolute bottom-8 left-8 w-24 h-24 bg-white/10 rounded-full blur-xl"
-            />
+            {/* Simplified Floating Elements */}
+            <div className="absolute top-8 right-8 w-16 h-16 bg-white/20 rounded-full blur-xl opacity-40"></div>
+            <div className="absolute bottom-8 left-8 w-24 h-24 bg-white/10 rounded-full blur-xl opacity-30"></div>
           </div>
         </motion.div>
 
         {/* GST Credibility Section */}
         <motion.div
-          initial={{ opacity: 0, y: 60, scale: 0.95 }}
-          whileInView={{ opacity: 1, y: 0, scale: 1 }}
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.3 }}
-          transition={{ duration: 1.0, delay: 0.2 }}
+          transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
           className="mt-16 text-center"
         >
           <div className="bg-gradient-to-r from-slate-800 via-slate-900 to-slate-800 rounded-3xl p-8 md:p-12 text-white shadow-2xl relative overflow-hidden border border-slate-700/50">
             
-            {/* Background Pattern */}
+            {/* Simplified Background Pattern */}
             <div className="absolute inset-0 opacity-10">
-              <motion.div 
-                animate={{ scale: [1, 1.2, 1], rotate: [0, 180, 360] }}
-                transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-                className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_50%_120%,rgba(255,255,255,0.3),transparent)]"
-              ></motion.div>
+              <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_50%_120%,rgba(255,255,255,0.3),transparent)]"></div>
             </div>
 
             <div className="relative z-10">
@@ -668,11 +512,7 @@ export const GlobalPresence = () => {
                 transition={{ duration: 0.8, delay: 0.2 }}
                 className="inline-flex items-center gap-2 bg-gradient-to-r from-green-500/20 to-emerald-500/20 rounded-full px-6 py-2 mb-6 border border-green-400/30"
               >
-                <motion.div 
-                  animate={{ scale: [1, 1.2, 1] }}
-                  transition={{ duration: 2, repeat: Infinity }}
-                  className="w-3 h-3 bg-green-400 rounded-full"
-                ></motion.div>
+                <div className="w-3 h-3 bg-green-400 rounded-full"></div>
                 <span className="text-green-300 font-semibold text-sm uppercase tracking-wide">Government Registered</span>
               </motion.div>
               
@@ -719,60 +559,20 @@ export const GlobalPresence = () => {
                 ].map((credential, index) => (
                   <motion.div
                     key={index}
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
+                    initial={{ opacity: 0 }}
+                    whileInView={{ opacity: 1 }}
                     viewport={{ once: true, amount: 0.3 }}
                     transition={{ 
                       duration: 0.5, 
                       delay: index * 0.1,
                       ease: "easeOut"
                     }}
-                    whileHover={{ 
-                      scale: 1.03,
-                      y: -5,
-                      transition: { duration: 0.2 }
-                    }}
                     className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20 hover:border-white/40 transition-all duration-300"
                   >
-                    <motion.div 
-                      initial={{ opacity: 0, y: 20 }}
-                      whileInView={{ opacity: 1, y: 0 }}
-                      viewport={{ once: true }}
-                      transition={{ duration: 0.4, delay: 0.2 + index * 0.1 }}
-                      className="text-2xl mb-3"
-                    >
-                      {credential.icon}
-                    </motion.div>
-                    
-                    <motion.div 
-                      initial={{ opacity: 0, y: 20 }}
-                      whileInView={{ opacity: 1, y: 0 }}
-                      viewport={{ once: true }}
-                      transition={{ duration: 0.4, delay: 0.3 + index * 0.1 }}
-                      className="text-sm text-white/70 uppercase tracking-wider font-semibold mb-2"
-                    >
-                      {credential.label}
-                    </motion.div>
-                    
-                    <motion.div 
-                      initial={{ opacity: 0, y: 20 }}
-                      whileInView={{ opacity: 1, y: 0 }}
-                      viewport={{ once: true }}
-                      transition={{ duration: 0.4, delay: 0.4 + index * 0.1 }}
-                      className="text-lg font-bold text-white mb-2 font-mono tracking-wide"
-                    >
-                      {credential.value}
-                    </motion.div>
-                    
-                    <motion.div 
-                      initial={{ opacity: 0, y: 20 }}
-                      whileInView={{ opacity: 1, y: 0 }}
-                      viewport={{ once: true }}
-                      transition={{ duration: 0.4, delay: 0.5 + index * 0.1 }}
-                      className="text-xs text-white/60"
-                    >
-                      {credential.description}
-                    </motion.div>
+                    <div className="text-2xl mb-3">{credential.icon}</div>
+                    <div className="text-sm text-white/70 uppercase tracking-wider font-semibold mb-2">{credential.label}</div>
+                    <div className="text-lg font-bold text-white mb-2 font-mono tracking-wide">{credential.value}</div>
+                    <div className="text-xs text-white/60">{credential.description}</div>
                   </motion.div>
                 ))}
               </div>
@@ -783,15 +583,10 @@ export const GlobalPresence = () => {
                   initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, amount: 0.5 }}
-                  transition={{ type: "spring", stiffness: 100, damping: 20, delay: 0.1 }}
-                  whileHover={{ scale: 1.03, y: -2, transition: { type: "tween", ease: "easeOut", duration: 0.3 } }}
+                  transition={{ duration: 0.6, delay: 0.1 }}
                   className="flex items-center gap-2"
                 >
-                  <motion.div 
-                    className="w-3 h-3 bg-green-400 rounded-full"
-                    animate={{ scale: [1, 1.2, 1], opacity: [0.7, 1, 0.7] }}
-                    transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-                  />
+                  <div className="w-3 h-3 bg-green-400 rounded-full" />
                   <span className="text-sm font-semibold text-white/90 tracking-wide">Government Verified</span>
                 </motion.div>
                 
@@ -799,15 +594,10 @@ export const GlobalPresence = () => {
                   initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, amount: 0.5 }}
-                  transition={{ type: "spring", stiffness: 100, damping: 20, delay: 0.2 }}
-                  whileHover={{ scale: 1.03, y: -2, transition: { type: "tween", ease: "easeOut", duration: 0.3 } }}
+                  transition={{ duration: 0.6, delay: 0.2 }}
                   className="flex items-center gap-2"
                 >
-                  <motion.div 
-                    className="w-3 h-3 bg-blue-400 rounded-full"
-                    animate={{ scale: [1, 1.2, 1], opacity: [0.7, 1, 0.7] }}
-                    transition={{ duration: 2.2, repeat: Infinity, ease: "easeInOut", delay: 0.2 }}
-                  />
+                  <div className="w-3 h-3 bg-blue-400 rounded-full" />
                   <span className="text-sm font-semibold text-white/90 tracking-wide">Export Authorized</span>
                 </motion.div>
                 
@@ -815,41 +605,18 @@ export const GlobalPresence = () => {
                   initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, amount: 0.5 }}
-                  transition={{ type: "spring", stiffness: 100, damping: 20, delay: 0.3 }}
-                  whileHover={{ scale: 1.03, y: -2, transition: { type: "tween", ease: "easeOut", duration: 0.3 } }}
+                  transition={{ duration: 0.6, delay: 0.3 }}
                   className="flex items-center gap-2"
                 >
-                  <motion.div 
-                    className="w-3 h-3 bg-yellow-400 rounded-full"
-                    animate={{ scale: [1, 1.2, 1], opacity: [0.7, 1, 0.7] }}
-                    transition={{ duration: 2.4, repeat: Infinity, ease: "easeInOut", delay: 0.4 }}
-                  />
+                  <div className="w-3 h-3 bg-yellow-400 rounded-full" />
                   <span className="text-sm font-semibold text-white/90 tracking-wide">Quality Certified</span>
                 </motion.div>
               </div>
             </div>
 
-            {/* Enhanced Floating Elements */}
-            <motion.div
-              animate={{ 
-                scale: [1, 1.3, 1], 
-                opacity: [0.1, 0.3, 0.1],
-                x: [0, 15, 0],
-                y: [0, -10, 0]
-              }}
-              transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
-              className="absolute top-8 right-8 w-12 h-12 bg-white/10 rounded-full blur-xl"
-            />
-            <motion.div
-              animate={{ 
-                scale: [1.2, 1, 1.2], 
-                opacity: [0.1, 0.2, 0.1],
-                x: [0, -20, 0],
-                y: [0, 15, 0]
-              }}
-              transition={{ duration: 10, repeat: Infinity, ease: "easeInOut", delay: 2 }}
-              className="absolute bottom-8 left-8 w-16 h-16 bg-white/10 rounded-full blur-xl"
-            />
+            {/* Simplified Floating Elements */}
+            <div className="absolute top-8 right-8 w-12 h-12 bg-white/10 rounded-full blur-xl opacity-30"></div>
+            <div className="absolute bottom-8 left-8 w-16 h-16 bg-white/10 rounded-full blur-xl opacity-20"></div>
           </div>
         </motion.div>
       </div>
