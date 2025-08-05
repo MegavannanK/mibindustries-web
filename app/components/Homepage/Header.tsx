@@ -1,8 +1,11 @@
 import { motion } from "framer-motion";
 import headerImage from "../../assets/images/export.png";
 import { ArrowRightIcon } from "@heroicons/react/outline";
+import { useRouter } from "next/navigation";
 
 export const Header = () => {
+  const router = useRouter();
+  
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -43,12 +46,14 @@ export const Header = () => {
         >
           <motion.h1
             variants={itemVariants}
-            className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight"
+            className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight"
           >
             <span className="bg-gradient-to-r from-primary-600 via-primary-700 to-primary-800 bg-clip-text text-transparent">
               MIB
             </span>{" "}
-            Industries
+            <span className="bg-gradient-to-r from-emerald-500 via-teal-600 to-cyan-600 bg-clip-text text-transparent">
+              Industries
+            </span>
           </motion.h1>
           <motion.p
             variants={itemVariants}
@@ -74,7 +79,8 @@ export const Header = () => {
               whileHover={{ scale: 1.01 }}
               whileTap={{ scale: 0.99 }}
               transition={{ duration: 0.15, ease: "easeOut" }}
-              className="px-6 py-2.5 sm:px-8 sm:py-3 bg-gradient-to-r from-primary-600 to-primary-700 text-white font-semibold rounded-full shadow-lg w-full sm:w-auto flex items-center justify-center gap-2 text-sm sm:text-base"
+              onClick={() => router.push('/services')}
+              className="px-6 py-2.5 sm:px-8 sm:py-3 bg-gradient-to-r from-primary-600 to-primary-700 text-white font-semibold rounded-full shadow-lg w-full sm:w-auto flex items-center justify-center gap-2 text-sm sm:text-base cursor-pointer"
             >
               <span>Explore Services</span>
               <ArrowRightIcon className="w-4 h-4 sm:w-5 sm:h-5" />
@@ -83,7 +89,8 @@ export const Header = () => {
               whileHover={{ scale: 1.01 }}
               whileTap={{ scale: 0.99 }}
               transition={{ duration: 0.15, ease: "easeOut" }}
-              className="px-6 py-2.5 sm:px-8 sm:py-3 text-primary-700 font-semibold rounded-full w-full sm:w-auto hover:bg-primary-50 text-sm sm:text-base"
+              onClick={() => router.push('/contact-us')}
+              className="px-6 py-2.5 sm:px-8 sm:py-3 text-primary-700 font-semibold rounded-full w-full sm:w-auto hover:bg-primary-50 text-sm sm:text-base cursor-pointer"
             >
               Contact Us
             </motion.button>
