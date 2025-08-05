@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import Container from "../ui/Container";
 import Image from "next/image";
 import { success_story } from "@/app/masters/sucess_story";
@@ -6,7 +6,6 @@ import { motion } from "framer-motion";
 
 export const OurWork: React.FC = () => {
   const images = success_story;
-  const [currentIndex, setCurrentIndex] = useState(0);
   const totalImages = images.length;
 
   // Animation variants
@@ -103,7 +102,7 @@ export const OurWork: React.FC = () => {
                   {/* Highlighted Slogan */}
                   <div className="text-center py-3">
                     <p className="italic font-bold text-2xl text-transparent bg-gradient-to-r from-primary-600 via-primary-700 to-primary-800 bg-clip-text">
-                      "The Soul of Indian Meals"
+                      &ldquo;The Soul of Indian Meals&rdquo;
                     </p>
                     <p className="text-sm text-gray-600 mt-2 italic">
                       A testament to quality, tradition, and the essence of authentic Indian cuisine
@@ -131,7 +130,7 @@ export const OurWork: React.FC = () => {
                     </p>
                   </div>
                   <p className="italic font-bold text-xl text-transparent bg-gradient-to-r from-primary-600 via-primary-700 to-primary-800 bg-clip-text leading-tight">
-                    "The Soul of Indian Meals"
+                    &ldquo;The Soul of Indian Meals&rdquo;
                   </p>
                 </div>
               </div>
@@ -144,7 +143,7 @@ export const OurWork: React.FC = () => {
                 { label: "Premium Quality", icon: "⭐" },
                 { label: "Naturally Aged", icon: "🌾" },
                 { label: "Traditionally Harvested", icon: "🚜" }
-              ].map((feature, index) => (
+              ].map((feature) => (
                 <motion.div
                   key={feature.label}
                   whileHover={{ scale: 1.02, y: -2 }}
@@ -170,7 +169,7 @@ export const OurWork: React.FC = () => {
                       <p className="text-primary-100 text-sm">Premium Rice Collection</p>
                     </div>
                     <div className="text-right">
-                      <div className="text-sm text-primary-200">Product {currentIndex + 1} of {totalImages}</div>
+                      <div className="text-sm text-primary-200">Product 1 of {totalImages}</div>
                     </div>
                   </div>
                 </div>
@@ -179,15 +178,14 @@ export const OurWork: React.FC = () => {
                 <div className="relative bg-white p-4">
                   <div className="relative aspect-[4/3] bg-white rounded-2xl overflow-hidden shadow-inner border border-gray-200/30">
                     <motion.div
-                      key={currentIndex}
                       initial={{ opacity: 0, scale: 0.95, y: 20 }}
                       animate={{ opacity: 1, scale: 1, y: 0 }}
                       transition={{ duration: 0.6, ease: "easeOut" }}
                       className="relative w-full h-full p-3"
                     >
                       <Image
-                        src={images[currentIndex]}
-                        alt={`Blue Elephant Premium Rice Product ${currentIndex + 1}`}
+                        src={images[0]}
+                        alt="Blue Elephant Premium Rice Product"
                         className="object-contain w-full h-full drop-shadow-2xl"
                         fill
                         priority={true}
