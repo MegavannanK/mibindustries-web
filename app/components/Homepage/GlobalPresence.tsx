@@ -36,7 +36,7 @@ const branches: Branch[] = [
     id: 1,
     country: "Singapore",
     city: "Trade Hub",
-    address: "21 BUKIT BATOK CRESENT, #12-75 SINGAPORE 658065",
+    address: "21 Bukit Batok Cresent, #12-75 Singapore-658065",
     coordinates: { lat: 1.2833, lng: 103.8667 },
     timezone: "GMT+8",
     established: "2018",
@@ -132,7 +132,7 @@ export const GlobalPresence = () => {
         <div className="absolute bottom-20 right-10 w-96 h-96 bg-primary-300/20 rounded-full blur-3xl"></div>
         <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-gradient-to-r from-primary-100/40 to-primary-200/30 rounded-full blur-3xl"></div>
       </div>
-
+      
       <div className="container mx-auto px-6 relative z-10">
         {/* Header Section */}
         <motion.div
@@ -150,7 +150,7 @@ export const GlobalPresence = () => {
             className="inline-flex items-center gap-2 bg-gradient-to-r from-primary-600/10 to-primary-700/10 rounded-full px-6 py-2 mb-6 border border-primary-200/50"
           >
             <OfficeBuildingIcon className="w-5 h-5 text-primary-600" />
-            <span className="text-primary-700 font-semibold text-sm uppercase tracking-wide">Global Operations</span>
+            <span className="text-primary-700 font-semibold text-sm uppercase tracking-wide">Global Branches</span>
           </motion.div>
           
           <motion.h2 
@@ -160,7 +160,7 @@ export const GlobalPresence = () => {
             transition={{ duration: 1.0, delay: 0.4 }}
             className="text-4xl md:text-5xl font-bold text-gray-900 mb-6"
           >
-            Strategic Trade
+            Strategic Office
             <motion.span 
               initial={{ opacity: 0, scale: 0.9 }}
               whileInView={{ opacity: 1, scale: 1 }}
@@ -177,8 +177,8 @@ export const GlobalPresence = () => {
             transition={{ duration: 0.8, delay: 0.6 }}
             className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed"
           >
-            Positioned at key international trade routes, our strategic offices enable seamless 
-            export operations and global supply chain management across continents.
+            Positioned at key international trade routes, our strategic offices enable seamless export & import operations 
+            <span className="hidden lg:block">and global supply chain management across continents.</span>
           </motion.p>
         </motion.div>
 
@@ -231,7 +231,7 @@ export const GlobalPresence = () => {
                           <div className="relative">
                             <div className="text-4xl filter drop-shadow-lg">{branch.icon}</div>
                           </div>
-                          <div className="text-white">
+                          <div className="text-white font-mono">
                             <motion.h3 
                               initial={{ opacity: 0, y: 20 }}
                               whileInView={{ opacity: 1, y: 0 }}
@@ -300,7 +300,7 @@ export const GlobalPresence = () => {
                             whileInView={{ opacity: 1, x: 0 }}
                             viewport={{ once: true }}
                             transition={{ duration: 0.6, delay: 0.3 + index * 0.1 }}
-                            className="text-gray-700 font-medium text-sm sm:text-base md:text-lg leading-snug sm:leading-relaxed"
+                            className="text-gray-700 font-medium text-base sm:text-base md:text-base leading-snug sm:leading-relaxed font-sans"
                           >{branch.address}</motion.p>
                           <motion.div 
                             initial={{ opacity: 0, x: 20 }}
@@ -442,7 +442,7 @@ export const GlobalPresence = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.5 }}
                 transition={{ duration: 0.8, delay: 0.2 }}
-                className="text-3xl md:text-4xl font-bold mb-4"
+                className="text-xl md:text-4xl font-bold mb-6"
               >
                 Connecting Global Markets
               </motion.h3>
@@ -451,17 +451,17 @@ export const GlobalPresence = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.5 }}
                 transition={{ duration: 0.8, delay: 0.4 }}
-                className="text-xl opacity-90 mb-8 max-w-2xl mx-auto"
+                className="text-lg opacity-90 mb-8 max-w-2xl mx-auto hidden lg:block"
               >
                 Bridging continents through strategic trade operations, ensuring seamless 
                 export-import solutions across international borders.
               </motion.p>
               
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-8 ">
                 {[
                   { value: "25+", label: "Export Countries" },
                   { value: "500+", label: "Product Lines" },
-                  { value: "1000+", label: "Shipments/Year" },
+                  { value: "1000+", label: "Shipments Done" },
                   { value: "24/7", label: "Trade Support" }
                 ].map((stat, index) => (
                   <motion.div
@@ -476,8 +476,8 @@ export const GlobalPresence = () => {
                     }}
                     className="text-center"
                   >
-                    <div className="text-3xl md:text-4xl font-bold mb-2">{stat.value}</div>
-                    <div className="text-sm opacity-80 uppercase tracking-wide">{stat.label}</div>
+                    <div className="text-lg md:text-3xl font-semibold mb-2">{stat.value}</div>
+                    <div className="text-xs opacity-80 uppercase tracking-wide">{stat.label}</div>
                   </motion.div>
                 ))}
               </div>
@@ -531,7 +531,7 @@ export const GlobalPresence = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.5 }}
                 transition={{ duration: 0.8, delay: 0.4 }}
-                className="text-lg opacity-90 mb-8 max-w-2xl mx-auto"
+                className="text-lg opacity-90 mb-8 max-w-2xl mx-auto hidden lg:block"
               >
                 Our business is officially registered and compliant with all government regulations for international trade operations.
               </motion.p>
@@ -551,8 +551,8 @@ export const GlobalPresence = () => {
                     icon: "🌍"
                   },
                   { 
-                    label: "ISO Certified", 
-                    value: "ISO 22000:2005", 
+                    label: "FSSAI  Certified", 
+                    value: "12424999000212", 
                     description: "Quality Management",
                     icon: "🏆"
                   }
@@ -578,7 +578,7 @@ export const GlobalPresence = () => {
               </div>
 
               {/* Trust Indicators */}
-              <div className="flex items-center justify-center gap-8 mt-8 pt-6 border-t border-white/20">
+              <div className="flex items-center justify-center gap-3 lg:gap-8 mt-8 pt-6 border-t border-white/20">
                 <motion.div 
                   initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}

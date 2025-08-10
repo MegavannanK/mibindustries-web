@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import headerImage from "../../assets/images/export.png";
+import Image from "next/image";
 import { ArrowRightIcon } from "@heroicons/react/outline";
 import { useRouter } from "next/navigation";
 
@@ -51,7 +52,7 @@ export const Header = () => {
             <span className="bg-gradient-to-r from-primary-600 via-primary-700 to-primary-800 bg-clip-text text-transparent">
               MIB
             </span>{" "}
-            <span className="bg-gradient-to-r from-emerald-500 via-teal-600 to-cyan-600 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-primary-700 via-primary-800 to-primary-900 bg-clip-text text-transparent">
               Industries
             </span>
           </motion.h1>
@@ -104,11 +105,12 @@ export const Header = () => {
           animate={{ opacity: 1 }}
           transition={{ duration: 0.6, ease: "easeOut", delay: 0.2 }}
         >
-          <img
-            src={headerImage.src}
-            className="w-full h-auto object-contain"
+          <Image
+            src={headerImage}
             alt="Global Trade Illustration"
-            loading="eager"
+            className="w-full h-auto object-contain"
+            priority
+            sizes="(max-width: 1024px) 90vw, 600px"
           />
         </motion.div>
       </div>

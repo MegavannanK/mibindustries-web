@@ -6,7 +6,6 @@ import { motion } from "framer-motion";
 
 export const OurWork: React.FC = () => {
   const images = success_story;
-  const totalImages = images.length;
 
   // Animation variants
   const containerVariants = {
@@ -50,7 +49,7 @@ export const OurWork: React.FC = () => {
           className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center"
         >
           {/* Left Content - Takes 7 columns */}
-          <motion.div variants={itemVariants} className="lg:col-span-7 space-y-6">
+          <motion.div variants={itemVariants} className="lg:col-span-7 space-y-6 mb-8 lg:mb-0">
             {/* Header Section */}
             <div className="space-y-4">
               <div className="flex items-center gap-4">
@@ -62,13 +61,13 @@ export const OurWork: React.FC = () => {
               
               <motion.h2 
                 variants={itemVariants}
-                className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight"
+                className="text-3xl sm:text-3xl lg:text-4xl font-semibold leading-tight"
               >
                 <span className="text-transparent bg-gradient-to-r from-primary-700 via-primary-800 to-primary-900 bg-clip-text">
                   Blue Elephant
                 </span>
                 <br />
-                <span className="text-gray-800">Premium Heritage</span>
+                <span className="text-gray-800 text-xl">Premium Heritage</span>
               </motion.h2>
               
               <motion.p 
@@ -137,7 +136,7 @@ export const OurWork: React.FC = () => {
             </motion.div>
 
             {/* Quality Features Grid */}
-            <motion.div variants={itemVariants} className="grid grid-cols-2 gap-4">
+            <motion.div variants={itemVariants} className="grid grid-cols-2 gap-3 sm:gap-4">
               {[
                 { label: "Lab Tested", icon: "🔬" },
                 { label: "Premium Quality", icon: "⭐" },
@@ -147,10 +146,10 @@ export const OurWork: React.FC = () => {
                 <motion.div
                   key={feature.label}
                   whileHover={{ scale: 1.02, y: -2 }}
-                  className="flex items-center gap-3 p-4 bg-white/70 backdrop-blur-sm rounded-xl border border-primary-100/50 shadow-sm hover:shadow-md transition-all duration-300"
+                  className="flex items-center gap-2 sm:gap-3 p-3 sm:p-4 bg-white/70 backdrop-blur-sm rounded-xl border border-primary-100/50 shadow-sm hover:shadow-md transition-all duration-300"
                 >
-                  <span className="text-xl">{feature.icon}</span>
-                  <span className="font-medium text-gray-700">{feature.label}</span>
+                  <span className="text-lg sm:text-xl flex-shrink-0">{feature.icon}</span>
+                  <span className="font-medium text-gray-700 text-xs sm:text-base leading-tight">{feature.label}</span>
                 </motion.div>
               ))}
             </motion.div>
@@ -167,9 +166,6 @@ export const OurWork: React.FC = () => {
                     <div>
                       <h3 className="font-bold text-xl">Blue Elephant</h3>
                       <p className="text-primary-100 text-sm">Premium Rice Collection</p>
-                    </div>
-                    <div className="text-right">
-                      <div className="text-sm text-primary-200">Product 1 of {totalImages}</div>
                     </div>
                   </div>
                 </div>
@@ -201,17 +197,17 @@ export const OurWork: React.FC = () => {
                 initial={{ opacity: 0, y: 30, x: -20 }}
                 whileInView={{ opacity: 1, y: 0, x: 0 }}
                 transition={{ delay: 0.6, duration: 0.8 }}
-                className="absolute -bottom-8 -left-6 bg-white/98 backdrop-blur-sm rounded-2xl shadow-2xl border border-gray-200/50 p-4 z-10"
+                className="absolute -bottom-6 sm:-bottom-8 -left-3 sm:-left-6 bg-white/98 backdrop-blur-sm rounded-xl sm:rounded-2xl shadow-2xl border border-gray-200/50 p-3 sm:p-4 z-10"
               >
-                <div className="flex items-center gap-3">
-                  <div className="w-12 h-12 bg-gradient-to-r from-emerald-500 to-teal-500 rounded-full flex items-center justify-center shadow-lg">
-                    <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <div className="flex items-center gap-2 sm:gap-3">
+                  <div className="w-8 h-8 sm:w-12 sm:h-12 bg-gradient-to-r from-emerald-500 to-teal-500 rounded-full flex items-center justify-center shadow-lg">
+                    <svg className="w-4 h-4 sm:w-6 sm:h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                     </svg>
                   </div>
                   <div>
-                    <p className="font-bold text-gray-800">100% Authentic</p>
-                    <p className="text-sm text-gray-600">Lab Certified Premium</p>
+                    <p className="font-bold text-gray-800 text-sm sm:text-base">100% Authentic</p>
+                    <p className="text-xs sm:text-sm text-gray-600">Lab Certified Premium</p>
                   </div>
                 </div>
               </motion.div>
@@ -220,24 +216,24 @@ export const OurWork: React.FC = () => {
                 initial={{ opacity: 0, y: -30, x: 20 }}
                 whileInView={{ opacity: 1, y: 0, x: 0 }}
                 transition={{ delay: 0.8, duration: 0.8 }}
-                className="absolute -top-8 -right-6 bg-gradient-to-r from-primary-500 to-primary-600 text-white rounded-2xl shadow-2xl p-4 z-10"
+                className="absolute -top-4 sm:-top-8 -right-3 sm:-right-6 bg-gradient-to-r from-primary-500 to-primary-600 text-white rounded-xl sm:rounded-2xl shadow-2xl p-2 sm:p-4 z-10"
               >
                 <div className="text-center">
-                  <div className="flex items-center justify-center gap-1 mb-2">
+                  <div className="flex items-center justify-center gap-0.5 sm:gap-1 mb-1 sm:mb-2">
                     {[...Array(5)].map((_, i) => (
                       <motion.span
                         key={i}
                         initial={{ opacity: 0, scale: 0 }}
                         animate={{ opacity: 1, scale: 1 }}
                         transition={{ delay: 1 + i * 0.1 }}
-                        className="text-yellow-300"
+                        className="text-yellow-300 text-xs sm:text-sm"
                       >
                         ★
                       </motion.span>
                     ))}
                   </div>
-                  <p className="font-bold">Premium Rated</p>
-                  <p className="text-xs text-primary-100 opacity-90">Trusted Quality</p>
+                  <p className="font-bold text-xs sm:text-base">Premium Rated</p>
+                  <p className="text-xs text-primary-100 opacity-90 hidden sm:block">Trusted Quality</p>
                 </div>
               </motion.div>
             </div>

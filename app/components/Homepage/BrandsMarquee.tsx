@@ -13,7 +13,7 @@ export const BrandsMarquee = () => {
         Brands
       </h2>
       <Marquee className="py-5">
-        <div className="flex gap-10 justify-between">
+        <div className="flex gap-8 justify-between">
           {brands.map((brand) => (
             <div key={brand.id} className="flex-shrink-0">
               <Image
@@ -21,8 +21,8 @@ export const BrandsMarquee = () => {
                 key={brand.id}
                 src={brand.image}
                 alt={brand.name}
-                width={120}
-                height={100}
+                width={80}
+                height={80}
                 className="object-contain"
               />
             </div>
