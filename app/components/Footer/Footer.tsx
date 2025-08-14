@@ -5,8 +5,8 @@ import Logo from "@/app/assets/images/logo.png";
 const contactData = [
   {
     icon: PhoneIncomingIcon,
-    text: "+91 9363291001",
-    link: "tel:+919363291001",
+  text: "+919363291001",
+  link: "tel:+919363291001",
   },
   {
     icon: MailIcon,
