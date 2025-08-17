@@ -31,7 +31,7 @@ const quickActions = [
   {
     label: "Schedule Call",
     icon: ClockIcon,
-    href: "https://calendly.com/your-slot",
+    href: "https://calendly.com/mibindustriesindia/30min",
     desc: "Pick a time",
     gradient: "from-indigo-500 to-indigo-600"
   }
@@ -67,7 +67,10 @@ const Contactus = () => {
               We’re here to collaborate, consult and accelerate your growth.
             </p>
             <div className="mt-8 flex flex-wrap gap-4">
-              <a href="#connect" className="inline-flex items-center gap-2 rounded-xl bg-white text-primary-700 hover:text-primary-800 px-6 py-3 text-sm font-semibold shadow hover:shadow-md transition">Ways to Connect</a>
+              <a href="https://calendly.com/mibindustriesindia/30min" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 rounded-xl bg-white text-primary-700 hover:text-primary-800 px-6 py-3 text-sm font-semibold shadow hover:shadow-md transition">
+                Schedule a Call
+                <svg className="w-4 h-4 text-primary-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M8 2v4"/><path d="M16 2v4"/><rect x="3" y="6" width="18" height="14" rx="2" ry="2"/><path d="M16 10h-4v4"/><path d="M8 10h.01"/></svg>
+              </a>
               <a href="tel:+919363291001" className="inline-flex items-center gap-2 rounded-xl bg-primary-700/40 hover:bg-primary-700/55 ring-1 ring-white/30 px-6 py-3 text-sm font-semibold transition">
                 <PhoneOutgoingIcon className="w-4 h-4" /> Call Us
               </a>

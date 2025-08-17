@@ -21,13 +21,16 @@ const ProductCard: React.FC<ProductCardProps> = ({
 }) => {
   const router = useRouter();
 
+  const navigateToProducts = () => router.push("/products");
+
+  const handleCardActivate = () => {
+    if (variant === "homepage") navigateToProducts();
+    else if (onClick) onClick();
+  };
+
   const handleSeeMoreClick = (e: React.MouseEvent) => {
-    e.stopPropagation(); // Prevent parent onClick from firing
-    if (variant === "homepage") {
-      router.push("/products");
-    } else if (onClick) {
-      onClick();
-    }
+    e.stopPropagation();
+    handleCardActivate();
   };
 
   const imageContainerClass = 
@@ -35,7 +38,14 @@ const ProductCard: React.FC<ProductCardProps> = ({
       ? "relative w-[180px] h-[150px] sm:w-[210] sm:h-[200px] xl:w-[300px] xl:h-[250px] overflow-hidden rounded-t-md justify-center mx-auto"
       : "relative w-full sm:w-[470px] sm:h-[250px] h-[200px] lg:w-[280px] lg:h-56 xl:w-[350px] xl:h-[250px] overflow-hidden rounded-t-md sm:align-center mx-auto";
   return (
-    <div className="p-4" onClick={onClick}>
+    <div
+      className="p-4"
+      onClick={handleCardActivate}
+      role={variant === "homepage" ? "button" : undefined}
+      tabIndex={variant === "homepage" ? 0 : undefined}
+      onKeyDown={variant === "homepage" ? (e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); handleCardActivate(); } } : undefined}
+      aria-label={variant === "homepage" ? `View all products (current: ${title})` : undefined}
+    >
       <div className="bg-white drop-shadow-primary rounded-lg overflow-hidden p-4 mx-auto">
         <div className={imageContainerClass}>
           <Image

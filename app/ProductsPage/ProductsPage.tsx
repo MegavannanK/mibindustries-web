@@ -159,7 +159,14 @@ export const ProductsPage = () => {
               variants={itemVariants}
               className="group"
             >
-              <div className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1">
+              <div
+                className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1 cursor-pointer focus:outline-none focus:ring-2 focus:ring-primary-500/60"
+                role="button"
+                tabIndex={0}
+                aria-label={`View details for ${product.name}`}
+                onClick={() => openModal(product)}
+                onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openModal(product); } }}
+              >
                 {/* Product Image */}
                 <div className="relative h-64 bg-gradient-to-br from-primary-50 to-primary-100 overflow-hidden">
                   <Image
@@ -196,7 +203,7 @@ export const ProductsPage = () => {
                         ))}
                         {product.variants.length > 2 && (
                           <button
-                            onClick={() => openModal(product)}
+                            onClick={(e) => { e.stopPropagation(); openModal(product); }}
                             className="px-2 py-1 bg-primary-200 text-primary-700 rounded-full text-xs font-medium hover:bg-primary-300 transition-colors cursor-pointer"
                           >
                             +{product.variants.length - 2} more
@@ -207,9 +214,9 @@ export const ProductsPage = () => {
                   )}
 
                   {/* Action Button */}
-                  <button 
-                    onClick={() => openModal(product)}
-                    className="w-full bg-gradient-to-r from-primary-600 to-primary-700 text-white py-3 px-4 rounded-lg hover:from-primary-700 hover:to-primary-800 transition-all duration-300 font-semibold shadow-md hover:shadow-lg"
+                  <button
+                    onClick={(e) => { e.stopPropagation(); openModal(product); }}
+                    className="w-full bg-gradient-to-r from-primary-600 to-primary-700 text-white py-3 px-4 rounded-lg hover:from-primary-700 hover:to-primary-800 transition-all duration-300 font-semibold shadow-md hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-primary-500/60"
                   >
                     View Details
                   </button>
