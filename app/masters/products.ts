@@ -18,9 +18,9 @@ export const products: Product[] = [
     id: 1,
     name: "Rice",
     variants: [
+  { name: "Basmati Rice" },
   { name: "Ponni Raw Rice" },
   { name: "Ponni Parboiled Rice" },
-  { name: "Basmati Rice" },
   { name: "Sona Masoori Rice" },
   { name: "DIA Rice (Low Glycemic for Diabeties)" },
   { name: "Plakkad Matta Rice" },
@@ -61,15 +61,15 @@ export const products: Product[] = [
   },
   {
     id: 3,
-    name: "Red chillies",
+    name: "Red Chillies",
     variants: [
+  { name: "Guntur Chillies" },
+  { name: "Kashmiri Chilli" },
   { name: "Dry Red Chillies" },
-  { name: "Kashmiri Red Chilli" },
-  { name: "Teja Chilli (With & Without Stems)" },
-  { name: "Sannam Chilli (With & Without Stems)" },
-  { name: "Gundu Chilli (Round Chilli)" },
-  { name: "Guntur Chilli" },
-  { name: "Red Chilli Powder" }
+  { name: "Teja Chillies (With & Without Stems)" },
+  { name: "Sannam Chillies (With & Without Stems)" },
+  { name: "Gundu Chillies (Round Chilli)" },
+  { name: "Red Chillies Powder" }
     ],
     slug: "red-chillies",
     description: "Spicy and flavorful red chillies.",
@@ -140,10 +140,10 @@ export const products: Product[] = [
     id: 7,
     name: "Jaggery",
     variants: [
-  { name: "Sugarcane Jaggery" },
+  { name: "Jaggery Cubes" },
   { name: "Jaggery Powder" },
   { name: "Jaggery Slaps/Blocks" },
-  { name: "Jaggery Cubes" },
+  { name: "Sugarcane Jaggery" },
   { name: "Flavored Jaggery" },
   { name: "Date Palm Jaggery" },
   { name: "Coconut Palm Jaggery" },
@@ -210,7 +210,8 @@ export const products: Product[] = [
     name: "Cooking Utensils",
     variants: [
   { name: "Idli Pot" },
-  { name: "All Cooking Utensils" }
+  { name: "All Cooking Utensils" },
+  { name: "Commercial-Restaurant Cookware" }
     ],
     slug: "cookwares",
     description: "Reliable Cookware Range",
@@ -221,9 +222,9 @@ export const products: Product[] = [
     id: 12,
     name: "Essentials",
     variants: [
-  { name: "Home Essentials" },
+  { name: "Home Items" },
+  { name: "Kitchen Items" },
   { name: "Stationery Items" },
-  { name: "Kitchen Essentials" },
   { name: "Cleaning Essentials" },
   { name: "Handmade Indian Traditional Music Instruments" },
   { name: "Bharathanatiyam Accessories" }
