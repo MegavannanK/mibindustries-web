@@ -2,7 +2,6 @@
 // import { CLOUDINARY_BASE_URL } from "./cloudinary";
 type Variant = {
   name: string;
-  packs: number[];
 };
 
 type Product = {
@@ -19,22 +18,14 @@ export const products: Product[] = [
     id: 1,
     name: "Rice",
     variants: [
-      {
-        name: "Ponni Raw",
-        packs: [10, 20, 50],
-      },
-      {
-        name: "Basmati",
-        packs: [15, 30, 60],
-      },
-      {
-        name: "Sona Masoori",
-        packs: [15, 30, 60],
-      },
-      {
-        name: "Ponni Parboiled Rice",
-        packs: [15, 30, 60],
-      },
+  { name: "Ponni Raw Rice" },
+  { name: "Ponni Parboiled Rice" },
+  { name: "Basmati Rice" },
+  { name: "Sona Masoori Rice" },
+  { name: "DIA Rice (Low Glycemic for Diabeties)" },
+  { name: "Plakkad Matta Rice" },
+  { name: "IR 64 Rice" },
+  { name: "IR 8 Rice" }
     ],
     slug: "Rice",
     description: "Premium Grain Selection.",
@@ -46,22 +37,21 @@ export const products: Product[] = [
     id: 2,
     name: "Indian Spices",
     variants: [
-      {
-        name: "Cloves",
-        packs: [5, 10, 25],
-      },
-      {
-        name: "Cinnamon",
-        packs: [8, 16, 32],
-      },
-      {
-        name: "Cardamom",
-        packs: [8, 16, 32],
-      },
-            {
-        name: "Cardamom",
-        packs: [8, 16, 32],
-      },
+  { name: "Cloves" },
+  { name: "Cinnamon" },
+  { name: "Black Cardamom" },
+  { name: "Green Cardamom" },
+  { name: "Bay Leaf / Briyani Leaf" },
+  { name: "Star Anise" },
+  { name: "Coriander Seeds" },
+  { name: "Black Pepper (Whole & Fine Ground)" },
+  { name: "Cumin Seeds" },
+  { name: "Fennel Seeds" },
+  { name: "Fenugreek Seeds" },
+  { name: "Mustard Seeds" },
+  { name: "Turmeric" },
+  { name: "Asafoetida (Hing)" },
+  { name: "Ginger" }
     ],
     slug: "Indian Spices",
     description: "Aromatic & Authentic",
@@ -73,14 +63,13 @@ export const products: Product[] = [
     id: 3,
     name: "Red chillies",
     variants: [
-      {
-        name: "Dry Red Chillies",
-        packs: [50, 100, 200],
-      },
-      {
-        name: "Red Chilli Powder",
-        packs: [25, 50, 75],
-      },
+  { name: "Dry Red Chillies" },
+  { name: "Kashmiri Red Chilli" },
+  { name: "Teja Chilli (With & Without Stems)" },
+  { name: "Sannam Chilli (With & Without Stems)" },
+  { name: "Gundu Chilli (Round Chilli)" },
+  { name: "Guntur Chilli" },
+  { name: "Red Chilli Powder" }
     ],
     slug: "red-chillies",
     description: "Spicy and flavorful red chillies.",
@@ -91,14 +80,12 @@ export const products: Product[] = [
     id: 4,
     name: "Cooking Oil",
     variants: [
-      {
-        name: "Peanut Oil",
-        packs: [50, 100, 150],
-      },
-      {
-        name: "Coconut Oil",
-        packs: [75, 125, 175],
-      },
+  { name: "Peanut Oil" },
+  { name: "Coconut Oil" },
+  { name: "Sesame Oil" },
+  { name: "Sunflower Oil" },
+  { name: "Pure Cow Ghee" },
+  { name: "Buffalo Ghee" }
     ],
     slug: "oil",
     description: "Cold-pressed cooking oil",
@@ -109,14 +96,16 @@ export const products: Product[] = [
     id: 5,
     name: "Lentils & Pulses",
     variants: [
-      {
-        name: "Urad Dal",
-        packs: [10, 20, 30],
-      },
-      {
-        name: "Toor Daal",
-        packs: [15, 25, 35],
-      },
+  { name: "Urad Dal" },
+  { name: "Toor Daal" },
+  { name: "Gram Daal" },
+  { name: "Fried Gram Daal" },
+  { name: "Moong Daal" },
+  { name: "Green Gram Daal" },
+  { name: "Kidney Peas" },
+  { name: "Black Gram Peas" },
+  { name: "Black Channa" },
+  { name: "White Channa" }
     ],
     slug: "lentils-pulses",
     description: "Wholesome Protein",
@@ -129,14 +118,18 @@ export const products: Product[] = [
     id: 6,
     name: "South Indian Snacks",
     variants: [
-      {
-        name: "Butter Murukku",
-        packs: [5, 10, 15],
-      },
-      {
-        name: "Madras Mixture",
-        packs: [7, 14, 21],
-      },
+  { name: "Butter Murukku" },
+  { name: "Madras Mixture" },
+  { name: "Kadalai Mittai / Peanut Candy" },
+  { name: "Nendhiram Chips / Kerala Bannana Chips" },
+  { name: "Karasev" },
+  { name: "Masala Peanuts" },
+  { name: "Thattai" },
+  { name: "Mixture" },
+  { name: "Jackfruit Chips" },
+  { name: "Bhujia" },
+  { name: "Sweets & Desserts" },
+  { name: "Fried & Baked Snacks - Samosa, Kachoris.." }
     ],
     slug: "indian-snacks",
     description: "Traditional Crunchy Delights",
@@ -147,14 +140,14 @@ export const products: Product[] = [
     id: 7,
     name: "Jaggery",
     variants: [
-      {
-        name: "Kitchen Towels",
-        packs: [5, 10, 15],
-      },
-      {
-        name: "Stationary Items",
-        packs: [7, 14, 21],
-      },
+  { name: "Sugarcane Jaggery" },
+  { name: "Jaggery Powder" },
+  { name: "Jaggery Slaps/Blocks" },
+  { name: "Jaggery Cubes" },
+  { name: "Flavored Jaggery" },
+  { name: "Date Palm Jaggery" },
+  { name: "Coconut Palm Jaggery" },
+  { name: "Liquid Jaggery (Syrup)" }
     ],
     slug: "essentials",
     description: "Natural Sweet Goodness",
@@ -165,14 +158,12 @@ export const products: Product[] = [
     id: 8,
     name: "Dry Fruits & Nuts",
     variants: [
-      {
-        name: "Cashews",
-        packs: [5, 10, 15],
-      },
-      {
-        name: "Almonds",
-        packs: [7, 14, 21],
-      },
+  { name: "Cashews" },
+  { name: "Almonds" },
+  { name: "Yellow Raisins" },
+  { name: "Black Raisins" },
+  { name: "Peanut/Groundnut with & without Shell" },
+  { name: "Kashiri Hazalnut" }
     ],
     slug: "dry-fruits-nuts",
     description: "Nutritious & Handpicked",
@@ -184,14 +175,17 @@ export const products: Product[] = [
     id: 9,
     name: "Pooja Items",
     variants: [
-      {
-        name: "Diya",
-        packs: [5, 10, 15],
-      },
-      {
-        name: "Incense Sticks",
-        packs: [7, 14, 21],
-      },
+  { name: "Thanjavur Paintings" },
+  { name: "Deity Idols" },
+  { name: "Diya" },
+  { name: "Incense Sticks" },
+  { name: "Kum-Kum" },
+  { name: "Vibuthi" },
+  { name: "Loban-Sambrani" },
+  { name: "Rudraksha beads & malas" },
+  { name: "Decorative & festive items" },
+  { name: "Pooja clothing & accessories" },
+  { name: "Puja thalis & utensils" }
     ],
     slug: "pooja-items",
     description: "Sacred Spiritual Essentials",
@@ -202,14 +196,9 @@ export const products: Product[] = [
     id: 10,
     name: "Brass Items",
     variants: [
-      {
-        name: "Idols",
-        packs: [5, 10, 15],
-      },
-      {
-        name: "Brass Pooja Items",
-        packs: [7, 14, 21],
-      },
+  { name: "Deity Idols" },
+  { name: "All Brass Pooja Items" },
+  { name: "Industrial Brass Items (Plumbing and Hardware)" }
     ],
     slug: "brass-items",
     description: "Heritage in Metal",
@@ -220,14 +209,8 @@ export const products: Product[] = [
     id: 11,
     name: "Cooking Utensils",
     variants: [
-      {
-        name: "Idli Pot",
-        packs: [5, 10, 15],
-      },
-      {
-        name: "All Cooking Utensils",
-        packs: [7, 14, 21],
-      },
+  { name: "Idli Pot" },
+  { name: "All Cooking Utensils" }
     ],
     slug: "cookwares",
     description: "Reliable Cookware Range",
@@ -238,14 +221,12 @@ export const products: Product[] = [
     id: 12,
     name: "Essentials",
     variants: [
-      {
-        name: "Kitchen Towels",
-        packs: [5, 10, 15],
-      },
-      {
-        name: "Stationary Items",
-        packs: [7, 14, 21],
-      },
+  { name: "Home Essentials" },
+  { name: "Stationery Items" },
+  { name: "Kitchen Essentials" },
+  { name: "Cleaning Essentials" },
+  { name: "Handmade Indian Traditional Music Instruments" },
+  { name: "Bharathanatiyam Accessories" }
     ],
     slug: "essentials",
     description: "Everyday Household Needs",

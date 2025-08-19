@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
+import { useRouter } from "next/navigation";
 import { motion } from "framer-motion";
 import { useInView } from "./useInView";
 import {
@@ -54,6 +55,7 @@ const steps = [
 ];
 
 export const Services = () => {
+  const router = useRouter();
   const [isInView, ref] = useInView();
   const [cardsInView, cardsRef] = useInView();
   const [hoveredCard, setHoveredCard] = useState<number | null>(null);
@@ -564,17 +566,21 @@ export const Services = () => {
               </p>
               <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
                 <motion.button 
-                  className="bg-white text-primary-600 px-6 sm:px-10 py-3 sm:py-4 rounded-xl sm:rounded-2xl font-bold hover:bg-blue-50 transition-all duration-300 shadow-xl hover:shadow-2xl transform hover:-translate-y-1 text-sm sm:text-base"
+                  className="bg-white text-primary-600 px-6 sm:px-10 py-3 sm:py-4 rounded-xl sm:rounded-2xl font-bold hover:bg-blue-50 transition-all duration-300 shadow-xl hover:shadow-2xl transform hover:-translate-y-1 text-sm sm:text-base focus:outline-none focus:ring-2 focus:ring-white/60"
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
+                  onClick={() => router.push('/contact-us')}
+                  aria-label="Go to contact page"
                 >
                   <span className="hidden sm:inline">Start Your Journey</span>
                   <span className="sm:hidden">Get Started</span>
                 </motion.button>
                 <motion.button 
-                  className="border-2 border-white/50 text-white px-6 sm:px-10 py-3 sm:py-4 rounded-xl sm:rounded-2xl font-bold hover:bg-white/10 transition-all duration-300 backdrop-blur-sm text-sm sm:text-base"
+                  className="border-2 border-white/50 text-white px-6 sm:px-10 py-3 sm:py-4 rounded-xl sm:rounded-2xl font-bold hover:bg-white/10 transition-all duration-300 backdrop-blur-sm text-sm sm:text-base focus:outline-none focus:ring-2 focus:ring-white/60"
                   whileHover={{ scale: 1.05, borderColor: "rgba(255,255,255,0.8)" }}
                   whileTap={{ scale: 0.95 }}
+                  onClick={() => router.push('/products')}
+                  aria-label="View products"
                 >
                   Learn More
                 </motion.button>

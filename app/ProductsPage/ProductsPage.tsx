@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
+import { useRouter } from "next/navigation";
 import Image from "next/image";
 import { products } from "@/app/masters/products";
 import { motion, AnimatePresence } from "framer-motion";
@@ -18,7 +19,6 @@ type Product = {
 
 type Variant = {
   name: string;
-  packs: number[];
 };
 
 export const ProductsPage = () => {
@@ -26,6 +26,7 @@ export const ProductsPage = () => {
   const [selectedCategory, setSelectedCategory] = useState("all");
   const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const router = useRouter();
 
   // Get unique categories
   const categories = ["all", ...new Set(products.map(product => product.name.toLowerCase()))];
@@ -269,10 +270,20 @@ export const ProductsPage = () => {
               Contact us today to learn more about our products and how we can help your business grow
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="bg-white text-primary-600 px-8 py-3 rounded-lg font-semibold hover:bg-primary-50 transition-colors">
+              <button
+                type="button"
+                onClick={() => router.push('/contact-us')}
+                className="bg-white text-primary-600 px-8 py-3 rounded-lg font-semibold hover:bg-primary-50 transition-colors focus:outline-none focus:ring-2 focus:ring-white/60"
+                aria-label="Go to contact page"
+              >
                 Contact Us
               </button>
-              <button className="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-primary-600 transition-colors">
+              <button
+                type="button"
+                onClick={() => router.push('/contact-us')}
+                className="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-primary-600 transition-colors focus:outline-none focus:ring-2 focus:ring-white/60"
+                aria-label="Go to contact page to request a quote"
+              >
                 Request Quote
               </button>
             </div>
@@ -339,9 +350,10 @@ export const ProductsPage = () => {
                       {/* All Variants */}
                       {selectedProduct.variants && selectedProduct.variants.length > 0 && (
                         <div>
-                          <h3 className="text-xl font-semibold text-primary-800 mb-4">
+                          <h3 className="text-xl font-semibold text-primary-800 mb-1">
                             Available Variants
                           </h3>
+                          <p className="text-xs text-primary-600 mb-4">Flexible packaging from small retail packs to bulk wholesale.</p>
                           <div className="space-y-4">
                             {selectedProduct.variants.map((variant: Variant, index: number) => (
                               <motion.div
@@ -351,22 +363,9 @@ export const ProductsPage = () => {
                                 animate={{ opacity: 1, x: 0 }}
                                 transition={{ delay: index * 0.1 }}
                               >
-                                <h4 className="font-semibold text-primary-800 mb-2">
+                                <h4 className="font-semibold text-primary-800">
                                   {variant.name}
                                 </h4>
-                                <div className="flex flex-wrap gap-2">
-                                  <span className="text-sm text-primary-600 font-medium">
-                                    Pack Sizes:
-                                  </span>
-                                  {variant.packs.map((pack: number, packIndex: number) => (
-                                    <span
-                                      key={packIndex}
-                                      className="inline-block bg-primary-100 text-primary-700 px-3 py-1 rounded-full text-sm font-medium"
-                                    >
-                                      {pack}kg
-                                    </span>
-                                  ))}
-                                </div>
                               </motion.div>
                             ))}
                           </div>
@@ -375,12 +374,24 @@ export const ProductsPage = () => {
 
                       {/* Action Buttons */}
                       <div className="flex flex-col sm:flex-row gap-3 pt-4">
-                        <button className="flex-1 bg-gradient-to-r from-primary-600 to-primary-700 text-white py-3 px-6 rounded-lg hover:from-primary-700 hover:to-primary-800 transition-all duration-300 font-semibold shadow-lg hover:shadow-xl">
+                        <button
+                          type="button"
+                          onClick={() => { closeModal(); router.push('/contact-us'); }}
+                          className="flex-1 bg-gradient-to-r from-primary-600 to-primary-700 text-white py-3 px-6 rounded-lg hover:from-primary-700 hover:to-primary-800 transition-all duration-300 font-semibold shadow-lg hover:shadow-xl focus:outline-none focus:ring-2 focus:ring-primary-500/50"
+                          aria-label="Request a quote for this product"
+                        >
                           Request Quote
                         </button>
-                        <button className="flex-1 border-2 border-primary-600 text-primary-600 py-3 px-6 rounded-lg hover:bg-primary-600 hover:text-white transition-all duration-300 font-semibold">
+                        <a
+                          href={`https://calendly.com/mibindustriesindia/30min?utm_source=site&utm_medium=modal&utm_campaign=contact_sales&product=${encodeURIComponent(selectedProduct.slug)}`}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          onClick={() => { closeModal(); }}
+                          className="flex-1 border-2 border-primary-600 text-primary-600 py-3 px-6 rounded-lg hover:bg-primary-600 hover:text-white transition-all duration-300 font-semibold focus:outline-none focus:ring-2 focus:ring-primary-500/40 text-center"
+                          aria-label="Book a sales call on Calendly"
+                        >
                           Contact Sales
-                        </button>
+                        </a>
                       </div>
                     </div>
                   </div>
