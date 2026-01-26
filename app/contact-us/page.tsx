@@ -135,7 +135,7 @@ const Contactus = () => {
               <h3 className="text-title-8 font-semibold text-gray-800 mb-3">Call Us</h3>
               <div className="space-y-3 text-body-1 text-gray-600">
                 <p><span className="font-medium">Main:</span><br/><a href="tel:+919363291001" className="text-primary-600 hover:text-primary-800">+919363291001</a></p>
-                <p><span className="font-medium">Support:</span><br/><a href="tel:+919894598418" className="text-primary-600 hover:text-primary-800">+91 98945 98418</a></p>
+                <p><span className="font-medium">Support:</span><br/><a href="tel:+917200710002" className="text-primary-600 hover:text-primary-800">+91 91 7200710002</a></p>
               </div>
               <div className="mt-auto" />
               <div className="pointer-events-none absolute inset-0 opacity-0 group-hover:opacity-100 bg-gradient-to-br from-white/0 to-primary-100/40 transition" />
@@ -378,7 +378,7 @@ export default Contactus;
                 </div>
                 <div>
                   <p className="font-medium text-gray-800 mb-1">Support</p>
-                  <a className="text-primary-600 text-sm" href="tel:+919894598418">+91 98945 98418</a>
+                  <a className="text-primary-600 text-sm" href="tel:+917200710002">+91 7200710002</a>
                 </div>
                 <div className="sm:col-span-2 pt-1">
                   <p className="text-xs text-gray-500">We route priority partner calls automatically. Outside hours, leave a voicemail.</p>

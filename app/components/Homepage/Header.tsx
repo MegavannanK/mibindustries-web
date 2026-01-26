@@ -100,18 +100,26 @@ export const Header = () => {
 
         {/* Image Section */}
         <motion.div
-          className="relative w-full max-w-sm sm:max-w-md md:max-w-md lg:max-w-3xl flex-1 min-h-0 lg:mt-0"
+          className="relative w-full max-w-sm sm:max-w-md md:max-w-lg lg:max-w-3xl xl:max-w-5xl 2xl:max-w-[1000px] flex-1 min-h-0 lg:mt-0"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.6, ease: "easeOut", delay: 0.2 }}
         >
-          <Image
-            src={headerImage}
-            alt="Global Trade Illustration"
-            className="w-full h-auto object-contain"
-            priority
-            sizes="(max-width: 1024px) 90vw, 600px"
-          />
+          <div className="relative w-full">
+            <Image
+              src={headerImage}
+              alt="Global logistics and export network illustration (air, sea, road)"
+              className="w-full h-auto object-contain select-none"
+              priority
+              quality={90}
+              placeholder="blur"
+              sizes="(max-width: 480px) 90vw,
+                     (max-width: 768px) 80vw,
+                     (max-width: 1024px) 70vw,
+                     (max-width: 1440px) 50vw,
+                     800px"
+            />
+          </div>
         </motion.div>
       </div>
     </div>

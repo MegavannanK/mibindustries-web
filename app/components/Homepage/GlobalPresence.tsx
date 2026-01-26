@@ -497,7 +497,7 @@ export const GlobalPresence = () => {
           transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
           className="mt-16 text-center"
         >
-          <div className="bg-gradient-to-r from-slate-800 via-slate-900 to-slate-800 rounded-3xl p-8 md:p-12 text-white shadow-2xl relative overflow-hidden border border-slate-700/50">
+          <div id="verified-credentials" className="bg-gradient-to-r from-slate-800 via-slate-900 to-slate-800 rounded-3xl p-8 md:p-12 text-white shadow-2xl relative overflow-hidden border border-slate-700/50 scroll-mt-40 md:scroll-mt-48">
             
             {/* Simplified Background Pattern */}
             <div className="absolute inset-0 opacity-10">
