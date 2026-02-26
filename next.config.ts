@@ -1,8 +1,9 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
+  output: "export",   // 🔥 REQUIRED for GitHub Pages
   images: {
+    unoptimized: true,   // 🔥 REQUIRED for static export
     domains: ["res.cloudinary.com"],
   },
 };
