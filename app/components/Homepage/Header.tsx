@@ -1,31 +1,32 @@
-import { motion } from "framer-motion";
+import { motion, easeOut, type Variants } from "framer-motion";
 import headerImage from "../../assets/images/export.png";
 import Image from "next/image";
 import { ArrowRightIcon } from "@heroicons/react/outline";
 import { useRouter } from "next/navigation";
 
+
 export const Header = () => {
   const router = useRouter();
   
-  const containerVariants = {
+  const containerVariants : Variants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
       transition: {
         staggerChildren: 0.05,
-        ease: "easeOut"
+        ease: easeOut
       },
     },
   };
 
-  const itemVariants = {
+  const itemVariants : Variants = {
     hidden: { opacity: 0, y: 8 },
     visible: {
       opacity: 1,
       y: 0,
       transition: {
         duration: 0.3,
-        ease: "easeOut",
+        ease: easeOut
       },
     },
   };
@@ -79,7 +80,7 @@ export const Header = () => {
             <motion.button
               whileHover={{ scale: 1.01 }}
               whileTap={{ scale: 0.99 }}
-              transition={{ duration: 0.15, ease: "easeOut" }}
+              transition={{ duration: 0.15, ease: easeOut }}
               onClick={() => router.push('/services')}
               className="px-6 py-2.5 sm:px-8 sm:py-3 bg-gradient-to-r from-primary-600 to-primary-700 text-white font-semibold rounded-full shadow-lg w-full sm:w-auto flex items-center justify-center gap-2 text-sm sm:text-base cursor-pointer"
             >
@@ -89,7 +90,7 @@ export const Header = () => {
             <motion.button
               whileHover={{ scale: 1.01 }}
               whileTap={{ scale: 0.99 }}
-              transition={{ duration: 0.15, ease: "easeOut" }}
+              transition={{ duration: 0.15, ease: easeOut }}
               onClick={() => router.push('/contact-us')}
               className="px-6 py-2.5 sm:px-8 sm:py-3 text-primary-700 font-semibold rounded-full w-full sm:w-auto hover:bg-primary-50 text-sm sm:text-base cursor-pointer"
             >
@@ -103,7 +104,7 @@ export const Header = () => {
           className="relative w-full max-w-sm sm:max-w-md md:max-w-lg lg:max-w-3xl xl:max-w-5xl 2xl:max-w-[1000px] flex-1 min-h-0 lg:mt-0"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ duration: 0.6, ease: "easeOut", delay: 0.2 }}
+          transition={{ duration: 0.6, ease: easeOut, delay: 0.2 }}
         >
           <div className="relative w-full">
             <Image

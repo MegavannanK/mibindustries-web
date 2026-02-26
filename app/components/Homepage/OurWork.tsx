@@ -2,7 +2,7 @@ import React from "react";
 import Container from "../ui/Container";
 import Image from "next/image";
 import { success_story } from "@/app/masters/sucess_story";
-import { motion } from "framer-motion";
+import { motion, easeOut } from "framer-motion";
 
 export const OurWork: React.FC = () => {
   const images = success_story;
@@ -14,7 +14,7 @@ export const OurWork: React.FC = () => {
       opacity: 1,
       transition: {
         staggerChildren: 0.2,
-        ease: "easeOut"
+        ease: easeOut
       }
     }
   };
@@ -26,7 +26,7 @@ export const OurWork: React.FC = () => {
       y: 0,
       transition: {
         duration: 0.6,
-        ease: "easeOut"
+        ease: easeOut
       }
     }
   };
@@ -176,7 +176,7 @@ export const OurWork: React.FC = () => {
                     <motion.div
                       initial={{ opacity: 0, scale: 0.95, y: 20 }}
                       animate={{ opacity: 1, scale: 1, y: 0 }}
-                      transition={{ duration: 0.6, ease: "easeOut" }}
+                      transition={{ duration: 0.6, ease: easeOut }}
                       className="relative w-full h-full p-3"
                     >
                       <Image

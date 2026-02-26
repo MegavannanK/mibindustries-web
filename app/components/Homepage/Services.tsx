@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 import { useRouter } from "next/navigation";
-import { motion } from "framer-motion";
+import { motion, easeOut, easeInOut, type Variants } from "framer-motion";
 import { useInView } from "./useInView";
 import {
   CogIcon,
@@ -86,12 +86,12 @@ export const Services = () => {
     mobileCard5InView,
   ];
 
-  const containerVariants = {
+  const containerVariants : Variants = {
     hidden: {},
     visible: { transition: { staggerChildren: 0.2 } },
   };
 
-  const cardVariants = {
+  const cardVariants : Variants = {
     hidden: { opacity: 0, y: 80, scale: 0.8 },
     visible: { 
       opacity: 1, 
@@ -107,7 +107,7 @@ export const Services = () => {
   };
 
   // Individual card variants for mobile (no stagger needed)
-  const mobileCardVariants = {
+  const mobileCardVariants : Variants = {
     hidden: { opacity: 0, y: 60, scale: 0.9 },
     visible: { 
       opacity: 1, 
@@ -122,7 +122,7 @@ export const Services = () => {
     },
   };
 
-  const arrowVariants = {
+  const arrowVariants : Variants = {
     hidden: { opacity: 0, scale: 0, rotate: -45 },
     visible: { 
       opacity: 1, 
@@ -138,15 +138,16 @@ export const Services = () => {
   };
 
   const floatingVariants = {
-    animate: {
-      y: [-10, 10, -10],
-      transition: {
-        duration: 4,
-        repeat: Infinity,
-        ease: "easeInOut"
-      }
-    }
-  };
+  animate: {
+    y: [-10, 10, -10],
+    transition: {
+      duration: 4,
+      repeat: Infinity,
+      repeatType: "loop",
+      ease: easeInOut,
+    },
+  },
+} satisfies Variants;
 
   return (
     <div ref={ref} className="py-24 bg-gradient-to-br from-slate-50 via-white to-blue-50 relative overflow-hidden">
@@ -162,7 +163,7 @@ export const Services = () => {
         <motion.div
           initial={{ opacity: 0, y: -40 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, ease: "easeOut" }}
+          transition={{ duration: 1, ease: easeOut }}
           className="text-center mb-20"
         >
           <motion.div
@@ -251,7 +252,7 @@ export const Services = () => {
                         scale: hoveredCard === idx || hoveredCard === idx + 1 ? 1.2 : 1
                       }}
                       transition={{
-                        x: { duration: 2, repeat: Infinity, ease: "easeInOut" },
+                        x: { duration: 2, repeat: Infinity, ease: easeInOut },
                         scale: { type: "spring", stiffness: 300 }
                       }}
                       className="relative"
@@ -337,7 +338,7 @@ export const Services = () => {
                           scale: hoveredCard === idx || hoveredCard === idx + 1 ? 1.2 : 1
                         }}
                         transition={{
-                          x: { duration: 2, repeat: Infinity, ease: "easeInOut" },
+                          x: { duration: 2, repeat: Infinity, ease: easeInOut },
                           scale: { type: "spring", stiffness: 300 }
                         }}
                         className="relative"
@@ -364,7 +365,7 @@ export const Services = () => {
                   transition={{
                     duration: 2,
                     repeat: Infinity,
-                    ease: "easeInOut"
+                    ease: easeInOut
                   }}
                   className="relative"
                 >
@@ -437,7 +438,7 @@ export const Services = () => {
                           scale: hoveredCard === idx + 3 || hoveredCard === idx + 4 ? 1.2 : 1
                         }}
                         transition={{
-                          x: { duration: 2, repeat: Infinity, ease: "easeInOut" },
+                          x: { duration: 2, repeat: Infinity, ease: easeInOut },
                           scale: { type: "spring", stiffness: 300 }
                         }}
                         className="relative"
@@ -522,7 +523,7 @@ export const Services = () => {
                       transition={{
                         duration: 2,
                         repeat: Infinity,
-                        ease: "easeInOut"
+                        ease: easeInOut
                       }}
                     >
                       <div className="absolute inset-0 bg-gradient-to-b from-primary-400 to-purple-400 rounded-full blur-sm opacity-50"></div>

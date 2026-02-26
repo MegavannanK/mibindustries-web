@@ -1,6 +1,6 @@
   import { useState, useEffect } from "react";
   import { flags } from "@/app/masters/flags";
-  import { motion, AnimatePresence } from "framer-motion";
+  import { motion, AnimatePresence, easeIn, easeOut , type Variants } from "framer-motion";
   import Image from "next/image";
 
   export const Flags = () => {
@@ -45,7 +45,7 @@
       }
     };
 
-    const flagVariants = {
+    const flagVariants : Variants= {
       hidden: { 
         opacity: 0, 
         y: 20,
@@ -57,7 +57,7 @@
         scale: 1,
         transition: {
           duration: 0.6,
-          ease: "easeOut"
+          ease: easeOut
         }
       },
       exit: { 
@@ -66,7 +66,7 @@
         scale: 0.9,
         transition: {
           duration: 0.3,
-          ease: "easeIn"
+          ease: easeIn
         }
       }
     };

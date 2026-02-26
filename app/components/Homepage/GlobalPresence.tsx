@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, easeOut } from "framer-motion";
 import { LocationMarkerIcon, ClockIcon, OfficeBuildingIcon } from "@heroicons/react/outline";
 
 interface Branch {
@@ -103,7 +103,7 @@ const cardVariants = {
     y: 0,
     transition: {
       duration: 0.6,
-      ease: "easeOut"
+      ease: easeOut
     }
   }
 };
@@ -118,7 +118,7 @@ const headerVariants = {
     y: 0,
     transition: {
       duration: 0.8,
-      ease: "easeOut"
+      ease: easeOut
     }
   }
 };
@@ -197,7 +197,7 @@ export const GlobalPresence = () => {
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true, amount: 0.3 }}
-              whileHover={{ y: -8, transition: { duration: 0.3, ease: "easeOut" } }}
+              whileHover={{ y: -8, transition: { duration: 0.3, ease: easeOut } }}
               className="group relative"
             >
               {/* Ultra Modern Card Design */}
@@ -426,7 +426,7 @@ export const GlobalPresence = () => {
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.3 }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
+          transition={{ duration: 0.8, ease: easeOut }}
           className="text-center"
         >
           <div className="bg-gradient-to-r from-primary-600 via-primary-700 to-primary-800 rounded-3xl p-8 md:p-12 text-white shadow-2xl relative overflow-hidden">
@@ -472,7 +472,7 @@ export const GlobalPresence = () => {
                     transition={{ 
                       duration: 0.5, 
                       delay: 0.5 + index * 0.1,
-                      ease: "easeOut"
+                      ease: easeOut
                     }}
                     className="text-center"
                   >
@@ -494,7 +494,7 @@ export const GlobalPresence = () => {
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.3 }}
-          transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
+          transition={{ duration: 0.8, ease: easeOut, delay: 0.2 }}
           className="mt-16 text-center"
         >
           <div id="verified-credentials" className="bg-gradient-to-r from-slate-800 via-slate-900 to-slate-800 rounded-3xl p-8 md:p-12 text-white shadow-2xl relative overflow-hidden border border-slate-700/50 scroll-mt-40 md:scroll-mt-48">
@@ -565,7 +565,7 @@ export const GlobalPresence = () => {
                     transition={{ 
                       duration: 0.5, 
                       delay: index * 0.1,
-                      ease: "easeOut"
+                      ease: easeOut
                     }}
                     className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20 hover:border-white/40 transition-all duration-300"
                   >

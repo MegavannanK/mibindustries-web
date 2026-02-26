@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
-import { motion, useAnimation } from "framer-motion";
+import { motion, useAnimation, easeOut } from "framer-motion";
 import Container from "../ui/Container";
 
 export const AboutUs = () => {
@@ -50,7 +50,7 @@ export const AboutUs = () => {
       opacity: 1,
       transition: {
         staggerChildren: 0.2,
-        ease: "easeOut"
+        ease: easeOut
       }
     }
   };
@@ -62,7 +62,7 @@ export const AboutUs = () => {
       y: 0,
       transition: {
         duration: 0.6,
-        ease: "easeOut"
+        ease: easeOut
       }
     }
   };
@@ -144,7 +144,7 @@ export const AboutUs = () => {
                     <motion.div
                       initial={{ opacity: 0, scale: 0.95, y: 20 }}
                       animate={{ opacity: 1, scale: 1, y: 0 }}
-                      transition={{ duration: 0.6, ease: "easeOut" }}
+                      transition={{ duration: 0.6, ease: easeOut }}
                       className="relative w-full h-full"
                     >
                       <Image
