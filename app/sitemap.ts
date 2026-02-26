@@ -1,21 +1,29 @@
-import { MetadataRoute } from 'next';
+import type { MetadataRoute } from 'next';
 import { products } from './masters/products';
+
+export const dynamic = "force-static";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const base = 'https://mibindustries.in';
+
   const staticRoutes: MetadataRoute.Sitemap = [
     '',
     '/products',
     '/services',
     '/contact-us'
-  ].map((p) => ({ url: `${base}${p}`, lastModified: new Date(), changeFrequency: 'weekly', priority: p === '' ? 1 : 0.7 }));
+  ].map((p) => ({
+    url: `${base}${p}`,
+    lastModified: '2025-01-01', // ✅ static value
+    changeFrequency: 'weekly',
+    priority: p === '' ? 1 : 0.7
+  }));
 
-  const productRoutes: MetadataRoute.Sitemap = products.map(p => ({
+  const productRoutes: MetadataRoute.Sitemap = products.map((p) => ({
     url: `${base}/products/${encodeURIComponent(p.slug)}`,
-    lastModified: new Date(),
+    lastModified: '2025-01-01', // ✅ static value
     changeFrequency: 'monthly',
     priority: 0.6
   }));
 
-  return [ ...staticRoutes, ...productRoutes ];
+  return [...staticRoutes, ...productRoutes];
 }

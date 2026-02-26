@@ -1,27 +1,30 @@
-import { useParams } from "next/navigation";
+"use client";
+
 import { products } from "../masters/products";
 import ProductCard from "./ui/ProductCard";
 
-export const Category = () => {
-  const params = useParams();
-  const slug = params.slug;
-  const categoryData = products.find(
-    (product) => product.slug === slug
-  )?.variants;
+type Props = {
+  slug: string;
+};
 
-  const imageUrl =
-    products.find((product) => product.slug === slug)?.image ?? "";
+const Category = ({ slug }: Props) => {
+  const filteredProducts = products.filter(
+    (product) => product.slug === slug
+  );
 
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5">
-      {categoryData?.map((category, index) => (
+    <>
+      {filteredProducts.map((product) => (
         <ProductCard
-          image={imageUrl}
-          key={index}
-          title={category.name}
-          // packs={category.packs}
+          key={product.slug}
+          title={product.name}
+          description={product.description}
+          image={product.image}
+          variant="products"
         />
       ))}
-    </div>
+    </>
   );
 };
+
+export { Category };
