@@ -1,9 +1,16 @@
 import type { NextConfig } from "next";
 
+const isProd = process.env.NODE_ENV === "production";
+const repoName = "mibindustries-web";
+
 const nextConfig: NextConfig = {
-  output: "export",   // 🔥 REQUIRED for GitHub Pages
+  output: "export",
+
+  basePath: isProd ? `/${repoName}` : "",
+  assetPrefix: isProd ? `/${repoName}/` : "",
+
   images: {
-    unoptimized: true,   // 🔥 REQUIRED for static export
+    unoptimized: true,
     domains: ["res.cloudinary.com"],
   },
 };
