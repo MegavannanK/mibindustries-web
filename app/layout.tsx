@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 
@@ -64,8 +65,25 @@ export default function RootLayout({
   return (
     <html lang="en-IN">
       <head>
+        {/* Google Analytics */}
+        <Script
+          src={`https://www.googletagmanager.com/gtag/js?id=G-YXXKK7PMM8`}
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-YXXKK7PMM8');
+          `}
+        </Script>
+
+        {/* Existing Meta */}
         <link rel="icon" href="/assets/images/logo.png" type="image/png" />
         <meta name="theme-color" content="#0f3d5f" />
+
+        {/* Your Structured Data */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
