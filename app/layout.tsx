@@ -65,19 +65,11 @@ export default function RootLayout({
   return (
     <html lang="en-IN">
       <head>
-        {/* Google Analytics */}
+        {/* Google Tag Manager */}
         <Script
-          src={`https://www.googletagmanager.com/gtag/js?id=G-YXXKK7PMM8`}
+          src="https://www.googletagmanager.com/ns.html?id=GTM-PCFV7PH7"
           strategy="afterInteractive"
         />
-        <Script id="google-analytics" strategy="afterInteractive">
-          {`
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', 'G-YXXKK7PMM8');
-          `}
-        </Script>
 
         {/* Existing Meta */}
         <link rel="icon" href="/assets/images/logo.png" type="image/png" />
