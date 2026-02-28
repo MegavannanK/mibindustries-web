@@ -67,7 +67,7 @@ export default function RootLayout({
       <head>
         {/* Google Tag Manager */}
         <Script
-          src="https://www.googletagmanager.com/ns.html?id=GTM-PCFV7PH7"
+          src="https://www.googletagmanager.com/gtm.js?id=GTM-PCFV7PH7"
           strategy="afterInteractive"
         />
 
