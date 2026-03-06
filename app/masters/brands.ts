@@ -17,11 +17,11 @@ export const brands: Brand[] = [
     name: "Lulu",
     image: `${CLOUDINARY_BASE_URL}/v1737312885/MIB-website/Homepage/Brands/caz1dwxmzx2flwxrpb50.png`,
   },
-  {
-    id: 3,
-    name: "fresh fortune",
-    image: `${CLOUDINARY_BASE_URL}/v1737315906/MIB-website/Homepage/Brands/uge7mmkxqe2hljrbtple.jpg`,
-  },
+  // {
+  //   id: 3,
+  //   name: "fresh fortune",
+  //   image: `${CLOUDINARY_BASE_URL}/v1737315906/MIB-website/Homepage/Brands/uge7mmkxqe2hljrbtple.jpg`,
+  // },
   // {
   //   id: 4,
   //   name: "East n west",
