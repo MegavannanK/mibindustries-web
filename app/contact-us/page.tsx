@@ -134,7 +134,7 @@ const Contactus = () => {
               <div className="w-16 h-16 rounded-full bg-gradient-to-r from-primary-500 to-primary-700 flex items-center justify-center mb-6"><PhoneOutgoingIcon className="h-8 w-8 text-white"/></div>
               <h3 className="text-title-8 font-semibold text-gray-800 mb-3">Call Us</h3>
               <div className="space-y-3 text-body-1 text-gray-600">
-                <p><span className="font-medium">Main:</span><br/><a href="tel:+919363291001" className="text-primary-600 hover:text-primary-800">+919363291001</a></p>
+                <p><span className="font-medium">Main:</span><br/><a href="tel:+919363291001" className="text-primary-600 hover:text-primary-800">+91 9363291001</a></p>
                 <p><span className="font-medium">Support:</span><br/><a href="tel:+917200710002" className="text-primary-600 hover:text-primary-800">+91 7200710002</a></p>
               </div>
               <div className="mt-auto" />
