@@ -1,4 +1,11 @@
 "use client";
+
+declare global {
+  interface Window {
+    dataLayer: Record<string, unknown>[];
+  }
+}
+
 import { MailIcon, PhoneOutgoingIcon, LocationMarkerIcon, ClockIcon } from "@heroicons/react/solid";
 import { motion, AnimatePresence } from "framer-motion";
 import Layout from "../components/Layout";
@@ -172,6 +179,15 @@ const Contactus = () => {
                 <motion.a
                   key={a.label}
                   href={a.href}
+                  onClick={() => {
+                    if (a.label === "WhatsApp") {
+                      window.dataLayer = window.dataLayer || [];
+                      window.dataLayer.push({
+                        event: "whatsapp_click",
+                        page_location: window.location.href
+                      });
+                    }
+                  }}
                   target={a.href.startsWith('http') ? '_blank' : undefined}
                   rel={a.href.startsWith('http') ? 'noopener noreferrer' : undefined}
                   whileTap={{scale:0.96}}
@@ -195,6 +211,15 @@ const Contactus = () => {
                 <motion.a
                   key={a.label}
                   href={a.href}
+                  onClick={() => {
+                    if (a.label === "WhatsApp") {
+                      window.dataLayer = window.dataLayer || [];
+                      window.dataLayer.push({
+                        event: "whatsapp_click",
+                        page_location: window.location.href
+                      });
+                    }
+                  }}
                   target={a.href.startsWith('http') ? '_blank' : undefined}
                   rel={a.href.startsWith('http') ? 'noopener noreferrer' : undefined}
                   whileHover={{ scale:1.02 }}
