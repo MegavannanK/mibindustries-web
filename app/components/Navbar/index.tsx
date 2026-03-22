@@ -8,6 +8,7 @@ import { MenuIcon, XIcon } from "@heroicons/react/solid";
 
 const navItems = [
   { label: "Home", target: "/" },
+  { label: "About Us", target: "/about-us" },
   { label: "Products", target: "/products" },
   { label: "Contact Us", target: "/contact-us" },
   { label: "Services", target: "/services" },
@@ -153,11 +154,7 @@ export const NavbarMobile = () => {
 
       {/* Mobile Menu */}
       {isMenuOpen && (
-        <div className={`absolute top-20 left-0 right-0 p-5 rounded-b-md transition-all duration-500 ${
-          isScrolled 
-            ? "bg-white/85 backdrop-blur-md border-b border-primary-200/50 text-primary-800" 
-            : "bg-transparent backdrop-blur-sm border-b border-primary-200/30 text-primary-800"
-        }`}>
+        <div className={`absolute top-20 left-0 right-0 p-5 rounded-b-2xl shadow-2xl transition-all duration-500 bg-white border-b border-primary-100 text-primary-900 z-[100]`}>
           <div className="flex flex-col items-center">
             {navItems.map((item, index) => (
               <p

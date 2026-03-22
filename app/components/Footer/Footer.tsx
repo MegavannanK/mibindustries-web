@@ -2,6 +2,7 @@
 import { useState, useEffect, useCallback } from "react";
 import { useRouter } from "next/navigation";
 import { MailIcon, PhoneIncomingIcon, XIcon } from "@heroicons/react/solid";
+import { ArrowRightIcon } from "@heroicons/react/outline";
 import Image from "next/image";
 import Logo from "@/app/assets/images/logo.png";
 
@@ -18,6 +19,7 @@ interface CompanyItem {
   href?: string; // route (products) or undefined for modal trigger
 }
 
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 const contactData: ContactItem[] = [
   {
     icon: PhoneIncomingIcon,
@@ -33,6 +35,7 @@ const contactData: ContactItem[] = [
   },
 ];
 
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 const companyData: CompanyItem[] = [
   {
     text: "Licenses",
@@ -64,106 +67,123 @@ export const Footer = () => {
   }, [open, escHandler]);
   
   return (
-    <div className="bg-sky-100 text-gray-800 py-6">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* First Row: Logo */}
-        <div className="flex justify-center items-center">
-          <div className="flex flex-col items-center">
+    <footer className="bg-sky-50 text-gray-700 pt-16 pb-8 border-t border-sky-100">
+      <div className="max-w-7xl mx-auto px-6 lg:px-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8">
+          
+          {/* Column 1: Brand */}
+          <div className="space-y-6">
             <div className="relative h-[100px] w-[100px]">
               <Image
                 src={Logo}
-                alt="Logo"
+                alt="MIB Industries Logo"
                 fill
-                className="object-contain"
+                className="object-contain mix-blend-multiply"
               />
             </div>
-            {/* <h4 className="text-2xl font-semibold text-primary-600 mt-2">MIB INDUSTRIES</h4> */}
+            <h3 className="text-2xl font-bold text-gray-900 tracking-wide">MIB Industries</h3>
+            <p className="text-gray-600 text-sm leading-relaxed max-w-xs">
+              Your global partner in premium agricultural sourcing and export. Delivering excellence, consistency, and trust across borders.
+            </p>
           </div>
-        </div>
 
-        {/* Second Row: Stay in Touch & Company */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-6">
-          {/* Stay in Touch */}
-          <div className="text-center md:text-left">
-            <p className="text-lg font-semibold mb-3">Stay In Touch</p>
-            <ul className="space-y-2">
-              {contactData.map((contact, index) => {
-                const url = contact.link || contact.href || '#';
-                return (
-                  <li
-                    key={index}
-                    className="flex items-center justify-center md:justify-start space-x-2"
-                  >
-                    <contact.icon
-                      width={24}
-                      height={24}
-                      aria-hidden="true"
-                      className="text-blue-300 flex-shrink-0"
-                    />
-                    <a
-                      href={url}
-                      aria-label={contact.label || contact.text}
-                      className="text-gray-600 hover:text-gray-800 focus:outline-none focus:ring-2 focus:ring-blue-300 rounded underline decoration-transparent hover:decoration-current transition-colors cursor-pointer"
-                    >
-                      {contact.text}
-                    </a>
-                  </li>
-                );
-              })}
+          {/* Column 2: Quick Links */}
+          <div>
+            <h4 className="text-gray-900 font-semibold mb-6 uppercase tracking-wider text-sm">Quick Links</h4>
+            <ul className="space-y-4">
+              <li>
+                <button onClick={() => router.push("/")} className="hover:text-primary-600 transition-colors">Home</button>
+              </li>
+              <li>
+                <button onClick={() => router.push("/about-us")} className="hover:text-primary-600 transition-colors">About Us</button>
+              </li>
+              <li>
+                <button onClick={() => router.push("/services")} className="hover:text-primary-600 transition-colors">Services</button>
+              </li>
+              <li>
+                <button 
+                  onClick={() => setOpen(true)} 
+                  className="hover:text-primary-600 transition-colors flex items-center gap-2"
+                >
+                  Licenses & Certifications
+                </button>
+              </li>
             </ul>
           </div>
 
-          {/* Company */}
-          <div className="text-center md:text-right hidden md:block">
-            <p className="text-lg font-semibold mb-3">Company</p>
-            <ul className="space-y-2">
-              {companyData.map((company, index) => (
-                <li key={index}>
-                  {company.text === "Licenses" ? (
-                    <button
-                      type="button"
-                      onClick={() => setOpen(true)}
-                      className="text-gray-600 hover:text-gray-800 focus:outline-none focus:ring-2 focus:ring-blue-300 rounded"
-                      aria-haspopup="dialog"
-                      aria-expanded={open}
-                      aria-controls="licenses-modal"
-                    >
-                      {company.text}
-                    </button>
-                  ) : company.text === "Products" ? (
-                    <button
-                      type="button"
-                      onClick={() => router.push("/products")}
-                      className="text-gray-600 hover:text-gray-800 focus:outline-none focus:ring-2 focus:ring-blue-300 rounded"
-                      aria-label="Go to Products"
-                    >
-                      {company.text}
-                    </button>
-                  ) : null}
-                </li>
-              ))}
+          {/* Column 3: Top Categories */}
+          <div>
+            <h4 className="text-gray-900 font-semibold mb-6 uppercase tracking-wider text-sm">Our Products</h4>
+            <ul className="space-y-4">
+              <li>
+                <button onClick={() => router.push("/products")} className="hover:text-primary-600 transition-colors">Premium Rice</button>
+              </li>
+              <li>
+                <button onClick={() => router.push("/products")} className="hover:text-primary-600 transition-colors">Whole Spices</button>
+              </li>
+              <li>
+                <button onClick={() => router.push("/products")} className="hover:text-primary-600 transition-colors">Lentils & Pulses</button>
+              </li>
+              <li>
+                <button onClick={() => router.push("/products")} className="hover:text-primary-600 font-medium transition-colors flex items-center gap-1">
+                  View All Products <ArrowRightIcon className="w-4 h-4 ml-1" />
+                </button>
+              </li>
+            </ul>
+          </div>
+
+          {/* Column 4: Contact Us */}
+          <div>
+            <h4 className="text-gray-900 font-semibold mb-6 uppercase tracking-wider text-sm">Contact Us</h4>
+            <ul className="space-y-4 text-sm">
+              <li className="flex items-start gap-3">
+                <PhoneIncomingIcon className="w-5 h-5 text-primary-600 flex-shrink-0 mt-0.5" />
+                <a href="tel:+919363291001" className="hover:text-gray-900 transition-colors">
+                  +91 93632 91001
+                </a>
+              </li>
+              <li className="flex items-start gap-3">
+                <MailIcon className="w-5 h-5 text-primary-600 flex-shrink-0 mt-0.5" />
+                <a href="mailto:info@mibindustries.in" className="hover:text-gray-900 transition-colors">
+                  info@mibindustries.in
+                </a>
+              </li>
+              <li className="flex items-start gap-3 text-gray-600">
+                {/* Placeholder for Address Icon - could use generic SVG if no MapIcon */}
+                <svg className="w-5 h-5 text-primary-600 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                </svg>
+                <span>
+                  37/17, Reddy St,<br/>
+                  Periyar Nagar, Korattur,<br/>
+                  Chennai-600080
+                </span>
+              </li>
             </ul>
           </div>
         </div>
 
-        {/* Third Row: Divider Line */}
-        <div className="border-t border-sky-200 my-6"></div>
-
-        {/* Fourth Row: Copyright */}
-        <div className="text-center">
-          <p className="text-gray-500">© 2025 MIB. All Rights Reserved</p>
+        {/* Bottom Bar: Copyright & Details */}
+        <div className="border-t border-sky-200 mt-16 pt-8 flex flex-col md:flex-row items-center justify-between text-sm text-gray-500">
+          <p>© {new Date().getFullYear()} MIB Industries. All Rights Reserved.</p>
+          <div className="flex gap-4 mt-4 md:mt-0">
+            <span className="hover:text-gray-800 transition-colors cursor-pointer">Privacy Policy</span>
+            <span className="hover:text-gray-800 transition-colors cursor-pointer">Terms of Service</span>
+          </div>
         </div>
       </div>
 
+      {/* Licenses Modal */}
       {open && (
         <div
           role="dialog"
           aria-modal="true"
           id="licenses-modal"
-          className="fixed inset-0 z-50 flex items-center justify-center p-4"
+          className="fixed inset-0 z-[100] flex items-center justify-center p-4"
         >
           <div
-            className="absolute inset-0 bg-black/50 backdrop-blur-sm" 
+            className="absolute inset-0 bg-black/60 backdrop-blur-sm" 
             onClick={() => setOpen(false)}
             aria-hidden="true"
           />
@@ -207,6 +227,6 @@ export const Footer = () => {
           </div>
         </div>
       )}
-    </div>
+    </footer>
   );
 };

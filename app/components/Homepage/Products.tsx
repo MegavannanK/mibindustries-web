@@ -75,7 +75,7 @@ export const Products = () => {
 
         {/* Scrollable Container */}
         <motion.div
-          className="lg:flex lg:flex-row justify-center 2xl:gap-14"
+          className="flex flex-col lg:flex-row items-center lg:items-stretch justify-center gap-8 lg:gap-14 py-4"
           initial={{ opacity: 0 }} // Start with opacity 0
           animate={{ opacity: 1 }} // Animate to opacity 1 (fade-in)
           transition={{ duration: 0.5 }} // Duration of the animation
@@ -83,12 +83,13 @@ export const Products = () => {
           {visibleProducts.map((product) => (
             <motion.div
               key={product.id}
+              className="flex"
               initial={{ opacity: 0, x: 50 }} // Animation for each product card
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 2.0 }}
             >
               <ProductCard
-                image={product.image}
+                image={product.homeImage || product.image}
                 title={product.name}
                 description={product.description}
                 variant="homepage"
