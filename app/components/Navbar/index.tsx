@@ -42,12 +42,10 @@ export const NavbarDesktop = () => {
 
   return (
     <div
-      className={`h-20 transition-all duration-500 z-50 ${
-        // isHomePage
-          isScrolled
-            ? "fixed top-0 left-0 right-0 shadow-xl w-full bg-white/80 backdrop-blur-md border-b border-primary-200/50 rounded-none"
-            : "absolute top-4 left-1/2 -translate-x-1/2 w-11/12 bg-transparent rounded-md"
-          // : "fixed top-0 left-0 right-0 shadow-md w-full bg-white"
+      className={`h-20 transition-all duration-500 z-50 fixed top-0 left-0 right-0 w-full ${
+        isScrolled
+          ? "shadow-xl bg-white/80 backdrop-blur-md border-b border-primary-200/50"
+          : "bg-transparent"
       }`}
     >
       <div className={`grid grid-cols-4 justify-between items-center h-full px-10 transition-colors duration-500 ${
@@ -113,12 +111,10 @@ export const NavbarMobile = () => {
 
   return (
     <div
-      className={`h-20 transition-all duration-400 z-50 ${
-        // isHomePage
-          isScrolled
-            ? "fixed top-0 left-0 right-0 shadow-xl w-full bg-white/80 backdrop-blur-md border-b border-primary-200/50 rounded-none"
-            : "absolute top-4 left-1/2 -translate-x-1/2 w-11/12 bg-transparent rounded-md"
-          // : "fixed top-0 left-0 right-0 shadow-md w-full bg-white"
+      className={`h-20 transition-all duration-500 z-50 fixed top-0 left-0 right-0 w-full ${
+        isScrolled
+          ? "shadow-xl bg-white/80 backdrop-blur-md border-b border-primary-200/50"
+          : "bg-transparent"
       }`}
     >
       <div className="max-w-screen-xl mx-auto flex justify-between items-center h-full px-4 sm:px-6 md:px-10">
