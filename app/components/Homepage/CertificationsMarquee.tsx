@@ -30,6 +30,7 @@ export const CertificationsMarquee = () => {
                 src={src}
                 alt={`Certification ${index + 1}`}
                 fill
+                unoptimized
                 className="object-contain"
                 sizes="(max-width: 768px) 150px, 200px"
               />

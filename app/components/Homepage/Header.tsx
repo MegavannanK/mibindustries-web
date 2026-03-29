@@ -3,9 +3,10 @@ import { motion, easeOut, type Variants } from "framer-motion";
 // import Image from "next/image";
 import { ArrowRightIcon } from "@heroicons/react/outline";
 import { useRouter } from "next/navigation";
-
+import { preload } from "react-dom";
 
 export const Header = () => {
+  preload("/assets/videos/globe_video_cropped.mp4", { as: "video", fetchPriority: "high" });
   const router = useRouter();
   
   const containerVariants : Variants = {

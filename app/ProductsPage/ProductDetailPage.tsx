@@ -309,7 +309,7 @@ export const ProductDetailPage = ({ product }: Props) => {
                 >
                   <div className="relative h-48 bg-[#f8fafc] flex items-center justify-center p-6 overflow-hidden">
                     <Image
-                      src={relatedProduct.image}
+                      src={relatedProduct.homeImage || relatedProduct.image}
                       alt={relatedProduct.name}
                       fill
                       className="object-contain group-hover:scale-110 transition-transform duration-500 max-h-40 my-auto"

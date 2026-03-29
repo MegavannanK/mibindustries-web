@@ -283,7 +283,7 @@ const ProductsContent = () => {
                   }
                 >
                   <Image
-                    src={product.image}
+                    src={product.homeImage || product.image}
                     alt={product.name}
                     fill
                     className="object-contain p-4 mix-blend-multiply group-hover:scale-105 transition-transform duration-500"

@@ -67,9 +67,9 @@ export const AboutUsGallery = () => {
                       src={src} 
                       alt={`Gallery Image ${idx + 1}`} 
                       fill 
+                      priority={true}
                       className="object-contain" 
                       sizes="(max-width: 768px) 100vw, 33vw"
-                      unoptimized={src.includes('.jpg')} // Help with performance if they are still somewhat large
                     />
                   </div>
                 </motion.div>
