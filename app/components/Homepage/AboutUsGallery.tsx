@@ -5,7 +5,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 import Container from "../ui/Container";
 
-const images = Array.from({ length: 27 }, (_, i) => `/assets/images/about/${i + 1}.png`);
+const images = Array.from({ length: 27 }, (_, i) => `/assets/images/about/${i + 1}.jpg`);
 
 export const AboutUsGallery = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -69,7 +69,7 @@ export const AboutUsGallery = () => {
                       fill 
                       className="object-contain" 
                       sizes="(max-width: 768px) 100vw, 33vw"
-                      unoptimized={src.includes('.png')} // Help with performance if they are still somewhat large
+                      unoptimized={src.includes('.jpg')} // Help with performance if they are still somewhat large
                     />
                   </div>
                 </motion.div>

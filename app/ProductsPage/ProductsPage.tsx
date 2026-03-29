@@ -11,6 +11,7 @@ import { SearchIcon, ChevronRightIcon } from "@heroicons/react/outline";
 type Product = {
   id: number;
   image: string;
+  homeImage?: string;
   name: string;
   variants?: Variant[];
   slug: string;
@@ -167,7 +168,7 @@ const ProductsContent = () => {
                       >
                         <div className="relative w-full aspect-square rounded-xl overflow-hidden bg-white p-4 border border-gray-50 flex items-center justify-center">
                           <Image
-                            src={product.image}
+                            src={product.homeImage || product.image}
                             alt={product.name}
                             fill
                             className="object-contain p-4 mix-blend-multiply group-hover:scale-105 transition-transform duration-500"
@@ -339,9 +340,7 @@ export const ProductsPage = () => {
   return (
     <Suspense
       fallback={
-        <div className="min-h-screen flex items-center justify-center bg-white">
-          <div className="animate-spin rounded-full h-10 w-10 border-t-2 border-b-2 border-gray-900" />
-        </div>
+        <div className="min-h-screen flex items-center justify-center bg-white" />
       }
     >
       <ProductsContent />

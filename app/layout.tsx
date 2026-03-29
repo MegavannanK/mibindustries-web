@@ -49,9 +49,9 @@ export const metadata: Metadata = {
     images: ["/og-image.jpg"]
   },
   icons: {
-    icon: '/assets/images/logo.png',
-    shortcut: '/assets/images/logo.png',
-    apple: '/assets/images/logo.png',
+    icon: '/assets/images/MIBIndustries.png',
+    shortcut: '/assets/images/MIBIndustries.png',
+    apple: '/assets/images/MIBIndustries.png',
   },
   manifest: "/site.webmanifest",
   category: "business"
@@ -80,7 +80,7 @@ export default function RootLayout({
         </Script>
 
         {/* Existing Meta */}
-        <link rel="icon" href="/assets/images/logo.png" type="image/png" />
+        <link rel="icon" href="/assets/images/MIBIndustries.png" type="image/png" />
         <meta name="theme-color" content="#0f3d5f" />
 
         {/* Your Structured Data */}
@@ -92,7 +92,7 @@ export default function RootLayout({
               "@type": "Organization",
               name: "MIB Industries",
               url: "https://mibindustries.in/",
-              logo: "https://mibindustries.in/assets/images/logo.png",
+              logo: "https://mibindustries.in/assets/images/MIBIndustries.png",
               description: "Chennai, India export & import company specializing in rice, spices, pulses, oils, snacks, dry fruits, brass & pooja items. Operates globally with strategic office location in Singapore and primarily serving the UK market.",
               address: {
                 "@type": "PostalAddress",

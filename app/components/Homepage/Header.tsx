@@ -50,7 +50,9 @@ export const Header = () => {
           muted
           loop
           playsInline
+          preload="auto"
           className="w-full h-auto block"
+          style={{ fetchPriority: "high" } as React.CSSProperties}
         >
           <source src="/assets/videos/globe_video_cropped.mp4" type="video/mp4" />
           Your browser does not support the video tag.

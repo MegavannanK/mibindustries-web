@@ -125,47 +125,45 @@ export const products: Product[] = [
     homeImage: "/assets/images/home_products/WHOLE SPICES.png",
     mainCategory: "Food Essentials",
   },
-  /*
   {
     id: 18,
     name: "Spice Powders",
     variants: [
-      { name: "Black Pepper Powder", description: "Bold, aromatic spice with a sharp kick." },
-      { name: "Coriander Powder", description: "Mild, citrusy flavor for balanced seasoning." },
-      { name: "Jeera (Cumin) Powder", description: "Warm, earthy spice with rich aroma." },
-      { name: "Red Chilli Powder", description: "Fiery heat with vibrant color." },
-      { name: "Turmeric Powder", description: "Pure, golden spice with natural goodness." },
+      { name: "Black Pepper Powder", image: "/assets/images/spice-powders/Black_Pepper_Powder.png", description: "Bold, aromatic spice with a sharp kick." },
+      { name: "Coriander Powder", image: "/assets/images/spice-powders/Coriander_Powder.png", description: "Mild, citrusy flavor for balanced seasoning." },
+      { name: "Jeera (Cumin) Powder", image: "/assets/images/spice-powders/Jeera_Cumin_Powder.png", description: "Warm, earthy spice with rich aroma." },
+      { name: "Red Chilli Powder", image: "/assets/images/spice-powders/Red_Chilli_Powder.png", description: "Fiery heat with vibrant color." },
+      { name: "Turmeric Powder", image: "/assets/images/spice-powders/Turmeric_Powder.png", description: "Pure, golden spice with natural goodness." },
     ],
     slug: "spice-powders",
-    description: "Authentic Indian Spices, Rich in Aroma & Flavor",
-    image: "/assets/images/spices/Whole_Spices_Banner.png",
-    homeImage: "/assets/images/home_products/WHOLE SPICES.png",
+    description: "Premium, finely ground authentic spices — bold, aromatic, and crafted to perfection.",
+    image: "/assets/images/spice-powders/Spice_Powder_Banner.png",
+    homeImage: "/assets/images/home_products/SPICE POWDERS.png",
     mainCategory: "Food Essentials",
   },
-  */
   {
     id: 3,
     name: "Dry Chillies",
     variants: [
-      { 
-        name: "Kashmiri Chilli", 
+      {
+        name: "Kashmiri Chilli",
         image: "/assets/images/chillies/Kashmiri_Chilli.png",
-        description: "Vibrant red colour with mild heat, perfect for rich curries." 
+        description: "Vibrant red colour with mild heat, perfect for rich curries."
       },
-      { 
-        name: "Teja S17 Chilli", 
+      {
+        name: "Teja S17 Chilli",
         image: "/assets/images/chillies/Teja_S17.png",
-        description: "Intense pungency and strong flavour, best for spicy food lovers." 
+        description: "Intense pungency and strong flavour, best for spicy food lovers."
       },
-      { 
-        name: "Sannam S4 Chilli", 
+      {
+        name: "Sannam S4 Chilli",
         image: "/assets/images/chillies/Sannam_S4.png",
-        description: "High heat with deep colour, widely used for everyday cooking and exports." 
+        description: "High heat with deep colour, widely used for everyday cooking and exports."
       },
-      { 
-        name: "Ramnad Round Chilli", 
+      {
+        name: "Ramnad Round Chilli",
         image: "/assets/images/chillies/Ramnad_Round_Chilli.png",
-        description: "Bold aroma and balanced spice, ideal for traditional South Indian dishes." 
+        description: "Bold aroma and balanced spice, ideal for traditional South Indian dishes."
       },
     ],
     slug: "red-chillies",
@@ -197,40 +195,40 @@ export const products: Product[] = [
     id: 5,
     name: "Lentils & Pulses",
     variants: [
-      { 
-        name: "Toor Daal", 
+      {
+        name: "Toor Daal",
         image: "/assets/images/pulses/TOOR_DHAAL.png",
-        description: "Classic everyday yellow lentils." 
+        description: "Classic everyday yellow lentils."
       },
-      { 
-        name: "Urad Dal", 
+      {
+        name: "Urad Dal",
         image: "/assets/images/pulses/URAD_DHAAL.png",
-        description: "Creamy lentils for idli & dosa." 
+        description: "Creamy lentils for idli & dosa."
       },
-      { 
-        name: "Moong Daal", 
+      {
+        name: "Moong Daal",
         image: "/assets/images/pulses/MOONG_DHAAL.png",
-        description: "Light and easy-to-digest lentils." 
+        description: "Light and easy-to-digest lentils."
       },
-      { 
-        name: "Gram Daal", 
+      {
+        name: "Gram Daal",
         image: "/assets/images/pulses/GRAM_DHAAL.png",
-        description: "Protein-rich split chickpeas." 
+        description: "Protein-rich split chickpeas."
       },
-      { 
-        name: "Fried Gram Daal", 
+      {
+        name: "Fried Gram Daal",
         image: "/assets/images/pulses/FRIED_GRAM_DHAAL.png",
-        description: "Crunchy roasted gram for snacks." 
+        description: "Crunchy roasted gram for snacks."
       },
-      { 
-        name: "Green Gram Daal", 
+      {
+        name: "Green Gram Daal",
         image: "/assets/images/pulses/Green_Gram.png",
-        description: "Nutritious, slightly sweet lentil for salads and curries." 
+        description: "Nutritious, slightly sweet lentil for salads and curries."
       },
-      { 
-        name: "Masoor Daal", 
+      {
+        name: "Masoor Daal",
         image: "/assets/images/pulses/MASOOR_DHAAL.png",
-        description: "Soft, quick-cooking red lentils." 
+        description: "Soft, quick-cooking red lentils."
       },
       // { name: "Kidney Peas", image: "/assets/images/pulses/URAD_DHAAL.png" },
       // { name: "Black Gram Peas", image: "/assets/images/pulses/URAD_DHAAL.png" },
@@ -281,6 +279,7 @@ export const products: Product[] = [
     slug: "jaggery",
     description: "Pure, Natural Sweetness from Traditional Jaggery",
     image: "/assets/images/jaggery/Jaggery_Banner.png",
+    homeImage: "/assets/images/home_products/JAGGERY.png",
     // image: "https://res.cloudinary.com/dd7bw6igp/image/upload/w_450,h_340,c_fill,f_auto,q_auto:good/v1752263406/jaggery_product_image.png",
     mainCategory: "Food Essentials",
   },

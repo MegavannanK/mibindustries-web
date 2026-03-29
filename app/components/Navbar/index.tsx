@@ -3,7 +3,7 @@
 import { useState, useEffect, useCallback } from "react";
 import { useRouter } from "next/navigation";
 import Image from "next/image"; // Import Image from next/image
-import logo from "@/app/assets/images/logo.png"; // Import the logo image
+import logo from "@/app/assets/images/MIBIndustries.png"; // Import the logo image
 import { MenuIcon, XIcon } from "@heroicons/react/solid";
 
 const navItems = [
@@ -57,11 +57,12 @@ export const NavbarDesktop = () => {
           <Image
             onClick={() => router.push("/")}
             className="cursor-pointer"
-            src={logo.src} // Use the imported logo.src here
-            alt="Logo"
-            width={56} // Define the width for the image
-            height={56} // Define the height for the image
-            
+            src={logo.src}
+            alt="MIB Industries Logo"
+            width={120}
+            height={48}
+            style={{ objectFit: "contain", height: "48px", width: "auto" }}
+            priority
           />
         </div>
 
@@ -124,11 +125,13 @@ export const NavbarMobile = () => {
         <div>
           <Image
             onClick={() => router.push("/")}
-            src={logo.src} // Use the imported logo.src here
-            alt="Logo"
-            width={56} // Define the width for the image
-            height={56} // Define the height for the image
+            src={logo.src}
+            alt="MIB Industries Logo"
+            width={120}
+            height={48}
+            style={{ objectFit: "contain", height: "48px", width: "auto" }}
             className="cursor-pointer"
+            priority
           />
         </div>
 
@@ -154,15 +157,15 @@ export const NavbarMobile = () => {
 
       {/* Mobile Menu */}
       {isMenuOpen && (
-        <div className={`absolute top-20 left-0 right-0 p-5 rounded-b-2xl shadow-2xl transition-all duration-500 bg-white border-b border-primary-100 text-primary-900 z-[100]`}>
+        <div className={`absolute top-20 left-0 right-0 p-5 rounded-b-2xl shadow-xl transition-all duration-500 bg-white/85 backdrop-blur-lg border-b border-primary-100/50 text-primary-900 z-[100]`}>
           <div className="flex flex-col items-center">
             {navItems.map((item, index) => (
               <p
                 key={index}
-                className="py-3 text-center text-title-7 font-semibold cursor-pointer hover:text-primary-600 transition-colors duration-300"
+                className="py-3 text-center text-title-7 font-bold cursor-pointer hover:text-primary-600 transition-colors duration-300"
                 onClick={() => {
-                  handleNavItemClick(item.target); // Updated click handler
-                  setIsMenuOpen(false); // Close the menu after clicking an item
+                  handleNavItemClick(item.target);
+                  setIsMenuOpen(false);
                 }}
               >
                 {item.label}

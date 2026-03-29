@@ -4,7 +4,7 @@ import { useRouter } from "next/navigation";
 import { MailIcon, PhoneIncomingIcon, XIcon } from "@heroicons/react/solid";
 import { ArrowRightIcon } from "@heroicons/react/outline";
 import Image from "next/image";
-import Logo from "@/app/assets/images/logo.png";
+import Logo from "@/app/assets/images/MIBIndustries.png";
 
 interface ContactItem {
   icon: React.ComponentType<React.SVGProps<SVGSVGElement>>;
@@ -73,12 +73,12 @@ export const Footer = () => {
           
           {/* Column 1: Brand */}
           <div className="space-y-6">
-            <div className="relative h-[100px] w-[100px]">
+            <div className="relative h-[60px] w-[180px]">
               <Image
                 src={Logo}
                 alt="MIB Industries Logo"
                 fill
-                className="object-contain mix-blend-multiply"
+                className="object-contain"
               />
             </div>
             <h3 className="text-2xl font-bold text-gray-900 tracking-wide">MIB Industries</h3>
