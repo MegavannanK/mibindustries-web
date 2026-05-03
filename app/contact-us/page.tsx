@@ -17,21 +17,21 @@ const quickActions = [
   {
     label: "Call Now",
     icon: PhoneOutgoingIcon,
-  href: "tel:+919363291001",
+    href: "tel:+919363291001",
     desc: "Speak with our team",
     gradient: "from-emerald-500 to-emerald-600"
   },
   {
     label: "Email Us",
     icon: MailIcon,
-  href: "mailto:info@mibindustries.in",
+    href: "mailto:info@mibindustries.in",
     desc: "General inquiries",
     gradient: "from-primary-500 to-primary-600"
   },
   {
-  label: "WhatsApp",
+    label: "WhatsApp",
 
-  href: "https://wa.me/919363291001",
+    href: "https://wa.me/919363291001",
     desc: "Fast messaging",
     gradient: "from-green-500 to-green-600"
   },
@@ -56,7 +56,7 @@ const Contactus = () => {
   return (
     <Layout>
       {/* Hero */}
-  <section className="relative overflow-hidden pt-24 pb-12 md:pt-28 md:pb-20 bg-gradient-to-br from-primary-400 via-primary-600 to-primary-800 text-white">
+      <section className="relative overflow-hidden pt-24 pb-12 md:pt-28 md:pb-20 bg-gradient-to-br from-primary-400 via-primary-600 to-primary-800 text-white">
         <div className="absolute inset-0 opacity-[0.15] pointer-events-none" aria-hidden>
           <div className="absolute -top-32 -left-20 w-[40rem] h-[40rem] bg-white/30 rounded-full blur-3xl" />
           <div className="absolute bottom-0 -right-10 w-[30rem] h-[30rem] bg-indigo-200/40 rounded-full blur-3xl" />
@@ -76,7 +76,7 @@ const Contactus = () => {
             <div className="mt-8 flex flex-wrap gap-4">
               <a href="https://calendly.com/mibindustriesindia/30min" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 rounded-xl bg-white text-primary-700 hover:text-primary-800 px-6 py-3 text-sm font-semibold shadow hover:shadow-md transition">
                 Schedule a Call
-                <svg className="w-4 h-4 text-primary-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M8 2v4"/><path d="M16 2v4"/><rect x="3" y="6" width="18" height="14" rx="2" ry="2"/><path d="M16 10h-4v4"/><path d="M8 10h.01"/></svg>
+                <svg className="w-4 h-4 text-primary-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M8 2v4" /><path d="M16 2v4" /><rect x="3" y="6" width="18" height="14" rx="2" ry="2" /><path d="M16 10h-4v4" /><path d="M8 10h.01" /></svg>
               </a>
               <a href="tel:+919363291001" className="inline-flex items-center gap-2 rounded-xl bg-primary-700/40 hover:bg-primary-700/55 ring-1 ring-white/30 px-6 py-3 text-sm font-semibold transition">
                 <PhoneOutgoingIcon className="w-4 h-4" /> Call Us
@@ -97,14 +97,14 @@ const Contactus = () => {
       </div> */}
 
       {/* Aurora Background Content Section */}
-  <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50/40 to-indigo-50/60 relative">
+      <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50/40 to-indigo-50/60 relative">
         {/* Background Aurora Glows */}
         <div className="absolute top-20 -left-40 w-96 h-96 bg-primary-200/30 rounded-full blur-3xl"></div>
         <div className="absolute bottom-20 -right-40 w-96 h-96 bg-primary-300/20 rounded-full blur-3xl"></div>
         <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[60vw] h-[60vh] bg-gradient-to-r from-primary-100/40 to-primary-200/30 rounded-full blur-3xl opacity-50"></div>
-        
-  <div className="max-w-6xl mx-auto px-6 py-16 md:py-20 relative z-10">
-          
+
+        <div className="max-w-6xl mx-auto px-6 py-16 md:py-20 relative z-10">
+
           {/* Hero Section */}
           <div className="text-center mb-14">
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-3">
@@ -118,50 +118,50 @@ const Contactus = () => {
             <ChannelTabs showHours={false} />
           </div>
           {/* Desktop contact info cards (restored) */}
-          <div className="hidden md:grid md:grid-cols-2 lg:grid-cols-4 gap-5 md:gap-6 mb-16 auto-rows-[1fr]" style={{contentVisibility:'auto'}}>
+          <div className="hidden md:grid md:grid-cols-2 lg:grid-cols-4 gap-5 md:gap-6 mb-16 auto-rows-[1fr]" style={{ contentVisibility: 'auto' }}>
             <div className="group relative overflow-hidden bg-white/95 md:bg-white/80 md:backdrop-blur-sm rounded-3xl p-6 md:p-8 shadow transition-all duration-300 border border-white/60 md:border-white/30 flex flex-col items-center text-center h-full min-h-[300px]">
-              <div className="w-16 h-16 rounded-full bg-gradient-to-r from-primary-500 to-primary-700 flex items-center justify-center mb-6"><LocationMarkerIcon className="h-8 w-8 text-white"/></div>
+              <div className="w-16 h-16 rounded-full bg-gradient-to-r from-primary-500 to-primary-700 flex items-center justify-center mb-6"><LocationMarkerIcon className="h-8 w-8 text-white" /></div>
               <h3 className="text-title-8 font-semibold text-gray-800 mb-3">Our Location</h3>
-              <div className="text-body-1 text-gray-600 leading-relaxed mb-4">37/17, Reddy St,<br/> Periyar Nagar, Korattur,<br/>Chennai-600080</div>
+              <div className="text-body-1 text-gray-600 leading-relaxed mb-4">No.19, 14th Cross,<br />Krishna Nagar, 2nd Phase,<br />Varadharajapuram, Mudichur,<br />Chennai - 600048.</div>
               <a
-                href="https://www.google.com/maps/search/?api=1&query=37%2F17%2C+Reddy+Street%2C+Periyar+Nagar%2C+Korattur%2C+Chennai+600080"
+                href="https://maps.google.com/?q=12.911799,80.060966"
                 target="_blank"
                 rel="noopener noreferrer"
-                onClick={(e)=>{ // remove focus after opening new tab
-                  requestAnimationFrame(()=> (e.currentTarget as HTMLAnchorElement).blur());
+                onClick={(e) => { // remove focus after opening new tab
+                  requestAnimationFrame(() => (e.currentTarget as HTMLAnchorElement).blur());
                 }}
                 className="mt-auto inline-flex items-center gap-1 text-primary-600 text-xs font-medium hover:text-primary-700 focus:outline-none focus:ring-2 focus:ring-primary-500/40 rounded-full px-3 py-1 bg-primary-50/60 hover:bg-primary-100/70 transition"
               >
                 View Map
-                <svg width='12' height='12' viewBox='0 0 24 24' stroke='currentColor' strokeWidth='2' fill='none'><path d='M5 12h14M13 5l7 7-7 7'/></svg>
+                <svg width='12' height='12' viewBox='0 0 24 24' stroke='currentColor' strokeWidth='2' fill='none'><path d='M5 12h14M13 5l7 7-7 7' /></svg>
               </a>
               <div className="pointer-events-none absolute inset-0 opacity-0 group-hover:opacity-100 bg-gradient-to-br from-white/0 to-primary-100/40 transition" />
             </div>
             <div className="group relative overflow-hidden bg-white/95 md:bg-white/80 md:backdrop-blur-sm rounded-3xl p-6 md:p-8 shadow transition-all duration-300 border border-white/60 md:border-white/30 flex flex-col items-center text-center h-full min-h-[300px]">
-              <div className="w-16 h-16 rounded-full bg-gradient-to-r from-primary-500 to-primary-700 flex items-center justify-center mb-6"><PhoneOutgoingIcon className="h-8 w-8 text-white"/></div>
+              <div className="w-16 h-16 rounded-full bg-gradient-to-r from-primary-500 to-primary-700 flex items-center justify-center mb-6"><PhoneOutgoingIcon className="h-8 w-8 text-white" /></div>
               <h3 className="text-title-8 font-semibold text-gray-800 mb-3">Call Us</h3>
               <div className="space-y-3 text-body-1 text-gray-600">
-                <p><span className="font-medium">Main:</span><br/><a href="tel:+919363291001" className="text-primary-600 hover:text-primary-800">+91 9363291001</a></p>
-                <p><span className="font-medium">Support:</span><br/><a href="tel:+917200710002" className="text-primary-600 hover:text-primary-800">+91 7200710002</a></p>
+                <p><span className="font-medium">Main:</span><br /><a href="tel:+919363291001" className="text-primary-600 hover:text-primary-800">+91 9363291001</a></p>
+                <p><span className="font-medium">Support:</span><br /><a href="tel:+917200710002" className="text-primary-600 hover:text-primary-800">+91 7200710002</a></p>
               </div>
               <div className="mt-auto" />
               <div className="pointer-events-none absolute inset-0 opacity-0 group-hover:opacity-100 bg-gradient-to-br from-white/0 to-primary-100/40 transition" />
             </div>
             <div className="group relative overflow-hidden bg-white/95 md:bg-white/80 md:backdrop-blur-sm rounded-3xl p-6 md:p-8 shadow transition-all duration-300 border border-white/60 md:border-white/30 flex flex-col items-center text-center h-full min-h-[300px]">
-              <div className="w-16 h-16 rounded-full bg-gradient-to-r from-primary-500 to-primary-700 flex items-center justify-center mb-6"><MailIcon className="h-8 w-8 text-white"/></div>
+              <div className="w-16 h-16 rounded-full bg-gradient-to-r from-primary-500 to-primary-700 flex items-center justify-center mb-6"><MailIcon className="h-8 w-8 text-white" /></div>
               <h3 className="text-title-8 font-semibold text-gray-800 mb-3">Email Us</h3>
               <div className="space-y-3 text-body-1 text-gray-600">
-                <p><span className="font-medium">General:</span><br/><a href="mailto:info@mibindustries.in" className="text-primary-600 hover:text-primary-800">info@mibindustries.in</a></p>
-                <p><span className="font-medium">Support:</span><br/><a href="mailto:mibindustriesindia@gmail.com" className="text-primary-600 hover:text-primary-800">mibindustriesindia@gmail.com</a></p>
+                <p><span className="font-medium">General:</span><br /><a href="mailto:info@mibindustries.in" className="text-primary-600 hover:text-primary-800">info@mibindustries.in</a></p>
+                <p><span className="font-medium">Support:</span><br /><a href="mailto:mibindustriesindia@gmail.com" className="text-primary-600 hover:text-primary-800">mibindustriesindia@gmail.com</a></p>
               </div>
               <div className="mt-auto" />
               <div className="pointer-events-none absolute inset-0 opacity-0 group-hover:opacity-100 bg-gradient-to-br from-white/0 to-primary-100/40 transition" />
             </div>
             <div className="group relative overflow-hidden bg-white/95 md:bg-white/80 md:backdrop-blur-sm rounded-3xl p-6 md:p-8 shadow transition-all duration-300 border border-white/60 md:border-white/30 flex flex-col items-center text-center h-full min-h-[300px]">
-              <div className="w-16 h-16 rounded-full bg-gradient-to-r from-primary-500 to-primary-700 flex items-center justify-center mb-6"><ClockIcon className="h-8 w-8 text-white"/></div>
+              <div className="w-16 h-16 rounded-full bg-gradient-to-r from-primary-500 to-primary-700 flex items-center justify-center mb-6"><ClockIcon className="h-8 w-8 text-white" /></div>
               <h3 className="text-title-8 font-semibold text-gray-800 mb-3">Business Hours</h3>
               <div className="space-y-3 text-gray-600">
-                <p className="text-body-1"><span className="font-medium">Mon - Sat:</span><br/>9:00 AM - 9:00 PM</p>
+                <p className="text-body-1"><span className="font-medium">Mon - Sat:</span><br />9:00 AM - 9:00 PM</p>
                 {/* <p className="text-body-1"><span className="font-medium">Saturday:</span><br/>10:00 AM - 4:00 PM</p> */}
                 <p className="text-body-1"><span className="font-medium">Sunday:</span>Closed</p>
               </div>
@@ -173,7 +173,7 @@ const Contactus = () => {
           {/* Company Description */}
           {/* Quick Connect: mobile (reverted rectangular cards) */}
           <div id="connect" className="mb-16 md:hidden space-y-5">
-            <h3 className="text-lg font-semibold tracking-wide text-primary-700 flex items-center gap-2"><span className="w-8 h-1 bg-gradient-to-r from-primary-500 to-primary-700 rounded-full"/> Connect Instantly</h3>
+            <h3 className="text-lg font-semibold tracking-wide text-primary-700 flex items-center gap-2"><span className="w-8 h-1 bg-gradient-to-r from-primary-500 to-primary-700 rounded-full" /> Connect Instantly</h3>
             <div className="grid grid-cols-2 gap-3">
               {quickActions.map(a => (
                 <motion.a
@@ -190,13 +190,13 @@ const Contactus = () => {
                   }}
                   target={a.href.startsWith('http') ? '_blank' : undefined}
                   rel={a.href.startsWith('http') ? 'noopener noreferrer' : undefined}
-                  whileTap={{scale:0.96}}
+                  whileTap={{ scale: 0.96 }}
                   className="group flex flex-col items-start gap-2 rounded-xl px-3.5 py-3 text-[11px] font-medium bg-white shadow border border-white/60 hover:shadow-md transition"
                 >
                   <span className={`w-7 h-7 rounded-lg flex items-center justify-center bg-gradient-to-br ${a.gradient} text-white shadow-inner`}>
-                    {a.icon ? <a.icon className="w-4 h-4"/> : <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.347-.272.297-1.04 1.016-1.04 2.479 0 1.463 1.065 2.876 1.213 3.074.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z" /></svg>}
+                    {a.icon ? <a.icon className="w-4 h-4" /> : <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.347-.272.297-1.04 1.016-1.04 2.479 0 1.463 1.065 2.876 1.213 3.074.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z" /></svg>}
                   </span>
-                  <span className="text-gray-700 flex items-center gap-1">{a.label}<svg className="w-3 h-3 text-primary-600 group-hover:translate-x-0.5 transition" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2" fill="none"><path d="M5 12h14M13 5l7 7-7 7"/></svg></span>
+                  <span className="text-gray-700 flex items-center gap-1">{a.label}<svg className="w-3 h-3 text-primary-600 group-hover:translate-x-0.5 transition" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2" fill="none"><path d="M5 12h14M13 5l7 7-7 7" /></svg></span>
                 </motion.a>
               ))}
             </div>
@@ -205,9 +205,9 @@ const Contactus = () => {
           </div>
           {/* Quick Connect: desktop (reverted rectangular cards) */}
           <div id="connect" className="hidden md:block mb-20">
-            <h3 className="text-lg font-semibold tracking-wide text-primary-700 mb-4 flex items-center gap-2"><span className="w-8 h-1 bg-gradient-to-r from-primary-500 to-primary-700 rounded-full"/> Connect Instantly</h3>
-            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5 mb-10" style={{contentVisibility:'auto'}}>
-                {quickActions.map(a => (
+            <h3 className="text-lg font-semibold tracking-wide text-primary-700 mb-4 flex items-center gap-2"><span className="w-8 h-1 bg-gradient-to-r from-primary-500 to-primary-700 rounded-full" /> Connect Instantly</h3>
+            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5 mb-10" style={{ contentVisibility: 'auto' }}>
+              {quickActions.map(a => (
                 <motion.a
                   key={a.label}
                   href={a.href}
@@ -222,19 +222,19 @@ const Contactus = () => {
                   }}
                   target={a.href.startsWith('http') ? '_blank' : undefined}
                   rel={a.href.startsWith('http') ? 'noopener noreferrer' : undefined}
-                  whileHover={{ scale:1.02 }}
-                  whileTap={{ scale:0.97 }}
-                  transition={{ type:'tween', duration:0.22 }}
+                  whileHover={{ scale: 1.02 }}
+                  whileTap={{ scale: 0.97 }}
+                  transition={{ type: 'tween', duration: 0.22 }}
                   className="group relative overflow-hidden rounded-2xl bg-white/95 md:bg-white/80 md:backdrop-blur shadow border border-white/60 md:border-white/40 p-5 flex flex-col gap-4 transition hover:shadow-lg"
                 >
                   <div className={`w-12 h-12 rounded-xl flex items-center justify-center bg-gradient-to-br ${a.gradient} shadow-inner`}>
-                    {a.icon ? <a.icon className="w-6 h-6 text-white"/> : <svg className="w-6 h-6 fill-current text-white" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.347-.272.297-1.04 1.016-1.04 2.479 0 1.463 1.065 2.876 1.213 3.074.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z" /></svg>}
+                    {a.icon ? <a.icon className="w-6 h-6 text-white" /> : <svg className="w-6 h-6 fill-current text-white" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.347-.272.297-1.04 1.016-1.04 2.479 0 1.463 1.065 2.876 1.213 3.074.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z" /></svg>}
                   </div>
                   <div className="flex-1">
                     <h4 className="font-semibold text-gray-800 mb-1 text-sm">{a.label}</h4>
                     <p className="text-xs text-gray-500">{a.desc}</p>
                   </div>
-                  <span className="text-[11px] font-medium text-primary-600 group-hover:translate-x-1 transition flex items-center gap-1">Open <svg width='10' height='10' viewBox='0 0 24 24' stroke='currentColor' strokeWidth='2' fill='none'><path d='M5 12h14M13 5l7 7-7 7'/></svg></span>
+                  <span className="text-[11px] font-medium text-primary-600 group-hover:translate-x-1 transition flex items-center gap-1">Open <svg width='10' height='10' viewBox='0 0 24 24' stroke='currentColor' strokeWidth='2' fill='none'><path d='M5 12h14M13 5l7 7-7 7' /></svg></span>
                   <div className="absolute inset-0 bg-gradient-to-br from-white/0 to-primary-100/30 opacity-0 group-hover:opacity-100 transition" />
                 </motion.a>
               ))}
@@ -244,7 +244,7 @@ const Contactus = () => {
 
           {/* FAQ */}
           <div className="mb-24">
-            <h3 className="text-lg font-semibold tracking-wide text-primary-700 mb-4 flex items-center gap-2"><span className="w-8 h-1 bg-gradient-to-r from-primary-500 to-primary-700 rounded-full"/> Frequently Asked Questions</h3>
+            <h3 className="text-lg font-semibold tracking-wide text-primary-700 mb-4 flex items-center gap-2"><span className="w-8 h-1 bg-gradient-to-r from-primary-500 to-primary-700 rounded-full" /> Frequently Asked Questions</h3>
             <FAQ />
           </div>
 
@@ -275,181 +275,181 @@ const Contactus = () => {
 };
 export default Contactus;
 
-  // Client components below
-  const CopyStrip = () => {
-    const [copied, setCopied] = useState(false);
+// Client components below
+const CopyStrip = () => {
+  const [copied, setCopied] = useState(false);
   const email = 'info@mibindustries.in';
   const phone = '+919363291001';
-    const handleCopy = (text: string) => {
-      navigator.clipboard.writeText(text).then(() => {
-        setCopied(true);
-        setTimeout(()=>setCopied(false),1800);
-      });
-    };
-    return (
-  <div className="relative overflow-hidden rounded-2xl bg-white/95 md:bg-white/85 md:backdrop-blur shadow border border-white/60 md:border-white/40 p-5 flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
-        <div>
-          <h4 className="font-semibold text-gray-800 mb-1 text-sm">Direct Contacts</h4>
-          <p className="text-xs text-gray-500">Tap to copy details instantly.</p>
-        </div>
-        <div className="flex flex-wrap gap-3">
-          <button onClick={()=>handleCopy(email)} className="px-4 py-2 text-xs rounded-xl bg-gradient-to-r from-primary-600 to-primary-700 text-white font-medium shadow hover:from-primary-500 hover:to-primary-600">Copy Email</button>
-          <button onClick={()=>handleCopy(phone)} className="px-4 py-2 text-xs rounded-xl bg-primary-50 text-primary-700 font-medium ring-1 ring-primary-600/20 hover:bg-primary-100">Copy Phone</button>
-        </div>
-        <AnimatePresence>
-          {copied && (
-            <motion.div initial={{opacity:0,y:8}} animate={{opacity:1,y:0}} exit={{opacity:0,y:-6}} className="absolute top-2 right-3 text-[11px] px-2 py-1 rounded-full bg-emerald-500 text-white shadow">
-              Copied!
-            </motion.div>
-          )}
-        </AnimatePresence>
-      </div>
-    );
+  const handleCopy = (text: string) => {
+    navigator.clipboard.writeText(text).then(() => {
+      setCopied(true);
+      setTimeout(() => setCopied(false), 1800);
+    });
   };
-
-  const FAQ = () => {
-    const [open, setOpen] = useState<number | null>(0);
-    return (
-  <div className="divide-y divide-gray-200 rounded-2xl bg-white/95 md:bg-white/80 md:backdrop-blur border border-white/60 md:border-white/40 shadow" style={{contentVisibility:'auto'}}>
-        {faqs.map((f,i)=>(
-          <div key={f.q}>
-            <button onClick={()=>setOpen(o=> o===i? null : i)} className="w-full flex items-center justify-between gap-4 px-6 py-5 text-left">
-              <span className="text-sm font-medium text-gray-800">{f.q}</span>
-              <motion.span animate={{rotate: open===i? 90:0}} className="text-primary-600">
-                <svg width='16' height='16' viewBox='0 0 24 24' stroke='currentColor' strokeWidth='2' fill='none'><path d='M8 5l8 7-8 7'/></svg>
-              </motion.span>
-            </button>
-            <AnimatePresence initial={false}>
-              {open===i && (
-                <motion.div initial={{height:0,opacity:0}} animate={{height:'auto',opacity:1}} exit={{height:0,opacity:0}} transition={{duration:0.3}} className="px-6 pb-6 -mt-2 text-xs text-gray-600 leading-relaxed">
-                  {f.a}
-                </motion.div>
-              )}
-            </AnimatePresence>
-          </div>
-        ))}
+  return (
+    <div className="relative overflow-hidden rounded-2xl bg-white/95 md:bg-white/85 md:backdrop-blur shadow border border-white/60 md:border-white/40 p-5 flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
+      <div>
+        <h4 className="font-semibold text-gray-800 mb-1 text-sm">Direct Contacts</h4>
+        <p className="text-xs text-gray-500">Tap to copy details instantly.</p>
       </div>
-    );
-  };
+      <div className="flex flex-wrap gap-3">
+        <button onClick={() => handleCopy(email)} className="px-4 py-2 text-xs rounded-xl bg-gradient-to-r from-primary-600 to-primary-700 text-white font-medium shadow hover:from-primary-500 hover:to-primary-600">Copy Email</button>
+        <button onClick={() => handleCopy(phone)} className="px-4 py-2 text-xs rounded-xl bg-primary-50 text-primary-700 font-medium ring-1 ring-primary-600/20 hover:bg-primary-100">Copy Phone</button>
+      </div>
+      <AnimatePresence>
+        {copied && (
+          <motion.div initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -6 }} className="absolute top-2 right-3 text-[11px] px-2 py-1 rounded-full bg-emerald-500 text-white shadow">
+            Copied!
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </div>
+  );
+};
 
-  // Compact tabbed channel info replacing multiple cards
-  const ChannelTabs = ({showHours=true}:{showHours?:boolean}) => {
-    const baseTabs = [
-      { key: 'location', label: 'Location', icon: LocationMarkerIcon },
-      { key: 'call', label: 'Call', icon: PhoneOutgoingIcon },
-      { key: 'email', label: 'Email', icon: MailIcon }
-    ];
-    const tabs = showHours ? [...baseTabs, { key: 'hours', label: 'Hours', icon: ClockIcon }] : baseTabs;
-  const [active, setActive] = useState('location');
-    return (
-      <div className="relative">
-        <div className="flex gap-2 overflow-x-auto pb-2" role="tablist" aria-label="Contact channels">
-          {tabs.map(t => (
-            <button
-              key={t.key}
-              role="tab"
-              aria-selected={active===t.key}
-              onClick={()=>setActive(t.key)}
-              className={`flex items-center gap-2 px-4 py-2 rounded-full text-xs font-medium transition border ${active===t.key? 'bg-primary-600 text-white border-primary-600 shadow': 'bg-white/80 backdrop-blur text-gray-700 border-white/60 hover:bg-white'} whitespace-nowrap`}
-            >
-              <span className="w-5 h-5 rounded-full bg-white/20 flex items-center justify-center"><t.icon className="w-4 h-4" /></span>
-              {t.label}
-            </button>
-          ))}
-        </div>
-  <div className="mt-6 relative rounded-2xl bg-white/95 md:bg-white/80 md:backdrop-blur shadow border border-white/60 md:border-white/40 p-6 min-h-[200px]" role="tabpanel">
-          <AnimatePresence mode="wait">
-            {active==='location' && (
-              <motion.div key='loc' initial={{opacity:0,y:10}} animate={{opacity:1,y:0}} exit={{opacity:0,y:-6}} transition={{duration:0.25}} className="space-y-2 text-sm text-gray-600">
-                <div className="inline-flex items-center gap-1.5 rounded-full bg-primary-50 px-2.5 py-1 text-[11px] font-medium text-primary-700 ring-1 ring-primary-600/10">
-                  <LocationMarkerIcon className="w-3.5 h-3.5" />
-                  <span>Our Location</span>
-                </div>
-                <address className="not-italic leading-relaxed">37/17, Reddy St,<br/> Periyar Nagar, Korattur,<br/>Chennai-600080</address>
-                <div className="pt-2">
-                  <motion.a
-                    href="https://www.google.com/maps/search/?api=1&query=37%2F17%2C+Reddy+Street%2C+Periyar+Nagar%2C+Korattur%2C+Chennai+600080"
-                    target="_blank"
-                    rel="noopener"
-                    whileTap={{ scale: 0.9 }}
-                    onClick={(e)=>{requestAnimationFrame(()=> (e.currentTarget as HTMLAnchorElement).blur());}}
-                    className="relative inline-flex items-center gap-1 text-primary-600 text-xs font-medium rounded-full px-2 py-1 bg-primary-50/50 hover:bg-primary-100/70 active:bg-primary-100 transition focus:outline-none focus:ring-2 focus:ring-primary-500/40"
-                  >
-                    <motion.span
-                      aria-hidden
-                      className="absolute inset-0 rounded-full"
-                      animate={{ scale:[1,1.08,1], opacity:[0.55,0.75,0.55] }}
-                      transition={{ duration:2.2, repeat:Infinity, ease:"easeInOut" }}
-                      style={{ background: 'radial-gradient(circle at 50% 50%, rgba(59,130,246,0.35), rgba(59,130,246,0))' }}
-                    />
-                    <span className="relative flex items-center gap-1">
-                      View on Map <svg width='12' height='12' viewBox='0 0 24 24' stroke='currentColor' strokeWidth='2' fill='none'><path d='M5 12h14M13 5l7 7-7 7'/></svg>
-                    </span>
-                  </motion.a>
-                </div>
-              </motion.div>
-            )}
-            {active==='call' && (
-              <motion.div key='call' initial={{opacity:0,y:10}} animate={{opacity:1,y:0}} exit={{opacity:0,y:-6}} transition={{duration:0.25}} className="grid sm:grid-cols-2 gap-4 text-sm text-gray-600">
-                <div className="sm:col-span-2 -mb-1">
-                  <div className="inline-flex items-center gap-1.5 rounded-full bg-primary-50 px-2.5 py-1 text-[11px] font-medium text-primary-700 ring-1 ring-primary-600/10">
-                    <PhoneOutgoingIcon className="w-3.5 h-3.5" />
-                    <span>Call</span>
-                  </div>
-                </div>
-                <div>
-                  <p className="font-medium text-gray-800 mb-1">Main Line</p>
-                  <a className="text-primary-600 text-sm" href="tel:+919363291001">+919363291001</a>
-                </div>
-                <div>
-                  <p className="font-medium text-gray-800 mb-1">Support</p>
-                  <a className="text-primary-600 text-sm" href="tel:+917200710002">+91 7200710002</a>
-                </div>
-                <div className="sm:col-span-2 pt-1">
-                  <p className="text-xs text-gray-500">We route priority partner calls automatically. Outside hours, leave a voicemail.</p>
-                </div>
-              </motion.div>
-            )}
-            {active==='email' && (
-              <motion.div key='email' initial={{opacity:0,y:10}} animate={{opacity:1,y:0}} exit={{opacity:0,y:-6}} transition={{duration:0.25}} className="space-y-3 text-sm text-gray-600">
-                <div>
-                  <div className="inline-flex items-center gap-1.5 rounded-full bg-primary-50 px-2.5 py-1 text-[11px] font-medium text-primary-700 ring-1 ring-primary-600/10">
-                    <MailIcon className="w-3.5 h-3.5" />
-                    <span>Email</span>
-                  </div>
-                </div>
-                <div>
-                  <p className="font-medium text-gray-800 mb-1">General</p>
-                  <a className="text-primary-600" href="mailto:info@mibindustries.in">info@mibindustries.in</a>
-                </div>
-                <div>
-                  <p className="font-medium text-gray-800 mb-1">Support</p>
-                  <a className="text-primary-600" href="mailto:mibindustriesindia@gmail.com">mibindustriesindia@gmail.com</a>
-                </div>
-                <p className="text-xs text-gray-500">Use clear subject lines. We triage by function for faster replies.</p>
-              </motion.div>
-            )}
-            {active==='hours' && (
-              <motion.div key='hours' initial={{opacity:0,y:10}} animate={{opacity:1,y:0}} exit={{opacity:0,y:-6}} transition={{duration:0.25}} className="grid sm:grid-cols-3 gap-4 text-sm text-gray-600">
-                <div>
-                  <p className="font-medium text-gray-800 mb-1">Mon–Fri</p>
-                  <p>9:00 – 18:00</p>
-                </div>
-                <div>
-                  <p className="font-medium text-gray-800 mb-1">Saturday</p>
-                  <p>10:00 – 16:00</p>
-                </div>
-                <div>
-                  <p className="font-medium text-gray-800 mb-1">Sunday</p>
-                  <p>Closed</p>
-                </div>
-                <div className="sm:col-span-3 pt-1 text-xs text-gray-500">All times Eastern Time (ET). Adjust responses for regional holidays.</div>
+const FAQ = () => {
+  const [open, setOpen] = useState<number | null>(0);
+  return (
+    <div className="divide-y divide-gray-200 rounded-2xl bg-white/95 md:bg-white/80 md:backdrop-blur border border-white/60 md:border-white/40 shadow" style={{ contentVisibility: 'auto' }}>
+      {faqs.map((f, i) => (
+        <div key={f.q}>
+          <button onClick={() => setOpen(o => o === i ? null : i)} className="w-full flex items-center justify-between gap-4 px-6 py-5 text-left">
+            <span className="text-sm font-medium text-gray-800">{f.q}</span>
+            <motion.span animate={{ rotate: open === i ? 90 : 0 }} className="text-primary-600">
+              <svg width='16' height='16' viewBox='0 0 24 24' stroke='currentColor' strokeWidth='2' fill='none'><path d='M8 5l8 7-8 7' /></svg>
+            </motion.span>
+          </button>
+          <AnimatePresence initial={false}>
+            {open === i && (
+              <motion.div initial={{ height: 0, opacity: 0 }} animate={{ height: 'auto', opacity: 1 }} exit={{ height: 0, opacity: 0 }} transition={{ duration: 0.3 }} className="px-6 pb-6 -mt-2 text-xs text-gray-600 leading-relaxed">
+                {f.a}
               </motion.div>
             )}
           </AnimatePresence>
         </div>
-      </div>
-    );
-  };
+      ))}
+    </div>
+  );
+};
 
-  // (Removed legacy card components after redesign)
+// Compact tabbed channel info replacing multiple cards
+const ChannelTabs = ({ showHours = true }: { showHours?: boolean }) => {
+  const baseTabs = [
+    { key: 'location', label: 'Location', icon: LocationMarkerIcon },
+    { key: 'call', label: 'Call', icon: PhoneOutgoingIcon },
+    { key: 'email', label: 'Email', icon: MailIcon }
+  ];
+  const tabs = showHours ? [...baseTabs, { key: 'hours', label: 'Hours', icon: ClockIcon }] : baseTabs;
+  const [active, setActive] = useState('location');
+  return (
+    <div className="relative">
+      <div className="flex gap-2 overflow-x-auto pb-2" role="tablist" aria-label="Contact channels">
+        {tabs.map(t => (
+          <button
+            key={t.key}
+            role="tab"
+            aria-selected={active === t.key}
+            onClick={() => setActive(t.key)}
+            className={`flex items-center gap-2 px-4 py-2 rounded-full text-xs font-medium transition border ${active === t.key ? 'bg-primary-600 text-white border-primary-600 shadow' : 'bg-white/80 backdrop-blur text-gray-700 border-white/60 hover:bg-white'} whitespace-nowrap`}
+          >
+            <span className="w-5 h-5 rounded-full bg-white/20 flex items-center justify-center"><t.icon className="w-4 h-4" /></span>
+            {t.label}
+          </button>
+        ))}
+      </div>
+      <div className="mt-6 relative rounded-2xl bg-white/95 md:bg-white/80 md:backdrop-blur shadow border border-white/60 md:border-white/40 p-6 min-h-[200px]" role="tabpanel">
+        <AnimatePresence mode="wait">
+          {active === 'location' && (
+            <motion.div key='loc' initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -6 }} transition={{ duration: 0.25 }} className="space-y-2 text-sm text-gray-600">
+              <div className="inline-flex items-center gap-1.5 rounded-full bg-primary-50 px-2.5 py-1 text-[11px] font-medium text-primary-700 ring-1 ring-primary-600/10">
+                <LocationMarkerIcon className="w-3.5 h-3.5" />
+                <span>Our Location</span>
+              </div>
+              <address className="not-italic leading-relaxed">No.19, 14th Cross,<br /> Krishna Nagar, 2nd Phase,<br />Varadharajapuram, Mudichur,<br />Chennai - 600048.</address>
+              <div className="pt-2">
+                <motion.a
+                  href="https://maps.google.com/?q=12.911799,80.060966"
+                  target="_blank"
+                  rel="noopener"
+                  whileTap={{ scale: 0.9 }}
+                  onClick={(e) => { requestAnimationFrame(() => (e.currentTarget as HTMLAnchorElement).blur()); }}
+                  className="relative inline-flex items-center gap-1 text-primary-600 text-xs font-medium rounded-full px-2 py-1 bg-primary-50/50 hover:bg-primary-100/70 active:bg-primary-100 transition focus:outline-none focus:ring-2 focus:ring-primary-500/40"
+                >
+                  <motion.span
+                    aria-hidden
+                    className="absolute inset-0 rounded-full"
+                    animate={{ scale: [1, 1.08, 1], opacity: [0.55, 0.75, 0.55] }}
+                    transition={{ duration: 2.2, repeat: Infinity, ease: "easeInOut" }}
+                    style={{ background: 'radial-gradient(circle at 50% 50%, rgba(59,130,246,0.35), rgba(59,130,246,0))' }}
+                  />
+                  <span className="relative flex items-center gap-1">
+                    View on Map <svg width='12' height='12' viewBox='0 0 24 24' stroke='currentColor' strokeWidth='2' fill='none'><path d='M5 12h14M13 5l7 7-7 7' /></svg>
+                  </span>
+                </motion.a>
+              </div>
+            </motion.div>
+          )}
+          {active === 'call' && (
+            <motion.div key='call' initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -6 }} transition={{ duration: 0.25 }} className="grid sm:grid-cols-2 gap-4 text-sm text-gray-600">
+              <div className="sm:col-span-2 -mb-1">
+                <div className="inline-flex items-center gap-1.5 rounded-full bg-primary-50 px-2.5 py-1 text-[11px] font-medium text-primary-700 ring-1 ring-primary-600/10">
+                  <PhoneOutgoingIcon className="w-3.5 h-3.5" />
+                  <span>Call</span>
+                </div>
+              </div>
+              <div>
+                <p className="font-medium text-gray-800 mb-1">Main Line</p>
+                <a className="text-primary-600 text-sm" href="tel:+919363291001">+919363291001</a>
+              </div>
+              <div>
+                <p className="font-medium text-gray-800 mb-1">Support</p>
+                <a className="text-primary-600 text-sm" href="tel:+917200710002">+91 7200710002</a>
+              </div>
+              <div className="sm:col-span-2 pt-1">
+                <p className="text-xs text-gray-500">We route priority partner calls automatically. Outside hours, leave a voicemail.</p>
+              </div>
+            </motion.div>
+          )}
+          {active === 'email' && (
+            <motion.div key='email' initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -6 }} transition={{ duration: 0.25 }} className="space-y-3 text-sm text-gray-600">
+              <div>
+                <div className="inline-flex items-center gap-1.5 rounded-full bg-primary-50 px-2.5 py-1 text-[11px] font-medium text-primary-700 ring-1 ring-primary-600/10">
+                  <MailIcon className="w-3.5 h-3.5" />
+                  <span>Email</span>
+                </div>
+              </div>
+              <div>
+                <p className="font-medium text-gray-800 mb-1">General</p>
+                <a className="text-primary-600" href="mailto:info@mibindustries.in">info@mibindustries.in</a>
+              </div>
+              <div>
+                <p className="font-medium text-gray-800 mb-1">Support</p>
+                <a className="text-primary-600" href="mailto:mibindustriesindia@gmail.com">mibindustriesindia@gmail.com</a>
+              </div>
+              <p className="text-xs text-gray-500">Use clear subject lines. We triage by function for faster replies.</p>
+            </motion.div>
+          )}
+          {active === 'hours' && (
+            <motion.div key='hours' initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -6 }} transition={{ duration: 0.25 }} className="grid sm:grid-cols-3 gap-4 text-sm text-gray-600">
+              <div>
+                <p className="font-medium text-gray-800 mb-1">Mon–Fri</p>
+                <p>9:00 – 18:00</p>
+              </div>
+              <div>
+                <p className="font-medium text-gray-800 mb-1">Saturday</p>
+                <p>10:00 – 16:00</p>
+              </div>
+              <div>
+                <p className="font-medium text-gray-800 mb-1">Sunday</p>
+                <p>Closed</p>
+              </div>
+              <div className="sm:col-span-3 pt-1 text-xs text-gray-500">All times Eastern Time (ET). Adjust responses for regional holidays.</div>
+            </motion.div>
+          )}
+        </AnimatePresence>
+      </div>
+    </div>
+  );
+};
+
+// (Removed legacy card components after redesign)

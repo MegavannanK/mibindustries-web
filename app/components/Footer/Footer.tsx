@@ -43,7 +43,7 @@ const companyData: CompanyItem[] = [
   },
   {
     text: "Products",
-  href: "/products",
+    href: "/products",
   },
 ];
 export const Footer = () => {
@@ -65,12 +65,12 @@ export const Footer = () => {
     }
     return () => document.removeEventListener("keydown", escHandler);
   }, [open, escHandler]);
-  
+
   return (
     <footer className="bg-sky-50 text-gray-700 pt-16 pb-8 border-t border-sky-100">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8">
-          
+
           {/* Column 1: Brand */}
           <div className="space-y-6">
             <div className="relative h-[60px] w-[180px]">
@@ -101,8 +101,8 @@ export const Footer = () => {
                 <button onClick={() => router.push("/services")} className="hover:text-primary-600 transition-colors">Services</button>
               </li>
               <li>
-                <button 
-                  onClick={() => setOpen(true)} 
+                <button
+                  onClick={() => setOpen(true)}
                   className="hover:text-primary-600 transition-colors flex items-center gap-2"
                 >
                   Licenses & Certifications
@@ -155,9 +155,10 @@ export const Footer = () => {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                 </svg>
                 <span>
-                  37/17, Reddy St,<br/>
-                  Periyar Nagar, Korattur,<br/>
-                  Chennai-600080
+                  No.19, 14th Cross,<br />
+                  Krishna Nagar, 2nd Phase,<br />
+                  Varadharajapuram, Mudichur,<br />
+                  Chennai - 600048.
                 </span>
               </li>
             </ul>
@@ -183,7 +184,7 @@ export const Footer = () => {
           className="fixed inset-0 z-[100] flex items-center justify-center p-4"
         >
           <div
-            className="absolute inset-0 bg-black/60 backdrop-blur-sm" 
+            className="absolute inset-0 bg-black/60 backdrop-blur-sm"
             onClick={() => setOpen(false)}
             aria-hidden="true"
           />

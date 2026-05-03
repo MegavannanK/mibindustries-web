@@ -60,7 +60,7 @@ const branches: Branch[] = [
     id: 2,
     country: "India",
     city: "HeadQuarters",
-    address: "37/17, Reddy St, Periyar Nagar, Korattur, Chennai-600080",
+    address: "No.19, 14th Cross, Krishna Nagar, 2nd Phase, Varadharajapuram, Mudichur, Chennai - 600048.",
     coordinates: { lat: 13.0827, lng: 80.2707 },
     timezone: "GMT+5:30",
     established: "2013",
@@ -94,12 +94,12 @@ const containerVariants = {
 };
 
 const cardVariants = {
-  hidden: { 
-    opacity: 0, 
+  hidden: {
+    opacity: 0,
     y: 50
   },
-  visible: { 
-    opacity: 1, 
+  visible: {
+    opacity: 1,
     y: 0,
     transition: {
       duration: 0.6,
@@ -109,12 +109,12 @@ const cardVariants = {
 };
 
 const headerVariants = {
-  hidden: { 
-    opacity: 0, 
+  hidden: {
+    opacity: 0,
     y: 30,
   },
-  visible: { 
-    opacity: 1, 
+  visible: {
+    opacity: 1,
     y: 0,
     transition: {
       duration: 0.8,
@@ -132,7 +132,7 @@ export const GlobalPresence = () => {
         <div className="absolute bottom-20 right-10 w-96 h-96 bg-primary-300/20 rounded-full blur-3xl"></div>
         <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-gradient-to-r from-primary-100/40 to-primary-200/30 rounded-full blur-3xl"></div>
       </div>
-      
+
       <div className="container mx-auto px-6 relative z-10">
         {/* Header Section */}
         <motion.div
@@ -142,7 +142,7 @@ export const GlobalPresence = () => {
           viewport={{ once: true, amount: 0.3 }}
           className="text-center mb-16"
         >
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, scale: 0.8, y: 30 }}
             whileInView={{ opacity: 1, scale: 1, y: 0 }}
             viewport={{ once: true, amount: 0.5 }}
@@ -152,8 +152,8 @@ export const GlobalPresence = () => {
             <OfficeBuildingIcon className="w-5 h-5 text-primary-600" />
             <span className="text-primary-700 font-semibold text-sm uppercase tracking-wide">Global Branches</span>
           </motion.div>
-          
-          <motion.h2 
+
+          <motion.h2
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.5 }}
@@ -161,7 +161,7 @@ export const GlobalPresence = () => {
             className="text-4xl md:text-5xl font-bold text-gray-900 mb-6"
           >
             Strategic Office
-            <motion.span 
+            <motion.span
               initial={{ opacity: 0, scale: 0.9 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
@@ -169,15 +169,15 @@ export const GlobalPresence = () => {
               className="bg-gradient-to-r from-primary-600 via-primary-700 to-primary-800 bg-clip-text text-transparent"
             > Locations</motion.span>
           </motion.h2>
-          
-          <motion.p 
+
+          <motion.p
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.5 }}
             transition={{ duration: 0.8, delay: 0.6 }}
             className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed"
           >
-            Positioned at key international trade routes, our strategic offices enable seamless export & import operations 
+            Positioned at key international trade routes, our strategic offices enable seamless export & import operations
             <span className="hidden lg:block">and global supply chain management across continents.</span>
           </motion.p>
         </motion.div>
@@ -204,7 +204,7 @@ export const GlobalPresence = () => {
               <div className="relative overflow-hidden">
                 {/* Main Card Container */}
                 <div className={`relative bg-gradient-to-br from-white/95 via-white/90 to-white/80 backdrop-blur-2xl rounded-3xl shadow-2xl hover:shadow-3xl ${branch.bgGlow} transition-all duration-700 border-0 overflow-hidden group-hover:shadow-primary-500/25`}>
-                  
+
                   {/* Modern Header with Floating Elements */}
                   <div className={`relative h-40 bg-gradient-to-br ${branch.primaryColor} overflow-hidden`}>
                     {/* Dynamic Background Pattern */}
@@ -212,16 +212,16 @@ export const GlobalPresence = () => {
                       {/* Simplified background elements - no infinite animations */}
                       <div className="absolute top-4 right-6 w-20 h-20 bg-white/10 rounded-full blur-2xl opacity-20"></div>
                       <div className="absolute bottom-4 left-6 w-16 h-16 bg-white/15 rounded-full blur-xl opacity-25"></div>
-                      
+
                       {/* Static geometric shapes */}
                       <div className="absolute top-6 left-8 w-8 h-8 border-2 border-white/20 rounded-lg"></div>
                       <div className="absolute bottom-8 right-8 w-6 h-6 bg-white/20 rounded-full"></div>
                     </div>
-                    
+
                     {/* Country Info - Modern Layout */}
                     <div className="relative z-10 p-6 h-full flex flex-col justify-between">
                       <div className="flex items-start justify-between">
-                        <motion.div 
+                        <motion.div
                           initial={{ opacity: 0, x: -30 }}
                           whileInView={{ opacity: 1, x: 0 }}
                           viewport={{ once: true }}
@@ -232,14 +232,14 @@ export const GlobalPresence = () => {
                             <div className="text-4xl filter drop-shadow-lg">{branch.icon}</div>
                           </div>
                           <div className="text-white font-mono">
-                            <motion.h3 
+                            <motion.h3
                               initial={{ opacity: 0, y: 20 }}
                               whileInView={{ opacity: 1, y: 0 }}
                               viewport={{ once: true }}
                               transition={{ duration: 0.6, delay: 0.4 + index * 0.1 }}
                               className="text-xl font-bold tracking-wide"
                             >{branch.country}</motion.h3>
-                            <motion.p 
+                            <motion.p
                               initial={{ opacity: 0, y: 15 }}
                               whileInView={{ opacity: 1, y: 0 }}
                               viewport={{ once: true }}
@@ -248,9 +248,9 @@ export const GlobalPresence = () => {
                             >{branch.city}</motion.p>
                           </div>
                         </motion.div>
-                        
+
                         {/* Modern Badge */}
-                        <motion.div 
+                        <motion.div
                           initial={{ opacity: 0, scale: 0.8, x: 30 }}
                           whileInView={{ opacity: 1, scale: 1, x: 0 }}
                           viewport={{ once: true }}
@@ -261,9 +261,9 @@ export const GlobalPresence = () => {
                           <span className="text-white font-bold text-sm tracking-wider">{branch.countryCode}</span>
                         </motion.div>
                       </div>
-                      
+
                       {/* Floating Timeline */}
-                      <motion.div 
+                      <motion.div
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
@@ -279,7 +279,7 @@ export const GlobalPresence = () => {
                   {/* Modern Content Section */}
                   <div className="p-8 space-y-6">
                     {/* Location with Modern Styling */}
-                    <motion.div 
+                    <motion.div
                       initial={{ opacity: 0, y: 30 }}
                       whileInView={{ opacity: 1, y: 0 }}
                       viewport={{ once: true, amount: 0.5 }}
@@ -287,7 +287,7 @@ export const GlobalPresence = () => {
                       className="space-y-4"
                     >
                       <div className="flex items-start gap-4">
-                        <motion.div 
+                        <motion.div
                           whileHover={{ scale: 1.1, rotate: 5 }}
                           transition={{ duration: 0.3 }}
                           className={`p-3 rounded-2xl ${branch.accentColor} border-0 shadow-md`}
@@ -295,14 +295,14 @@ export const GlobalPresence = () => {
                           <LocationMarkerIcon className="w-5 h-5 text-primary-600" />
                         </motion.div>
                         <div className="flex-1 pt-1">
-                          <motion.p 
+                          <motion.p
                             initial={{ opacity: 0, x: 20 }}
                             whileInView={{ opacity: 1, x: 0 }}
                             viewport={{ once: true }}
                             transition={{ duration: 0.6, delay: 0.3 + index * 0.1 }}
                             className="text-gray-700 font-medium text-base sm:text-base md:text-base leading-snug sm:leading-relaxed font-sans"
                           >{branch.address}</motion.p>
-                          <motion.div 
+                          <motion.div
                             initial={{ opacity: 0, x: 20 }}
                             whileInView={{ opacity: 1, x: 0 }}
                             viewport={{ once: true }}
@@ -377,14 +377,14 @@ export const GlobalPresence = () => {
                     </motion.div> */}
 
                     {/* Modern Status Indicators */}
-                    <motion.div 
+                    <motion.div
                       initial={{ opacity: 0, y: 30 }}
                       whileInView={{ opacity: 1, y: 0 }}
                       viewport={{ once: true, amount: 0.5 }}
                       transition={{ duration: 0.8, delay: 0.6 + index * 0.1 }}
                       className="flex items-center justify-center gap-8 pt-6"
                     >
-                      <motion.div 
+                      <motion.div
                         initial={{ opacity: 0, x: -20 }}
                         whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ once: true }}
@@ -394,7 +394,7 @@ export const GlobalPresence = () => {
                         <div className="w-4 h-4 bg-green-500 rounded-full"></div>
                         <span className="text-sm font-semibold text-gray-700 tracking-wide">Live Operations</span>
                       </motion.div>
-                      <motion.div 
+                      <motion.div
                         initial={{ opacity: 0, x: 20 }}
                         whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ once: true }}
@@ -409,7 +409,7 @@ export const GlobalPresence = () => {
 
                   {/* Floating Corner Decoration - Simplified */}
                   <div className="absolute bottom-6 right-6 w-4 h-4 bg-primary-400/60 rounded-full blur-sm"></div>
-                  
+
                   {/* Top Corner Accent */}
                   <div className="absolute top-0 right-0 w-20 h-20 bg-gradient-to-bl from-white/10 to-transparent"></div>
                 </div>
@@ -430,14 +430,14 @@ export const GlobalPresence = () => {
           className="text-center"
         >
           <div className="bg-gradient-to-r from-primary-600 via-primary-700 to-primary-800 rounded-3xl p-8 md:p-12 text-white shadow-2xl relative overflow-hidden">
-            
+
             {/* Simplified Background Pattern */}
             <div className="absolute inset-0 opacity-10">
               <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_50%_120%,rgba(255,255,255,0.3),transparent)]"></div>
             </div>
 
             <div className="relative z-10">
-              <motion.h3 
+              <motion.h3
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.5 }}
@@ -446,17 +446,17 @@ export const GlobalPresence = () => {
               >
                 Connecting Global Markets
               </motion.h3>
-              <motion.p 
+              <motion.p
                 initial={{ opacity: 0, y: 25 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.5 }}
                 transition={{ duration: 0.8, delay: 0.4 }}
                 className="text-lg opacity-90 mb-8 max-w-2xl mx-auto hidden lg:block"
               >
-                Bridging continents through strategic trade operations, ensuring seamless 
+                Bridging continents through strategic trade operations, ensuring seamless
                 export-import solutions across international borders.
               </motion.p>
-              
+
               <div className="grid grid-cols-2 md:grid-cols-4 gap-8 ">
                 {[
                   { value: "25+", label: "Export Countries" },
@@ -469,8 +469,8 @@ export const GlobalPresence = () => {
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true, amount: 0.3 }}
-                    transition={{ 
-                      duration: 0.5, 
+                    transition={{
+                      duration: 0.5,
                       delay: 0.5 + index * 0.1,
                       ease: easeOut
                     }}
@@ -498,14 +498,14 @@ export const GlobalPresence = () => {
           className="mt-16 text-center"
         >
           <div id="verified-credentials" className="bg-gradient-to-r from-slate-800 via-slate-900 to-slate-800 rounded-3xl p-8 md:p-12 text-white shadow-2xl relative overflow-hidden border border-slate-700/50 scroll-mt-40 md:scroll-mt-48">
-            
+
             {/* Simplified Background Pattern */}
             <div className="absolute inset-0 opacity-10">
               <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_50%_120%,rgba(255,255,255,0.3),transparent)]"></div>
             </div>
 
             <div className="relative z-10">
-              <motion.div 
+              <motion.div
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.5 }}
@@ -515,8 +515,8 @@ export const GlobalPresence = () => {
                 <div className="w-3 h-3 bg-green-400 rounded-full"></div>
                 <span className="text-green-300 font-semibold text-sm uppercase tracking-wide">Government Registered</span>
               </motion.div>
-              
-              <motion.h3 
+
+              <motion.h3
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.5 }}
@@ -525,8 +525,8 @@ export const GlobalPresence = () => {
               >
                 Verified Business Credentials
               </motion.h3>
-              
-              <motion.p 
+
+              <motion.p
                 initial={{ opacity: 0, y: 25 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.5 }}
@@ -535,24 +535,24 @@ export const GlobalPresence = () => {
               >
                 Our business is officially registered and compliant with all government regulations for international trade operations.
               </motion.p>
-              
+
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                 {[
-                  { 
-                    label: "GST Registration", 
-                    value: "33ITKPM7611C1ZQ", 
+                  {
+                    label: "GST Registration",
+                    value: "33ITKPM7611C1ZQ",
                     description: "Goods & Services Tax",
                     icon: "📋"
                   },
-                  { 
-                    label: "Import Export License", 
-                    value: "ITKPM7611C", 
+                  {
+                    label: "Import Export License",
+                    value: "ITKPM7611C",
                     description: "Authorized Import & Export Operations",
                     icon: "🌍"
                   },
-                  { 
-                    label: "FSSAI  Certified", 
-                    value: "12424999000212", 
+                  {
+                    label: "FSSAI  Certified",
+                    value: "12424999000212",
                     description: "Quality Management",
                     icon: "🏆"
                   }
@@ -562,8 +562,8 @@ export const GlobalPresence = () => {
                     initial={{ opacity: 0 }}
                     whileInView={{ opacity: 1 }}
                     viewport={{ once: true, amount: 0.3 }}
-                    transition={{ 
-                      duration: 0.5, 
+                    transition={{
+                      duration: 0.5,
                       delay: index * 0.1,
                       ease: easeOut
                     }}
@@ -579,7 +579,7 @@ export const GlobalPresence = () => {
 
               {/* Trust Indicators */}
               <div className="flex items-center justify-center gap-3 lg:gap-8 mt-8 pt-6 border-t border-white/20">
-                <motion.div 
+                <motion.div
                   initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, amount: 0.5 }}
@@ -589,8 +589,8 @@ export const GlobalPresence = () => {
                   <div className="w-3 h-3 bg-green-400 rounded-full" />
                   <span className="text-sm font-semibold text-white/90 tracking-wide">Government Verified</span>
                 </motion.div>
-                
-                <motion.div 
+
+                <motion.div
                   initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, amount: 0.5 }}
@@ -600,8 +600,8 @@ export const GlobalPresence = () => {
                   <div className="w-3 h-3 bg-blue-400 rounded-full" />
                   <span className="text-sm font-semibold text-white/90 tracking-wide">Export Authorized</span>
                 </motion.div>
-                
-                <motion.div 
+
+                <motion.div
                   initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, amount: 0.5 }}
